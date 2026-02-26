@@ -1,0 +1,203 @@
+{
+  "bannerCharacters": [
+    { "id": 1,  "name": "Anastasia", "costume": "Gentle Maid",              "element": "Fire",  "role": "DPS",     "tier": "B",  "banner": "Standard",  "color": "#ef4444", "emoji": "🧹" },
+    { "id": 2,  "name": "Blade",     "costume": "Apostle Blade",            "element": "Dark",  "role": "DPS",     "tier": "SS", "banner": "Limited",   "color": "#6d28d9", "emoji": "⚔️" },
+    { "id": 3,  "name": "Eclipse",   "costume": "Nightmare Bunny",          "element": "Dark",  "role": "Mage",    "tier": "S",  "banner": "Limited",   "color": "#7c3aed", "emoji": "🌙" },
+    { "id": 4,  "name": "Diana",     "costume": "Adventurer of the Unknown","element": "Wind",  "role": "Support", "tier": "SS", "banner": "Standard",  "color": "#22c55e", "emoji": "🧭" }
+  ],
+  "allCharacters": [
+    { "id": 1,  "name": "Anastasia", "costume": "Gentle Maid",               "element": "Fire",  "role": "DPS",     "tier": "B",  "banner": "Standard",  "color": "#ef4444", "emoji": "🧹" },
+    { "id": 2,  "name": "Blade",     "costume": "Apostle Blade",             "element": "Dark",  "role": "DPS",     "tier": "SS", "banner": "Limited",   "color": "#6d28d9", "emoji": "⚔️" },
+    { "id": 3,  "name": "Eclipse",   "costume": "Nightmare Bunny",           "element": "Dark",  "role": "Mage",    "tier": "S",  "banner": "Limited",   "color": "#7c3aed", "emoji": "🌙" },
+    { "id": 4,  "name": "Diana",     "costume": "Adventurer of the Unknown", "element": "Wind",  "role": "Support", "tier": "SS", "banner": "Standard",  "color": "#22c55e", "emoji": "🧭" }
+  ],
+  "characterDetails": [
+    {
+      "id": 1,
+      "slug": "anastasia",
+      "name": "Anastasia",
+      "stars": 5,
+      "rank": "B",
+      "element": "Fire",
+      "archetype": "Physical DPS",
+      "color": "#ef4444",
+      "emoji": "🧹",
+      "lore": "A fire-element physical attacker with a high-risk, high-reward playstyle built around critical strikes. Her signature Crit DMG steroid gives her devastating burst potential on a single turn, but it lasts only one turn — making her a precision weapon that rewards careful setup over sustained damage.",
+      "gameplay": "Anastasia specializes in boosting her own Crit DMG by 100% for one turn and unleashing multi-hit physical attacks. Her 'Gentle Maid' costume uses a +Shaped AoE with 3 attacks, while 'Fire Graffiti' hits 5 times for higher chain-damage output. She has zero utility, so pair her with a Crit Rate buffer like Arines to ensure her burst lands. She is outclassed by Liatris as a fire physical attacker in end-game PvE, but she's a solid beginner option and still viable in specific setups.",
+      "modeRatings": {
+        "mirrorWar": 5,
+        "fiendHunter": 6,
+        "guildRaid": 5,
+        "towerOfSalvation": 5,
+        "lastNight": 6
+      },
+      "costumes": [
+        {
+          "id": "c1-1",
+          "name": "Gentle Maid",
+          "rarity": "Standard",
+          "emoji": "🧹",
+          "color": "#ef4444",
+          "description": "Anastasia's base costume and the most accessible version of her kit. Gentle Maid's skill 'Cluster Bombardment' (5 SP, 5-turn CD) increases Crit DMG by 100% for 1 turn and attacks 3 times, each dealing Physical DMG at 65% ATK. Requires Crit Rate investment from gear or a support like Arines to reach her ceiling. Best stat priority: Crit Rate and ATK.",
+          "skills": ["Cluster Bombardment"]
+        },
+        {
+          "id": "c1-2",
+          "name": "Fire Graffiti",
+          "rarity": "Standard",
+          "emoji": "🎨",
+          "color": "#dc2626",
+          "description": "Anastasia's second costume, designed for higher chain-damage output. Fire Graffiti attacks 5 times, each at 120% ATK (720% total with chain damage) plus the 200% Crit DMG buff from Gentle Maid. More hits means more chains, making this her go-to follow-up costume for maximizing total damage in a burst rotation. Use Gentle Maid first, then Fire Graffiti.",
+          "skills": ["Fire Graffiti Strike"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "blade",
+      "name": "Blade",
+      "stars": 5,
+      "rank": "SS",
+      "element": "Dark",
+      "archetype": "Physical DPS",
+      "color": "#6d28d9",
+      "emoji": "⚔️",
+      "lore": "Blade is a dark-element physical glass cannon — she possesses the highest base ATK in the entire game (429) and 75% base Crit DMG, making her devastatingly powerful. However, her base HP (1,050–1,293) is among the lowest in the game, even lower than many 3-star units. She requires protective support to stay alive, but when she does, she hits harder than virtually anyone.",
+      "gameplay": "Blade's 'Apostle' costume is the flagship costume: it applies a unique full-team counterattack, hitting all enemies for up to 2,000% damage in response to attacks. Her 'Young Lady' costume applies 100% Physical Vulnerability to the main target for 4 turns, dramatically boosting Apostle's counter damage. 'Onsen Swordfighter' is her nuke costume — it deals 600% + 120% per enemy debuff, scaling to 1,000%+ when paired with debuffers like Celia and Eleaneer. She thrives in Guild Raid and Fiend Hunt where boss multi-hit attacks trigger her counters repeatedly. She is fragile in PvP and Tower of Salvation without energy guard support.",
+      "modeRatings": {
+        "mirrorWar": 4,
+        "fiendHunter": 10,
+        "guildRaid": 10,
+        "towerOfSalvation": 6,
+        "lastNight": 4
+      },
+      "costumes": [
+        {
+          "id": "c2-1",
+          "name": "Apostle Blade",
+          "rarity": "Limited",
+          "emoji": "⚔️",
+          "color": "#6d28d9",
+          "description": "Blade's signature and most iconic costume. 'Ruthless Fervor' (5 SP, 3-turn CD) attacks 4 times at 50% ATK each and applies 100% Physical Vulnerability to the main target for 4 turns. On top of this, Apostle Blade's passive enables a full-enemy-team counterattack of up to 200% per hit, up to 10 times (2,000% total), triggered whenever she is attacked. This makes her exceptional against multi-hit boss attacks in Guild Raid. Her very low HP means she needs an energy guard or a taunt tank like Lecliss to survive long enough to counter. Key upgrades: Skill Potential 3, DMG upgrades.",
+          "skills": ["Ruthless Fervor", "All-Team Counterattack (Passive)"]
+        },
+        {
+          "id": "c2-2",
+          "name": "Young Lady",
+          "rarity": "Standard",
+          "emoji": "👘",
+          "color": "#8b5cf6",
+          "description": "Blade's standard costume based on her younger self. 'Young Lady Strike' deals multi-hit Physical DMG and applies 100% Physical Vulnerability to the main target for 4 turns. This vulnerability has 100% uptime when cycled with Apostle Blade, ensuring every Apostle counterattack deals massively amplified damage. DMG scaling at +0 is low, so this costume is heavily reliant on Potential upgrades. Best used as a setup piece rather than a standalone damage source.",
+          "skills": ["Young Lady Strike"]
+        },
+        {
+          "id": "c2-3",
+          "name": "Onsen Swordfighter Blade",
+          "rarity": "Limited",
+          "emoji": "♨️",
+          "color": "#4c1d95",
+          "description": "Blade's nuke-turn costume. 'Onsen Strike' deals 600% Physical DMG base (+120% per debuff on the enemy), reaching 1,000%+ with Celia and Eleaneer stacking debuffs. This is Blade's highest potential damage costume. Best used on the big nuke turn in Guild Raids where the boss self-debuffs on break turns. Her AOE coverage is limited compared to some newer costumes and she is not ideal for PvP. Best paired with Shadow Bunny Eleaneer (AOE debuffs) and both Celia costumes for maximum debuff stacking.",
+          "skills": ["Onsen Strike (Debuff Scaling Nuke)"]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "eclipse",
+      "name": "Eclipse",
+      "stars": 5,
+      "rank": "S",
+      "element": "Dark",
+      "archetype": "Magic DPS",
+      "color": "#7c3aed",
+      "emoji": "🌙",
+      "lore": "Eclipse is the owner of the Pagan Tower — a great witch of the eastern Svern Continent. She is a magic dark DPS who weaponizes SP drain and MRES shredding to cripple her enemies while dealing respectable damage. Her PvP impact became massive with the release of Nightmare Bunny. Celia, a student who sought her out to learn dark magic, eventually surpassed her.",
+      "gameplay": "Eclipse's power depends heavily on her 'Nightmare Bunny' limited costume. Without it, her base Dimension Witch is a serviceable but average dark attacker. With Nightmare Bunny, she becomes a PvP terror: she shreds Magic Resistance by 15% before hitting (unique pre-hit shred mechanic), drains enemy SP while refilling yours, and has a near-impossible-to-avoid cross AOE. Her base M.ATK (308) is below average, so she is outclassed in end-game PvE by Blade and Luvencia, but she remains a strong mid-tier pick for players without those units.",
+      "modeRatings": {
+        "mirrorWar": 9,
+        "fiendHunter": 7,
+        "guildRaid": 7,
+        "towerOfSalvation": 7,
+        "lastNight": 4
+      },
+      "costumes": [
+        {
+          "id": "c3-1",
+          "name": "The Dimension Witch",
+          "rarity": "Standard",
+          "emoji": "🧙‍♀️",
+          "color": "#5b21b6",
+          "description": "Eclipse's base costume, recruitable from the Story Pack 6 pub. 'Terra Drain' (4 SP, 5-turn CD) heals 35% Max HP, attacks 3 times at 120% Magic ATK each, and decreases 3 SP for each enemy hit. In PvP, the SP drain prevents enemy teams from fielding full SP on their following turn. In PvE, SP drain is mostly irrelevant, making this a vanilla dark attacker. Her skip-shaped AOE is awkward to position. Best upgrade: Skill Potential 3 for SP cost reduction.",
+          "skills": ["Terra Drain (Damage + SP Drain + Self Heal)"]
+        },
+        {
+          "id": "c3-2",
+          "name": "Nightmare Bunny Eclipse",
+          "rarity": "Limited",
+          "emoji": "🐰",
+          "color": "#7c3aed",
+          "description": "Eclipse's signature limited costume tied to winter events. 'Dream Eater' (3 SP, 5-turn CD) decreases Magic Resist by 15% for 4 turns BEFORE dealing damage — unique pre-hit shred mechanic. Attacks 3 times at 75% Magic ATK each, acquires 1 SP per unique hit, and decreases 1 SP per unique hit from enemies. In PvP she is a terror: her cross AOE is nearly impossible to dodge, and her SP battery effect is game-changing. In Tower of Salvation she is a vital SP refill tool. At +0, damage is low — this costume needs investment. Key upgrade: Skill Potential 1, DMG upgrades.",
+          "skills": ["Dream Eater (MRES Shred + Damage + SP Drain/Battery)"]
+        },
+        {
+          "id": "c3-3",
+          "name": "Beach Vacation Eclipse",
+          "rarity": "Limited",
+          "emoji": "🏖️",
+          "color": "#0ea5e9",
+          "description": "Eclipse's highest raw damage costume. 'Summer Climax' (5 SP, 11-turn CD) attacks 2 times at 200% Magic ATK each (400% total, plus chain damage). The 11-turn cooldown means she can typically only use it once per fight. It has reliable 3×3 AOE coverage. Best used as a nuke-turn save: hold it and fire after Nightmare Bunny's MRES shred for maximum damage. Not worth pulling if you don't have Nightmare Bunny. Also available: Dream Bride Eclipse (limited/event) and Honeymoon Getaway (5 SP, 5-turn CD, 350% single target with great coverage).",
+          "skills": ["Summer Climax (High Damage AoE Nuke)", "Honeymoon Getaway (350% Coverage Skill)", "Dream Bride (625% Heart-AOE, free event costume)"]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "slug": "diana",
+      "name": "Diana",
+      "stars": 5,
+      "rank": "SS",
+      "element": "Wind",
+      "archetype": "Support",
+      "color": "#22c55e",
+      "emoji": "🧭",
+      "lore": "Diana is a homunculus technology expert and Wind magic supporter introduced in Story Pack 10. She functions as a living aura generator, projecting powerful elemental and defensive buffs to nearby allies. She is considered the single most essential buffer in all of late-game PvE — a mandatory unit for end-game Fiend Hunts, Guild Raids, and high-score Tower of Pride runs.",
+      "gameplay": "Diana's 'Adventurer of the Unknown' costume applies an 8-turn aura in a cross pattern, granting allies +100% Elemental DMG and +20% Crit Rate (220% and 30% respectively at +5 full potential). This nearly doubles damage output against enemies you have elemental advantage on. Unlike standard buff skills, her aura is persistent — allies must stay in range, but the buff doesn't expire. Her 'Anti-Dystopia' costume (1 SP) applies a regenerating Energy Guard to allies, making her one of the best defensive supporters too. She has the Dispatch talent skill, which earns free Dia (premium currency) daily and is a reason alone to obtain her.",
+      "modeRatings": {
+        "mirrorWar": 5,
+        "fiendHunter": 10,
+        "guildRaid": 10,
+        "towerOfSalvation": 9,
+        "lastNight": 7
+      },
+      "costumes": [
+        {
+          "id": "c4-1",
+          "name": "Adventurer of the Unknown",
+          "rarity": "Standard",
+          "emoji": "🧭",
+          "color": "#22c55e",
+          "description": "Diana's base costume and the most important support costume in the game. 'Elemental Reverse' (3 SP at +3, 9-turn CD) creates an 8-turn aura around Diana that grants allies Elemental DMG +100% and Crit Rate +20% (up to +220% Elemental DMG and +30% Crit Rate at +5 full potential). Works for both physical and magic teams. Must-have for all end-game PvE. Key upgrades: Skill Potential 2 (gives 100% uptime in Fiend Hunt), must upgrade to at least +2 or +3. Also has the 'Dispatch' talent field skill which can earn free Dia daily — get her from Story Pack 10 pub even at +0 just for this.",
+          "skills": ["Elemental Reverse (Elemental DMG Aura + Crit Rate Aura)", "Dispatch (Talent Field Skill — daily Dia reward)"]
+        },
+        {
+          "id": "c4-2",
+          "name": "Anti-Dystopia Diana",
+          "rarity": "Limited",
+          "emoji": "🛡️",
+          "color": "#16a34a",
+          "description": "Diana's defensive limited costume, released in the Nightmare Winter special pack. 'Champagne Shower' (1 SP from 2nd upgrade) deploys a high-magnitude Energy Guard over a wide area that regenerates once at the end of the cast turn, providing protection for 2 effective enemy turns. At +5 with M.ATK buffers, this guard can exceed 10,000 HP — comparable to or surpassing Red Hat Rou. Makes Diana one of the best T1 PvP defensive openers. Combined with AOTU Diana, she becomes both an offensive and defensive powerhouse. Key upgrades: Design +1 and +4 for SP cost reduction.",
+          "skills": ["Champagne Shower (Regenerating Energy Guard AoE)"]
+        },
+        {
+          "id": "c4-3",
+          "name": "Magical Innovator Diana",
+          "rarity": "Limited",
+          "emoji": "🤖",
+          "color": "#0d9488",
+          "description": "Diana's robot-summoning costume (released February 2026). Deploys a robot companion pre-emptively that can buff nearby allies with a 50% property damage buff (X-shape, 1 SP, no cooldown, stackable up to 4 times for 200% total). Best suited for Fiend Hunt and Guild Raid nuke setups where the robot can repeatedly buff the same attacker. Low impact in PvP. Diana's exclusive gear (White Pixie head accessory) grants 54% HP, making her tankier — useful for keeping her alive in aggressive PvP metas.",
+          "skills": ["Robot Summon (Pre-emptive)", "Robot Skill: Property Buff +50% (X-AOE, 1 SP, no CD)"]
+        }
+      ]
+    }
+  ]
+}

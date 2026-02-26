@@ -1,0 +1,479 @@
+[
+  {
+    "id": 1,
+    "slug": "anastasia",
+    "name": "Anastasia",
+    "stars": 5,
+    "rank": "SS",
+    "element": "Dark",
+    "archetype": "DPS",
+    "color": "#a855f7",
+    "emoji": "🧙‍♀️",
+    "lore": "Once a prodigious student of the arcane academy, Anastasia turned to forbidden shadow magic after losing everything she loved to a cursed war. She walks the world alone — feared by enemies, admired by those she chooses to protect.",
+    "gameplay": "Anastasia excels as a single-target and AoE magical DPS. Her passive amplifies Dark damage by up to 40% when enemies have debuffs. Combo her with a buffer and a silence unit to unleash devastating burst turns. Best deployed in Mirror War and Last Night of the Earth.",
+    "costumes": [
+      {
+        "id": "c1-1",
+        "name": "Winter Witch",
+        "rarity": "Limited",
+        "emoji": "🧙‍♀️",
+        "color": "#a855f7",
+        "description": "Draped in midnight velvet and silver frost, Winter Witch is Anastasia's signature battle attire. The crystalline staff channels concentrated shadow energy, amplifying her burst rotation by 25%. This costume unlocks her signature skill: Frost Hex Chain.",
+        "skills": ["Frost Hex Chain", "Shadow Vortex", "Arcane Barrier"]
+      },
+      {
+        "id": "c1-2",
+        "name": "Crimson Scholar",
+        "rarity": "Standard",
+        "emoji": "📚",
+        "color": "#dc2626",
+        "description": "The classic academy uniform, worn before the fall. Crimson Scholar reflects Anastasia's roots as a talented student. While less powerful than later costumes, it offers reliable Dark DoT stacking and a balanced skill set perfect for beginners.",
+        "skills": ["Dark Ink Burst", "Scholarly Hex", "Focus Ward"]
+      },
+      {
+        "id": "c1-3",
+        "name": "Eclipse Sovereign",
+        "rarity": "Limited",
+        "emoji": "🌑",
+        "color": "#1e1b4b",
+        "description": "Forged during the eclipse ritual, this costume represents Anastasia at the peak of her power. Eclipse Sovereign doubles her passive trigger chance and grants immunity to dispel for 2 turns, making her a raid and colosseum staple.",
+        "skills": ["Eclipse Nova", "Void Cascade", "Sovereign's Will"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "lecliss",
+    "name": "Lecliss",
+    "stars": 5,
+    "rank": "S",
+    "element": "Light",
+    "archetype": "Tank",
+    "color": "#f59e0b",
+    "emoji": "⚔️",
+    "lore": "A knight sworn to an ancient order, Lecliss carries the burden of being the last Sacred Knight. Her code demands she protect the innocent — no matter the personal cost. Behind her stoic exterior lies a deep well of emotion she rarely shows.",
+    "gameplay": "Lecliss is the premier frontline tank in PvP modes. Her taunt skill forces enemies to target her for 2 turns, while her counter-attack passive punishes physical attackers. Stack her with a healer and a buffer for prolonged siege battles in Guild Raid.",
+    "costumes": [
+      {
+        "id": "c2-1",
+        "name": "Sacred Knight",
+        "rarity": "Standard",
+        "emoji": "⚔️",
+        "color": "#f59e0b",
+        "description": "The iconic golden armor of the Sacred Order. Sacred Knight Lecliss boasts the highest base defense in her class. The holy shield passive triggers when her HP drops below 30%, granting a full-turn immunity shield.",
+        "skills": ["Holy Guard", "Sacred Counter", "Radiant Bulwark"]
+      },
+      {
+        "id": "c2-2",
+        "name": "Fallen Vow",
+        "rarity": "Limited",
+        "emoji": "🖤",
+        "color": "#6d28d9",
+        "description": "A tragic alternate costume depicting Lecliss in corrupted armor after breaking her sacred vow. Fallen Vow trades pure defense for a hybrid offense-defense kit — her taunts now deal damage, and counters apply Curse stacks to enemies.",
+        "skills": ["Cursed Vow", "Dark Counter", "Void Barrier"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "slug": "nadia",
+    "name": "Nadia",
+    "stars": 5,
+    "rank": "SS",
+    "element": "Fire",
+    "archetype": "Sub-DPS",
+    "color": "#ef4444",
+    "emoji": "🦊",
+    "lore": "A nimble thief who grew up in the slums, Nadia uses her fox-like cunning to outmaneuver anyone who stands in her way. She steals not for greed, but to survive — and secretly to fund an orphanage she pretends not to care about.",
+    "gameplay": "Nadia is a single-target assassin who dominates in Mirror War. Her Crimson Fox passive grants bonus actions when she eliminates a target, enabling chain kills. Pair with a speed buffer and a silencer to lock down enemy supports before Nadia cleans up.",
+    "costumes": [
+      {
+        "id": "c3-1",
+        "name": "Crimson Fox",
+        "rarity": "Limited",
+        "emoji": "🦊",
+        "color": "#ef4444",
+        "description": "Nadia's signature outfit — a flame-red coat that blurs with afterimages as she moves. Crimson Fox unlocks her iconic triple-dash skill, letting her hit three separate enemies in a single turn. A staple in any aggressive PvP team.",
+        "skills": ["Fox Dash Triple", "Ember Smoke", "Scarlet Vanish"]
+      },
+      {
+        "id": "c3-2",
+        "name": "Night Thief",
+        "rarity": "Standard",
+        "emoji": "🌙",
+        "color": "#78716c",
+        "description": "The stealthy original — dark hood and silent boots. Night Thief Nadia focuses on single-target burst with a steal mechanic that copies one enemy buff each turn. More consistent but less explosive than Crimson Fox.",
+        "skills": ["Shadowstep", "Buff Steal", "Smoke Screen"]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "rafina",
+    "name": "Rafina",
+    "stars": 4,
+    "rank": "A",
+    "element": "Wind",
+    "archetype": "Support",
+    "color": "#22c55e",
+    "emoji": "🌿",
+    "lore": "A wandering herbalist who communes with ancient forest spirits, Rafina travels the continent healing the sick and restoring balance to nature corrupted by war. She speaks little but observes everything.",
+    "gameplay": "Rafina is an accessible support unit ideal for new players. Her HoT (Heal over Time) ticks are among the highest in the game per turn. She also grants a 15% Wind resistance buff to the team. Best used in Tower of Salvation runs where sustained healing matters.",
+    "costumes": [
+      {
+        "id": "c4-1",
+        "name": "Forest Sage",
+        "rarity": "Standard",
+        "emoji": "🌿",
+        "color": "#22c55e",
+        "description": "Rafina's primary costume. Woven from enchanted leaves that regenerate overnight, Forest Sage amplifies her healing by 20% and extends HoT duration by 1 turn. The passive bloom effect heals allies at the start of each round.",
+        "skills": ["Bloom Heal", "Nature's Veil", "Wind Blessing"]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "seir",
+    "name": "Seir",
+    "stars": 5,
+    "rank": "SS",
+    "element": "Dark",
+    "archetype": "DPS",
+    "color": "#8b5cf6",
+    "emoji": "👑",
+    "lore": "Seir was once an empress of a fallen kingdom, cursed to serve as a vessel for dark energy until a worthy successor breaks the seal. Cold, calculating, and terrifyingly powerful — she views battle as a performance of absolute dominance.",
+    "gameplay": "Seir is arguably the best AoE Dark mage in the game. Her Dark Empress passive amplifies all dark damage dealt by allies by 12%, making her a buffer-DPS hybrid. In raids, a full dark team built around Seir can clear bosses two turns faster than most other compositions.",
+    "costumes": [
+      {
+        "id": "c5-1",
+        "name": "Dark Empress",
+        "rarity": "Limited",
+        "emoji": "👑",
+        "color": "#8b5cf6",
+        "description": "The crown and void-silk gown she wore the day her kingdom fell. Dark Empress is Seir's definitive form — it unlocks her signature AoE ultimate \"Obsidian Reign\" which deals 320% magic damage to all enemies and applies a 3-turn Dark Vulnerability debuff.",
+        "skills": ["Obsidian Reign", "Void Mantle", "Empress Curse"]
+      },
+      {
+        "id": "c5-2",
+        "name": "Sealed Form",
+        "rarity": "Standard",
+        "emoji": "🔮",
+        "color": "#6d28d9",
+        "description": "Seir in her weakened, sealed state. While less powerful, Sealed Form is accessible from the standard banner and still provides strong single-target dark magic. Use it early game before pulling her limited costumes.",
+        "skills": ["Dark Seal", "Shadow Bolt", "Curse Shroud"]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "arines",
+    "name": "Arines",
+    "stars": 4,
+    "rank": "S",
+    "element": "Light",
+    "archetype": "Healer",
+    "color": "#fbbf24",
+    "emoji": "✨",
+    "lore": "A devout holy maiden who serves the Temple of Dawn, Arines channels the light of her faith into miraculous healing. She is warm, earnest, and occasionally naive — but utterly reliable when it matters most.",
+    "gameplay": "Arines is a core healer in PvE content. Her cleanse skill removes up to 2 debuffs per turn and her resurrection passive triggers once per battle, saving a fallen ally with 30% HP. She synergizes with any Light DPS to maintain team HP through brutal boss mechanics.",
+    "costumes": [
+      {
+        "id": "c6-1",
+        "name": "Holy Maiden",
+        "rarity": "Standard",
+        "emoji": "✨",
+        "color": "#fbbf24",
+        "description": "Arines' temple attire, stitched with golden runes that pulse in rhythm with her prayers. Holy Maiden unlocks her full cleanse kit and resurrection passive. Excellent in Tower of Salvation and Fiend Hunter due to the sustained healing output.",
+        "skills": ["Radiant Mend", "Purifying Light", "Dawn Resurrection"]
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "justia",
+    "name": "Justia",
+    "stars": 5,
+    "rank": "S",
+    "element": "Water",
+    "archetype": "Sub-DPS",
+    "color": "#38bdf8",
+    "emoji": "💧",
+    "lore": "A former general who surrendered her title to follow her own moral code, Justia now fights as a blade dancer — a style she invented by combining formal swordsmanship with flowing water techniques learned from a river hermit.",
+    "gameplay": "Justia is a versatile Water damage dealer who excels in Fiend Hunter and Guild Raid. Her Flowing Strike passive resets her cooldown when she lands a critical hit, enabling extended offensive rotations. Strong against Fire-type bosses. Pair with a critical rate buffer.",
+    "costumes": [
+      {
+        "id": "c7-1",
+        "name": "Blade Dancer",
+        "rarity": "Limited",
+        "emoji": "💧",
+        "color": "#38bdf8",
+        "description": "Justia's signature flowing combat dress, which ripples like water as she moves. Blade Dancer amplifies her critical hit rate by 15% and unlocks Tide Waltz — a skill that hits all enemies twice and applies Wet, setting up massive combo damage with Water allies.",
+        "skills": ["Tide Waltz", "Flowing Strike", "Cascading Edge"]
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "walya",
+    "name": "Walya",
+    "stars": 4,
+    "rank": "A",
+    "element": "Earth",
+    "archetype": "Tank",
+    "color": "#a16207",
+    "emoji": "🪨",
+    "lore": "A gentle giant forged from living stone in the heart of an ancient mountain, Walya was awakened by a group of miners and chose to follow them home. She asks for little, gives everything, and cries pebbles when emotionally moved.",
+    "gameplay": "Walya is a reliable F2P-friendly tank for PvE. Her Earthen Shell passive absorbs up to 20% of incoming damage as a shield that regenerates each round. She lacks PvP utility but is invaluable in Earth-buffed boss stages and Tower floors 40–70.",
+    "costumes": [
+      {
+        "id": "c8-1",
+        "name": "Iron Golem",
+        "rarity": "Standard",
+        "emoji": "🪨",
+        "color": "#a16207",
+        "description": "Walya in her natural stone-armored form. Iron Golem provides excellent raw defense and the passive Earthen Shell. Her taunt radius covers adjacent allies, making her a great off-tank for protecting fragile supports.",
+        "skills": ["Earthen Shell", "Stone Slam", "Mountain Ward"]
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "slug": "eunass",
+    "name": "Eunass",
+    "stars": 5,
+    "rank": "SS",
+    "element": "Fire",
+    "archetype": "DPS",
+    "color": "#f97316",
+    "emoji": "🔮",
+    "lore": "A reclusive oracle who sees battle outcomes before they happen, Eunass wields fire not as a weapon of rage but as a precise surgical tool — burning exactly what needs to burn, no more, no less. She speaks only in riddles.",
+    "gameplay": "Eunass is an upcoming top-tier Fire DPS with a unique foresight mechanic — her skill set adapts based on the enemy's next predicted action, dealing bonus damage to enemies planning to attack. She will likely dominate Last Night of the Earth and Mirror War on release.",
+    "costumes": [
+      {
+        "id": "c9-1",
+        "name": "Crimson Oracle",
+        "rarity": "Upcoming",
+        "emoji": "🔮",
+        "color": "#f97316",
+        "description": "Eunass draped in ember-orange robes with floating oracle orbs that track her predictions. Crimson Oracle's signature skill \"Premonition Blaze\" deals 280% Fire damage and doubles if the enemy was predicted to dodge. A high-skill-ceiling unit for advanced players.",
+        "skills": ["Premonition Blaze", "Foresight Burn", "Oracle Seal"]
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "slug": "valze",
+    "name": "Valze",
+    "stars": 5,
+    "rank": "S",
+    "element": "Dark",
+    "archetype": "Sub-DPS",
+    "color": "#7c3aed",
+    "emoji": "🌒",
+    "lore": "A shadow operative who works for no one and everyone, Valze trades information and violence in equal measure. She claims to have no past — but the crescent scar on her palm tells a different story.",
+    "gameplay": "Valze is an upcoming Dark sub-DPS focused on debuff application. Her Shadow Veil passive grants stealth at the start of battle, allowing a guaranteed critical first strike. Expected to be a top pick in Mirror War for her opening burst + silence combo.",
+    "costumes": [
+      {
+        "id": "c10-1",
+        "name": "Shadow Veil",
+        "rarity": "Upcoming",
+        "emoji": "🌒",
+        "color": "#7c3aed",
+        "description": "Valze in her signature crescent-moon combat attire — midnight fabric that absorbs light. Shadow Veil unlocks \"Crescent Cleave\", a skill that deals massive single-target damage from stealth and applies a 2-turn Silence. Critical for shutting down enemy supports.",
+        "skills": ["Crescent Cleave", "Shadow Veil", "Moon Step"]
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "slug": "celia",
+    "name": "Celia",
+    "stars": 4,
+    "rank": "A",
+    "element": "Light",
+    "archetype": "Buffer",
+    "color": "#fde68a",
+    "emoji": "🕊️",
+    "lore": "A quiet divine messenger who descended from the upper heavens to assist in mortal conflicts she was told not to involve herself in. She involves herself anyway. Her superiors have given up reprimanding her.",
+    "gameplay": "Celia is an accessible buffer who grants +20% speed and +15% Light damage to adjacent allies for 3 turns. Her passive Inspire triggers on ally critical hits, extending buffs by 1 turn. A strong support for Light-heavy teams in Fiend Hunter.",
+    "costumes": [
+      {
+        "id": "c11-1",
+        "name": "Dawn Sage",
+        "rarity": "Standard",
+        "emoji": "🕊️",
+        "color": "#fde68a",
+        "description": "Celia's gentle white-feather attire, radiating warm morning light. Dawn Sage's Inspire passive and dual-buff kit make her a strong beginner-friendly buffer. The feathered wings are decorative but fans love them regardless.",
+        "skills": ["Dawn Aura", "Inspire", "Light Weave"]
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "slug": "karito",
+    "name": "Karito",
+    "stars": 4,
+    "rank": "S",
+    "element": "Earth",
+    "archetype": "Warrior",
+    "color": "#78716c",
+    "emoji": "🦷",
+    "lore": "A veteran mercenary who lost his right eye in his first major contract and considers it the best trade he ever made — that was the job that made his reputation. He charges fair rates and always delivers.",
+    "gameplay": "Karito is a well-rounded physical warrior with above-average damage and self-sustain. His Iron Fang passive restores HP equal to 15% of damage dealt. Reliable in solo challenge modes and as a frontline damage dealer in PvE content where sustained HP matters.",
+    "costumes": [
+      {
+        "id": "c12-1",
+        "name": "Iron Fang",
+        "rarity": "Standard",
+        "emoji": "🦷",
+        "color": "#78716c",
+        "description": "Heavy iron gauntlets and a battle-scarred chestplate. Iron Fang Karito's signature skill \"Savage Bite\" deals 200% physical damage and heals 25% of damage dealt. A bread-and-butter warrior that never falls out of PvE utility.",
+        "skills": ["Savage Bite", "Iron Fang Passive", "Earth Slam"]
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "slug": "melfice",
+    "name": "Melfice",
+    "stars": 4,
+    "rank": "A",
+    "element": "Dark",
+    "archetype": "Mage",
+    "color": "#6d28d9",
+    "emoji": "🌀",
+    "lore": "An outcast scholar who stumbled upon a void grimoire and hasn't slept properly since. Melfice is brilliant, erratic, and genuinely unsure whether the entity speaking to him from the book is a god, a demon, or his own subconscious.",
+    "gameplay": "Melfice is a DoT-specialist mage who applies stacking Void Rot to enemies each turn. While his burst damage is lower than other DPS, sustained fights favor him — by turn 5, Void Rot stacks deal more total damage than most ultimates.",
+    "costumes": [
+      {
+        "id": "c13-1",
+        "name": "Void Caller",
+        "rarity": "Standard",
+        "emoji": "🌀",
+        "color": "#6d28d9",
+        "description": "Melfice in tattered scholar robes floating in void energy. Void Caller's passive applies 1 stack of Void Rot on each ability cast, stacking up to 5 times. At max stacks, enemies take 60 additional magic damage per turn. Excellent in long boss fights.",
+        "skills": ["Void Rot Stack", "Grimoire Pulse", "Chaos Bolt"]
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "slug": "levia",
+    "name": "Levia",
+    "stars": 5,
+    "rank": "S",
+    "element": "Water",
+    "archetype": "Healer",
+    "color": "#0ea5e9",
+    "emoji": "🧜",
+    "lore": "A phantom of the deep sea, Levia is bound to the mortal world by a promise she made to a drowning sailor centuries ago. She has long forgotten the sailor's name but continues fulfilling the vow. She finds the routine comforting.",
+    "gameplay": "Levia is the best Water healer in the game, combining single-target burst healing with team-wide damage mitigation. Her Sea Phantom passive grants 10% damage reduction to all allies for 2 turns after healing. Indispensable in Water-type Guild Raids.",
+    "costumes": [
+      {
+        "id": "c14-1",
+        "name": "Sea Phantom",
+        "rarity": "Limited",
+        "emoji": "🧜",
+        "color": "#0ea5e9",
+        "description": "A translucent flowing gown that phases in and out of visibility like sea mist. Sea Phantom Levia's signature \"Abyssal Tide\" heals the lowest HP ally for 50% of her magic attack and grants the entire team 2 turns of Wet resistance, preventing Water-based debuffs.",
+        "skills": ["Abyssal Tide", "Sea Phantom Veil", "Phantom Surge"]
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "slug": "viola",
+    "name": "Viola",
+    "stars": 5,
+    "rank": "SS",
+    "element": "Wind",
+    "archetype": "DPS",
+    "color": "#16a34a",
+    "emoji": "🌪️",
+    "lore": "A storm-summoner born in the eye of a cyclone, Viola has never experienced a day without wind. She is restless, energetic, and incapable of standing still — qualities that translate terrifyingly well to combat.",
+    "gameplay": "Viola is the premier Wind DPS and speed-nuker. Her Storm Caller passive grants +30 speed when Wind buffs are active, letting her act before nearly all enemies. In speed-based team compositions, Viola goes first, applies AoE knockback, then allies finish cleanly.",
+    "costumes": [
+      {
+        "id": "c15-1",
+        "name": "Storm Caller",
+        "rarity": "Standard",
+        "emoji": "🌪️",
+        "color": "#16a34a",
+        "description": "Viola in a swept storm-rider coat, her hair permanently mid-hurricane. Storm Caller's signature \"Cyclone Edge\" hits all enemies 3 times with Wind damage and applies -20% speed debuff. Essential in speed-based PvP and Tower runs.",
+        "skills": ["Cyclone Edge", "Storm Rider", "Wind Burst"]
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "slug": "zakan",
+    "name": "Zakan",
+    "stars": 4,
+    "rank": "A",
+    "element": "Fire",
+    "archetype": "Warrior",
+    "color": "#dc2626",
+    "emoji": "🔥",
+    "lore": "A former arena champion who fought his way out of debt and into legend. Zakan burns with a competitive fury that never cools — he trains constantly and takes losses harder than anyone around him.",
+    "gameplay": "Zakan is a straightforward Fire physical warrior with high single-target damage output. His Wrath Blade passive grants +10% attack every time he takes damage, stacking up to 5 times. A reliable pick for Fire-type boss stages and beginner-friendly challenge content.",
+    "costumes": [
+      {
+        "id": "c16-1",
+        "name": "Wrath Blade",
+        "rarity": "Standard",
+        "emoji": "🔥",
+        "color": "#dc2626",
+        "description": "Zakan's arena gear, a scarred leather harness and a flame-forged blade that heats up mid-battle. Wrath Blade's passive Rage Stack increases attack with each hit received, making him stronger the longer a fight lasts — a high-risk, high-reward warrior.",
+        "skills": ["Wrath Cleave", "Rage Stack", "Flame Rush"]
+      }
+    ]
+  },
+  {
+    "id": 17,
+    "slug": "priscilla",
+    "name": "Priscilla",
+    "stars": 4,
+    "rank": "S",
+    "element": "Light",
+    "archetype": "Tank",
+    "color": "#d4b97a",
+    "emoji": "🛡️",
+    "lore": "A noble-born paladin who gave up her inheritance to serve on the front lines. Priscilla's polished ivory shield has turned blades that would have ended campaigns. She is as steadfast as she is well-dressed.",
+    "gameplay": "Priscilla is a top-tier Light tank for PvP content. Her Ivory Shield passive absorbs the first critical hit each battle, ignoring damage entirely. She pairs with Light DPS to form one of the most durable frontlines in the game for Mirror War defense teams.",
+    "costumes": [
+      {
+        "id": "c17-1",
+        "name": "Ivory Shield",
+        "rarity": "Standard",
+        "emoji": "🛡️",
+        "color": "#d4b97a",
+        "description": "Priscilla's gleaming ivory armor, polished to reflect spells as well as blades. Ivory Shield's signature skill \"Bastion\" grants all allies a 1-hit absorption shield and increases team Light resistance by 20% for 2 turns. Core pick for Light team defense in PvP.",
+        "skills": ["Bastion", "Ivory Wall", "Holy Stance"]
+      }
+    ]
+  },
+  {
+    "id": 18,
+    "slug": "yuveria",
+    "name": "Yuveria",
+    "stars": 5,
+    "rank": "SS",
+    "element": "Dark",
+    "archetype": "Warrior",
+    "color": "#c084fc",
+    "emoji": "🌙",
+    "lore": "A celestial dancer cursed to fight without rest until a forgotten god releases her. Yuveria has made peace with her fate and performs every battle like it is her last performance — with breathtaking beauty and lethal precision.",
+    "gameplay": "Yuveria is a hybrid Dark warrior who blends high physical damage with magical debuffs. Her Lunar Dance passive triggers after each kill, dealing AoE Dark damage to all remaining enemies. Extremely powerful in Mirror War for chain kills. Requires careful positioning.",
+    "costumes": [
+      {
+        "id": "c18-1",
+        "name": "Lunar Dancer",
+        "rarity": "Limited",
+        "emoji": "🌙",
+        "color": "#c084fc",
+        "description": "Yuveria in her celestial silk dance attire, crescent moon ornaments trailing behind every movement. Lunar Dancer's signature \"Moonfall\" deals 250% Dark physical damage to one target and triggers Lunar Dance passive immediately. Her best and most played costume.",
+        "skills": ["Moonfall", "Lunar Dance", "Crescent Sweep"]
+      }
+    ]
+  }
+]
