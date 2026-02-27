@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useSpring, useMotionValue, AnimatePresence } from "framer-motion";
 import _charactersData from "@/data/characters.json";
+import _bossData from "@/data/boss.json";
 
 /* ─────────────────────────────────────────────────────────────────────────────
    TYPES  (declared first so the JSON cast below can reference them)
@@ -16,6 +17,14 @@ interface Costume {
   id: string; name: string; rarity: string;
   emoji: string; color: string; description: string; skills: string[];
 }
+interface BossChar { name: string; image: string; color: string; tier: string; }
+interface BossTeam { rank: number; name: string; clearRate: string; avgTurns: number; tags: string[]; chars: BossChar[]; description: string; }
+interface Boss {
+  name: string; subtitle: string; element: string; difficulty: string; difficultyColor: string;
+  description: string; weaknesses: string[]; resistances: string[]; bgImage: string; accentColor: string;
+  hotTeams: BossTeam[];
+}
+
 interface CharacterDetail {
   id: number; slug: string; name: string; stars: number; rank: string;
   element: string; archetype: string; color: string; emoji: string;
@@ -35,6 +44,8 @@ const _cd = _charactersData as unknown as {
 const BANNER_CHARACTERS: BannerCharacter[] = _cd.bannerCharacters ?? [];
 const ALL_CHARACTERS:    BannerCharacter[] = _cd.allCharacters    ?? [];
 const CHARACTER_DATA:    CharacterDetail[] = _cd.characterDetails ?? [];
+
+const BOSS_FIGHT: Boss = (_bossData as unknown as { boss: Boss }).boss;
 
 /* ─────────────────────────────────────────────────────────────────────────────
    STATIC DATA (UI-only, not from JSON)
@@ -177,29 +188,135 @@ function ToastProvider({ dark }: { dark: boolean }) {
 }
 
 /* ─────────────────────────────────────────────────────────────────────────────
-   SMOOTH CURSOR
+   SMOOTH CURSOR — Arrow + MagicUI Pointer hybrid
+   • Spring-tracked arrow replaces the system cursor globally
+   • On cursor:pointer elements → arrow tilts & tints violet,
+     a MagicUI-style label chip appears above with the element text,
+     and a soft radial glow halo blooms (slower spring = trailing effect)
 ───────────────────────────────────────────────────────────────────────────── */
 function SmoothCursor() {
-  const cx = useMotionValue(-100), cy = useMotionValue(-100);
-  const sx = useSpring(cx, { stiffness: 500, damping: 40 });
-  const sy = useSpring(cy, { stiffness: 500, damping: 40 });
+  const cx = useMotionValue(-200);
+  const cy = useMotionValue(-200);
+  // Fast spring for the arrow itself
+  const sx = useSpring(cx, { stiffness: 420, damping: 36, mass: 0.55 });
+  const sy = useSpring(cy, { stiffness: 420, damping: 36, mass: 0.55 });
+  // Slower spring for the trailing halo (MagicUI Pointer feel)
+  const hx = useSpring(cx, { stiffness: 180, damping: 26, mass: 0.9 });
+  const hy = useSpring(cy, { stiffness: 180, damping: 26, mass: 0.9 });
+
   const [ptr, setPtr] = useState(false);
+  const [label, setLabel] = useState("");
+
   useEffect(() => {
     const m = (e: MouseEvent) => {
-      cx.set(e.clientX); cy.set(e.clientY);
+      cx.set(e.clientX);
+      cy.set(e.clientY);
       const el = document.elementFromPoint(e.clientX, e.clientY) as HTMLElement | null;
-      setPtr(!!(el && getComputedStyle(el).cursor === "pointer"));
+      const isPtr = !!(el && getComputedStyle(el).cursor === "pointer");
+      setPtr(isPtr);
+      if (isPtr && el) {
+        const closest = el.closest("button,a,[role=button]") as HTMLElement | null;
+        const raw =
+          el.getAttribute("aria-label") ||
+          el.getAttribute("title") ||
+          closest?.getAttribute("aria-label") ||
+          closest?.textContent?.trim().replace(/\s+/g, " ").slice(0, 24) ||
+          "";
+        setLabel(raw);
+      } else {
+        setLabel("");
+      }
     };
     window.addEventListener("mousemove", m);
     return () => window.removeEventListener("mousemove", m);
   }, []);
+
   return (
     <>
-      <motion.div style={{ x: sx, y: sy, translateX: "-50%", translateY: "-50%" }} className="pointer-events-none fixed top-0 left-0 z-[9999] mix-blend-difference">
-        <motion.div animate={{ scale: ptr ? 1.8 : 1 }} transition={{ type: "spring", stiffness: 400, damping: 25 }} className="h-5 w-5 rounded-full bg-white" />
+      {/* ── Trailing halo (slower spring → lags behind = depth) ── */}
+      <motion.div
+        style={{ x: hx, y: hy, translateX: "-50%", translateY: "-50%" }}
+        className="pointer-events-none fixed top-0 left-0 z-[9996]"
+      >
+        <AnimatePresence>
+          {ptr && (
+            <motion.div
+              key="halo"
+              initial={{ opacity: 0, scale: 0.3 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.3 }}
+              transition={{ type: "spring", stiffness: 300, damping: 24 }}
+              style={{
+                width: 56, height: 56, borderRadius: "50%",
+                background: "radial-gradient(circle, rgba(109,40,217,0.30) 0%, rgba(109,40,217,0.07) 55%, transparent 100%)",
+                filter: "blur(3px)",
+              }}
+            />
+          )}
+        </AnimatePresence>
       </motion.div>
-      <motion.div style={{ x: sx, y: sy, translateX: "-50%", translateY: "-50%" }} className="pointer-events-none fixed top-0 left-0 z-[9998]">
-        <motion.div animate={{ scale: ptr ? 2.4 : 1, opacity: ptr ? 0.3 : 0.15 }} transition={{ type: "spring", stiffness: 200, damping: 20 }} className="h-10 w-10 rounded-full border border-violet-500" />
+
+      {/* ── Arrow + label layer (fast spring) ── */}
+      <motion.div
+        style={{ x: sx, y: sy }}
+        className="pointer-events-none fixed top-0 left-0 z-[9999]"
+      >
+        {/* Arrow SVG — tilts and tints on hover */}
+        <motion.svg
+          width="22" height="27" viewBox="0 0 22 27"
+          fill="none" xmlns="http://www.w3.org/2000/svg"
+          animate={{ scale: ptr ? 1.1 : 1, rotate: ptr ? -14 : 0, x: ptr ? -1 : 0, y: ptr ? -1 : 0 }}
+          transition={{ type: "spring", stiffness: 440, damping: 28 }}
+        >
+          {/* Shadow */}
+          <path d="M3 2.5L3 21L8.5 16L12.5 24L15.5 22.5L11.5 14.5L18.5 14.5L3 2.5Z"
+            fill="rgba(0,0,0,0.20)" transform="translate(1,1.5)" />
+          {/* Body */}
+          <motion.path
+            d="M3 2.5L3 21L8.5 16L12.5 24L15.5 22.5L11.5 14.5L18.5 14.5L3 2.5Z"
+            animate={{ fill: ptr ? "#ede9fe" : "#ffffff" }}
+            transition={{ duration: 0.16 }}
+            stroke="#6d28d9" strokeWidth="1.6"
+            strokeLinejoin="round" strokeLinecap="round"
+          />
+        </motion.svg>
+
+        {/* ── MagicUI Pointer label chip ── */}
+        <AnimatePresence>
+          {ptr && label && (
+            <motion.div
+              key="chip"
+              initial={{ opacity: 0, scale: 0.7, y: 8, x: -2 }}
+              animate={{ opacity: 1, scale: 1, y: 0, x: 0 }}
+              exit={{ opacity: 0, scale: 0.7, y: 8 }}
+              transition={{ type: "spring", stiffness: 520, damping: 30 }}
+              className="absolute left-5 top-0 flex items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-[11px] font-bold"
+              style={{
+                background: "linear-gradient(135deg, #7c3aed 0%, #5b21b6 100%)",
+                color: "#fff",
+                boxShadow: "0 4px 18px rgba(109,40,217,0.50), inset 0 0 0 1px rgba(255,255,255,0.14)",
+                letterSpacing: "0.015em",
+              }}
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-white/80 animate-pulse shrink-0" />
+              {label}
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        {/* ── Ring fallback (when there is no label text) ── */}
+        <AnimatePresence>
+          {ptr && !label && (
+            <motion.div
+              key="ring"
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 0.5, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.5 }}
+              transition={{ duration: 0.18 }}
+              className="absolute -top-3 -left-3 h-11 w-11 rounded-full border-2 border-violet-500"
+            />
+          )}
+        </AnimatePresence>
       </motion.div>
     </>
   );
@@ -272,7 +389,7 @@ function Marquee({ children, reverse = false, pauseOnHover = true, className = "
   const resume = () => rowRef.current?.querySelectorAll<HTMLElement>(".mq-track").forEach(el => { el.style.animationPlayState = "running"; });
   return (
     <div ref={rowRef} className={`flex flex-row ${className}`} style={{ "--gap": `${gap}px`, "--duration": duration } as React.CSSProperties} onMouseEnter={pauseOnHover ? pause : undefined} onMouseLeave={pauseOnHover ? resume : undefined}>
-      {[0, 1].map((i) => (
+      {[0, 1, 2, 3].map((i) => (
         <div key={i} className="mq-track flex shrink-0 gap-[var(--gap)] flex-row items-center" style={{ animation: `marqueeH var(--duration) linear infinite ${reverse ? "reverse" : "normal"}` }}>
           {children}
         </div>
@@ -380,11 +497,11 @@ function TierBadge({ tier }: { tier: string }) {
 function CharacterCard({ char, dark, onOpen }: { char: BannerCharacter; dark: boolean; onOpen: (id: number) => void }) {
   return (
     <motion.div whileHover={{ y: -6, scale: 1.04 }} transition={{ type: "spring", stiffness: 400, damping: 22 }} onClick={() => onOpen(char.id)}
-      className={`relative mx-2 w-52 shrink-0 overflow-hidden rounded-2xl border p-4 cursor-pointer group ${dark ? "bg-neutral-900 border-white/8 hover:border-violet-500/50" : "bg-white border-neutral-200 hover:border-violet-300 shadow-sm hover:shadow-xl"}`}
+      className={`relative mx-2 w-60 shrink-0 overflow-hidden rounded-xl border p-4 cursor-pointer group ${dark ? "bg-neutral-900 border-white/8 hover:border-violet-500/50" : "bg-white border-neutral-200 hover:border-violet-300 shadow-sm hover:shadow-xl"}`}
       style={{ boxShadow: undefined }}>
       {/* Glow on hover */}
-      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl" style={{ boxShadow: `inset 0 0 30px ${char.color}18` }} />
-      <div className="mb-3 flex h-32 items-center justify-center rounded-xl text-6xl relative overflow-hidden"
+      <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl" style={{ boxShadow: `inset 0 0 30px ${char.color}18` }} />
+      <div className="mb-3 flex h-36 items-center justify-center rounded-lg text-7xl relative overflow-hidden"
         style={{ background: `linear-gradient(135deg, ${char.color}22, ${char.color}06)`, border: `1px solid ${char.color}30` }}>
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: `linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)`, backgroundSize: "16px 16px" }} />
         <span className="relative z-10 drop-shadow-lg" style={{ filter: `drop-shadow(0 0 16px ${char.color}50)` }}>{char.emoji}</span>
@@ -410,11 +527,11 @@ function CharacterCard({ char, dark, onOpen }: { char: BannerCharacter; dark: bo
 function CharacterPill({ char, dark, onOpen }: { char: BannerCharacter; dark: boolean; onOpen: (id: number) => void }) {
   const [hovered, setHovered] = useState(false);
   return (
-    <div className="relative shrink-0 mx-2" style={{ width: 220, height: 78 }} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onClick={() => onOpen(char.id)}>
+    <div className="relative shrink-0 mx-2" style={{ width: 260, height: 92 }} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onClick={() => onOpen(char.id)}>
       <motion.div animate={{ y: hovered ? -6 : 0 }} transition={{ type: "spring", stiffness: 500, damping: 30 }}
-        className={`absolute inset-0 flex items-center gap-3 rounded-2xl border px-4 py-3 cursor-pointer ${dark ? "bg-neutral-900 border-white/8" : "bg-white border-neutral-200 shadow-sm"}`}
+        className={`absolute inset-0 flex items-center gap-3 rounded-xl border px-4 py-3 cursor-pointer ${dark ? "bg-neutral-900 border-white/8" : "bg-white border-neutral-200 shadow-sm"}`}
         style={{ borderColor: hovered ? (dark ? char.color + "60" : char.color + "50") : undefined, boxShadow: hovered ? `0 8px 28px -4px ${char.color}40` : undefined, transition: "border-color 0.15s, box-shadow 0.15s" }}>
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl text-[28px] shrink-0" style={{ background: `linear-gradient(135deg, ${char.color}25, ${char.color}08)`, border: `1px solid ${char.color}35` }}>{char.emoji}</div>
+        <div className="flex h-14 w-14 items-center justify-center rounded-lg text-[32px] shrink-0" style={{ background: `linear-gradient(135deg, ${char.color}25, ${char.color}08)`, border: `1px solid ${char.color}35` }}>{char.emoji}</div>
         <div className="min-w-0 flex-1">
           <p className={`text-sm font-bold leading-tight truncate ${dark ? "text-white" : "text-neutral-900"}`}>{char.name}</p>
           <p className={`text-[11px] truncate mt-0.5 ${dark ? "text-neutral-500" : "text-neutral-400"}`}>{char.costume}</p>
@@ -424,6 +541,292 @@ function CharacterPill({ char, dark, onOpen }: { char: BannerCharacter; dark: bo
         {char.banner === "Limited" && <span className="absolute -top-1.5 -right-1 rounded-md bg-amber-500/15 border border-amber-500/30 px-1.5 py-0.5 text-[9px] font-bold text-amber-500 uppercase">L</span>}
       </motion.div>
     </div>
+  );
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BOSS FIGHT SECTION
+───────────────────────────────────────────────────────────────────────────── */
+function BossSection({ dark }: { dark: boolean }) {
+  const [activeTeam, setActiveTeam] = useState(0);
+  const boss = BOSS_FIGHT;
+  const team = boss.hotTeams[activeTeam];
+
+  return (
+    <section className="relative w-full overflow-hidden" style={{ minHeight: 860 }}>
+
+      {/* ── Full-bleed background ── */}
+      <div className="absolute inset-0 z-0">
+        {/* Boss background image */}
+        <div className="absolute inset-0" style={{ backgroundImage: `url(${boss.bgImage})`, backgroundSize: "cover", backgroundPosition: "center top" }} />
+        {/* Heavy left overlay for text legibility, lightens toward right to show bg art */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(105deg, rgba(6,4,14,0.97) 0%, rgba(12,6,28,0.92) 35%, rgba(18,8,40,0.72) 58%, rgba(8,5,20,0.45) 100%)" }} />
+        {/* Top/bottom vignette */}
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(0,0,0,0.18) 0%, transparent 25%, transparent 72%, rgba(0,0,0,0.60) 100%)" }} />
+        {/* Pulsing violet glow behind boss art zone */}
+        <motion.div className="absolute right-[4%] top-1/2 -translate-y-1/2 rounded-full pointer-events-none"
+          style={{ width: 680, height: 680, background: "radial-gradient(circle, rgba(168,85,247,0.20) 0%, rgba(109,40,217,0.09) 42%, transparent 70%)" }}
+          animate={{ scale: [1, 1.07, 1], opacity: [0.45, 0.85, 0.45] }}
+          transition={{ duration: 6.5, repeat: Infinity, ease: "easeInOut" }}
+        />
+        {/* Particle streaks */}
+        {[...Array(10)].map((_, i) => (
+          <motion.div key={i} className="absolute rounded-full pointer-events-none"
+            style={{
+              width: 1.5,
+              height: 36 + (i * 8) % 52,
+              background: `linear-gradient(180deg, ${i % 2 === 0 ? "#a855f7" : "#ef4444"}88, transparent)`,
+              left: `${7 + i * 9}%`,
+              top: `${14 + (i % 4) * 17}%`,
+            }}
+            animate={{ y: [0, 55, 0], opacity: [0, 0.55, 0] }}
+            transition={{ duration: 2.6 + i * 0.38, repeat: Infinity, delay: i * 0.27, ease: "easeInOut" }}
+          />
+        ))}
+        {/* Fine scan-line texture */}
+        <div className="absolute inset-0 pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(0deg, rgba(0,0,0,0.022) 0px, rgba(0,0,0,0.022) 1px, transparent 1px, transparent 4px)" }} />
+      </div>
+
+      {/* ── Content ── */}
+      <div className="relative z-20 mx-auto max-w-7xl px-4 sm:px-6 lg:px-12 py-20 md:py-28 lg:py-36">
+        <div className="flex flex-col gap-14 lg:grid lg:grid-cols-2 lg:gap-20 items-start">
+
+          {/* ═══════════════════════════════
+              LEFT — Boss identity
+          ═══════════════════════════════ */}
+          <div className="w-full">
+
+            {/* Eyebrow */}
+            <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.48 }}
+              className="mb-7 flex items-center gap-3 flex-wrap">
+              <span className="flex items-center gap-1.5 text-xs font-black uppercase tracking-widest text-red-400">
+                <svg viewBox="0 0 20 20" fill="currentColor" className="w-3.5 h-3.5">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                </svg>
+                World Boss
+              </span>
+              <span className="h-px w-8" style={{ background: "rgba(239,68,68,0.45)" }} />
+              <span className="rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-widest border"
+                style={{ background: boss.difficultyColor + "22", borderColor: boss.difficultyColor + "55", color: boss.difficultyColor }}>
+                {boss.difficulty}
+              </span>
+              <span className="rounded-full px-3 py-1 text-[10px] font-black uppercase tracking-widest border border-purple-500/30 bg-purple-500/10 text-purple-400">
+                {boss.element}
+              </span>
+            </motion.div>
+
+            {/* Boss name — big */}
+            <motion.h2 initial={{ opacity: 0, y: 26 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.07 }}
+              className="text-5xl sm:text-6xl lg:text-[4.5rem] xl:text-8xl font-extrabold tracking-tight leading-[0.93] text-white"
+              style={{ fontFamily: "'Sora',sans-serif", textShadow: "0 0 70px rgba(168,85,247,0.55), 0 4px 8px rgba(0,0,0,0.9)" }}>
+              {boss.name}
+            </motion.h2>
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: 0.15 }}
+              className="mt-3 text-sm font-semibold tracking-[0.22em] text-purple-400 uppercase">
+              {boss.subtitle}
+            </motion.p>
+
+            {/* Description — larger text */}
+            <motion.p initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.21 }}
+              className="mt-7 text-base leading-[1.75] text-neutral-300 max-w-lg">
+              {boss.description}
+            </motion.p>
+
+            {/* Weakness / Resistance */}
+            <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.28 }}
+              className="mt-9 flex flex-wrap gap-7">
+              <div>
+                <p className="text-[11px] font-black uppercase tracking-widest text-neutral-500 mb-3">Weak to</p>
+                <div className="flex gap-2 flex-wrap">
+                  {boss.weaknesses.map((el) => {
+                    const c = ELEMENT_COLORS[el] || "#888";
+                    return (
+                      <span key={el} className="flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold border"
+                        style={{ background: c + "22", borderColor: c + "55", color: c }}>
+                        {ELEMENT_ICONS[el]}{el}
+                      </span>
+                    );
+                  })}
+                </div>
+              </div>
+              <div>
+                <p className="text-[11px] font-black uppercase tracking-widest text-neutral-500 mb-3">Resists</p>
+                <div className="flex gap-2 flex-wrap">
+                  {boss.resistances.map((el) => (
+                    <span key={el} className="flex items-center gap-1.5 rounded-full px-4 py-1.5 text-xs font-bold border"
+                      style={{ background: "rgba(255,255,255,0.04)", borderColor: "rgba(255,255,255,0.1)", color: "#6b7280" }}>
+                      {ELEMENT_ICONS[el]}{el}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* CTA */}
+            <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.35 }}
+              className="mt-10 flex flex-wrap gap-3">
+              <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
+                className="flex items-center gap-2 rounded-xl px-7 py-4 text-sm font-bold text-white cursor-pointer"
+                style={{ background: "linear-gradient(135deg, #7c3aed, #a855f7)", boxShadow: "0 12px 36px rgba(124,58,237,0.52)" }}>
+                <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd"/>
+                </svg>
+                Full Boss Guide
+              </motion.button>
+              <motion.button whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
+                className="flex items-center gap-2 rounded-xl border px-7 py-4 text-sm font-semibold cursor-pointer"
+                style={{ borderColor: "rgba(168,85,247,0.4)", color: "#d8b4fe", background: "rgba(168,85,247,0.09)" }}>
+                <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                  <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                </svg>
+                View All Teams
+              </motion.button>
+            </motion.div>
+          </div>
+
+          {/* ═══════════════════════════════
+              RIGHT — Hot Teams panel
+          ═══════════════════════════════ */}
+          <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.55, delay: 0.12 }}
+            className="w-full">
+
+            {/* Panel header */}
+            <div className="mb-6 flex items-end justify-between gap-4 flex-wrap">
+              <div>
+                <p className="text-[11px] font-black uppercase tracking-widest text-amber-400 mb-1">🔥 Meta Teams</p>
+                <h3 className="text-2xl font-extrabold text-white" style={{ fontFamily: "'Sora',sans-serif" }}>
+                  Hot Teams vs <span className="text-purple-300">{boss.name}</span>
+                </h3>
+              </div>
+              <span className="text-[10px] font-semibold text-neutral-500 shrink-0 mb-0.5">Updated Feb 2025</span>
+            </div>
+
+            {/* Team selector tabs */}
+            <div className="flex gap-2 mb-6">
+              {boss.hotTeams.map((t, i) => (
+                <button key={i} onClick={() => setActiveTeam(i)}
+                  className="relative flex-1 rounded-xl border py-3 px-2 text-xs font-bold cursor-pointer transition-all"
+                  style={{
+                    borderColor: activeTeam === i ? "rgba(168,85,247,0.65)" : "rgba(255,255,255,0.08)",
+                    background: activeTeam === i ? "rgba(168,85,247,0.16)" : "rgba(255,255,255,0.03)",
+                    color: activeTeam === i ? "#d8b4fe" : "#6b7280",
+                  }}>
+                  <span className="block text-[10px] font-black text-amber-400">#{t.rank}</span>
+                  <span className="block truncate mt-0.5">{t.name}</span>
+                  {activeTeam === i && (
+                    <motion.div layoutId="team-active-bar" className="absolute bottom-0 inset-x-4 h-[2px] rounded-full"
+                      style={{ background: "linear-gradient(90deg, #7c3aed, #a855f7)" }} />
+                  )}
+                </button>
+              ))}
+            </div>
+
+            {/* Active team card */}
+            <AnimatePresence mode="wait">
+              <motion.div key={activeTeam}
+                initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.22 }}
+                className="rounded-2xl border p-5 sm:p-7"
+                style={{
+                  background: "linear-gradient(150deg, rgba(109,40,217,0.15) 0%, rgba(16,8,36,0.60) 55%, rgba(255,255,255,0.02) 100%)",
+                  borderColor: "rgba(168,85,247,0.28)",
+                  boxShadow: "0 0 0 1px rgba(168,85,247,0.10), 0 28px 72px rgba(0,0,0,0.60)",
+                  backdropFilter: "blur(14px)",
+                }}>
+
+                {/* Stats strip */}
+                <div className="flex items-center gap-5 mb-7 pb-6 border-b border-white/[0.07] flex-wrap sm:flex-nowrap">
+                  <div className="text-center shrink-0">
+                    <p className="text-3xl font-extrabold text-white" style={{ fontFamily: "'Sora',sans-serif" }}>{team.clearRate}</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mt-1">Clear Rate</p>
+                  </div>
+                  <div className="h-12 w-px shrink-0 hidden sm:block" style={{ background: "rgba(255,255,255,0.07)" }} />
+                  <div className="text-center shrink-0">
+                    <p className="text-3xl font-extrabold text-white" style={{ fontFamily: "'Sora',sans-serif" }}>{team.avgTurns}</p>
+                    <p className="text-[10px] font-semibold uppercase tracking-widest text-neutral-500 mt-1">Avg Turns</p>
+                  </div>
+                  <div className="h-12 w-px shrink-0 hidden sm:block" style={{ background: "rgba(255,255,255,0.07)" }} />
+                  <div className="flex flex-wrap gap-1.5 flex-1">
+                    {team.tags.map((tag) => (
+                      <span key={tag} className="rounded-full px-3 py-1.5 text-[10px] font-bold"
+                        style={{ background: "rgba(168,85,247,0.18)", color: "#c4b5fd", border: "1px solid rgba(168,85,247,0.32)" }}>
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                {/* ── 5 Character portraits in a row ── */}
+                <div className="grid grid-cols-5 gap-2 sm:gap-4 mb-7">
+                  {team.chars.map((char, ci) => (
+                    <motion.div key={char.name}
+                      initial={{ opacity: 0, scale: 0.8, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }}
+                      transition={{ delay: ci * 0.07, type: "spring", stiffness: 360, damping: 26 }}
+                      className="flex flex-col items-center gap-2">
+
+                      {/* Portrait */}
+                      <div className="relative w-full group cursor-pointer" style={{ aspectRatio: "2/3" }}>
+                        {/* Hover glow ring */}
+                        <div className="absolute -inset-[2px] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+                          style={{ boxShadow: `0 0 0 2px ${char.color}, 0 0 28px ${char.color}55` }} />
+
+                        {/* Image container */}
+                        <div className="relative w-full h-full rounded-xl overflow-hidden"
+                          style={{
+                            background: `linear-gradient(170deg, ${char.color}28, ${char.color}06)`,
+                            border: `1.5px solid ${char.color}42`,
+                            boxShadow: `0 8px 28px ${char.color}20`,
+                          }}>
+                          <img src={char.image} alt={char.name}
+                            className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.06]" />
+                          {/* Bottom gradient name strip */}
+                          <div className="absolute bottom-0 inset-x-0 h-2/5 pointer-events-none"
+                            style={{ background: "linear-gradient(to top, rgba(0,0,0,0.82) 0%, rgba(0,0,0,0.3) 55%, transparent 100%)" }} />
+                        </div>
+
+                        {/* Tier badge — top right */}
+                        <span className="absolute -top-2 -right-2 z-20 flex h-6 w-6 items-center justify-center rounded-lg text-[10px] font-black shadow-lg"
+                          style={{
+                            background: TIER_COLORS[char.tier] + "28",
+                            border: `2px solid ${TIER_COLORS[char.tier]}85`,
+                            color: TIER_COLORS[char.tier],
+                            boxShadow: `0 0 12px ${TIER_COLORS[char.tier]}45`,
+                          }}>
+                          {char.tier}
+                        </span>
+                      </div>
+
+                      {/* Name */}
+                      <p className="text-[10px] sm:text-[11px] font-semibold text-neutral-300 text-center leading-tight w-full truncate px-0.5" title={char.name}>
+                        {char.name}
+                      </p>
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Team description */}
+                <p className="text-sm leading-relaxed text-neutral-400 mb-6">{team.description}</p>
+
+                {/* CTA button */}
+                <motion.button whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
+                  className="w-full rounded-xl py-3.5 text-sm font-bold cursor-pointer flex items-center justify-center gap-2"
+                  style={{
+                    background: "rgba(124,58,237,0.18)",
+                    border: "1px solid rgba(124,58,237,0.45)",
+                    color: "#c4b5fd",
+                  }}>
+                  <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4">
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                  </svg>
+                  Open in Team Builder →
+                </motion.button>
+              </motion.div>
+            </AnimatePresence>
+          </motion.div>
+
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -488,7 +891,7 @@ function CharacterModal({ char, dark, onClose }: { char: CharacterDetail; dark: 
       {/* Modal panel — wider, radius 5px as requested */}
       <motion.div initial={{ opacity: 0, scale: 0.94, y: 32 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.94, y: 32 }} transition={{ type: "spring", stiffness: 360, damping: 30 }} onClick={(e) => e.stopPropagation()}
         className={`relative flex w-full max-w-5xl flex-col overflow-hidden border shadow-2xl ${dark ? "bg-[#0c0d15] border-white/8" : "bg-white border-neutral-200/80"}`}
-        style={{ borderRadius: 5, maxHeight: "92vh", boxShadow: `0 0 0 1px ${char.color}22, 0 40px 100px -16px ${char.color}40, 0 24px 48px -8px rgba(0,0,0,0.6)` }}>
+        style={{ borderRadius: 5, height: "88vh", maxHeight: "88vh", boxShadow: `0 0 0 1px ${char.color}22, 0 40px 100px -16px ${char.color}40, 0 24px 48px -8px rgba(0,0,0,0.6)` }}>
 
         {/* ── Top accent bar ── */}
         <div className="absolute inset-x-0 top-0 h-[3px] z-20" style={{ background: `linear-gradient(90deg, ${char.color}, ${char.color}88, ${ec}55, transparent)` }} />
@@ -662,6 +1065,21 @@ function CharacterModal({ char, dark, onClose }: { char: CharacterDetail; dark: 
           </div>
         </div>
 
+        {/* ── Guide page CTA footer ── */}
+        <div className={`shrink-0 flex items-center justify-between px-7 py-4 border-t ${dark ? "border-white/6 bg-[#0c0d15]" : "border-neutral-100 bg-white"}`}>
+          <p className={`text-xs ${dark ? "text-neutral-600" : "text-neutral-400"}`}>Want full builds, team comps &amp; videos?</p>
+          <motion.a
+            href={`/guides/${char.slug}`}
+            whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
+            className="flex items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-bold text-white cursor-pointer shadow-lg"
+            style={{ background: `linear-gradient(135deg, ${char.color}, ${char.color}bb)`, boxShadow: `0 4px 18px ${char.color}45` }}
+          >
+            <svg viewBox="0 0 20 20" fill="currentColor" className="w-4 h-4 shrink-0">
+              <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z" />
+            </svg>
+            View {char.name}&apos;s Guide
+          </motion.a>
+        </div>
         {/* BorderBeam on modal */}
         <BorderBeam colorFrom={char.color} colorTo={ec} duration={10} size={300} />
       </motion.div>
@@ -692,7 +1110,8 @@ function GuideRow({ guide, dark, i }: { guide: typeof GUIDES[0]; dark: boolean; 
    MAIN PAGE
 ───────────────────────────────────────────────────────────────────────────── */
 export default function BD2Hub() {
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(false);
+  const [themeReady, setThemeReady] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [charSearch, setCharSearch] = useState("");
   const [filterElement, setFilterElement] = useState("");
@@ -702,6 +1121,15 @@ export default function BD2Hub() {
   const openModal = (charId: number) => { const d = CHARACTER_DATA.find((c) => c.id === charId); if (d) setModalChar(d); };
   const closeModal = () => setModalChar(null);
 
+  useEffect(() => {
+    const saved = localStorage.getItem("bd2hub-theme");
+    setDark(saved === "dark");
+    setThemeReady(true);
+  }, []);
+  useEffect(() => {
+    if (!themeReady) return;
+    localStorage.setItem("bd2hub-theme", dark ? "dark" : "light");
+  }, [dark, themeReady]);
   useEffect(() => {
     const h = () => setScrolled(window.scrollY > 48);
     window.addEventListener("scroll", h);
@@ -738,6 +1166,7 @@ export default function BD2Hub() {
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&family=Sora:wght@400;600;700;800&display=swap');
         @keyframes auroraShift { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
         @keyframes marqueeH { from{transform:translateX(0)} to{transform:translateX(calc(-100% - var(--gap,16px)))} }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
         a,button,[role="button"],.cursor-pointer { cursor: pointer !important; }
         input,textarea { cursor: text !important; }
         .no-scrollbar::-webkit-scrollbar { display:none; }
@@ -985,6 +1414,9 @@ export default function BD2Hub() {
           ))}
         </div>
       </section>
+
+      {/* ── BOSS FIGHT + HOT TEAMS ── */}
+      <BossSection dark={dark} />
 
       {/* ── GUIDES + STATS ── */}
       <section className={`border-t ${border}`}>

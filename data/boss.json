@@ -1,0 +1,61 @@
+{
+  "boss": {
+    "name": "Demon King Bares",
+    "subtitle": "Abyssal Sovereign · World Boss",
+    "element": "Dark",
+    "difficulty": "Nightmare",
+    "difficultyColor": "#ef4444",
+    "description": "The fallen sovereign who sundered the heavens. Bares channels void energy to corrupt all light and silence those who challenge his reign. His phase transitions summon spectral armies — only perfectly-timed skill rotations can break his shield.",
+    "weaknesses": ["Fire", "Light"],
+    "resistances": ["Dark", "Water"],
+    "bgImage": "https://www.browndust2.com/uploads/Apostle_Blade_PC_1600x1200_5f92f8ed81.png",
+    "accentColor": "#a855f7",
+    "hotTeams": [
+      {
+        "rank": 1,
+        "name": "Void Breaker",
+        "clearRate": "98%",
+        "avgTurns": 4,
+        "tags": ["Fire", "Limited"],
+        "chars": [
+          { "name": "Eunass",    "image": "https://your-cdn.com/chars/eunass.png",    "color": "#f97316", "tier": "SS" },
+          { "name": "Anastasia", "image": "https://your-cdn.com/chars/anastasia.png", "color": "#a855f7", "tier": "SS" },
+          { "name": "Arines",    "image": "https://your-cdn.com/chars/arines.png",    "color": "#fbbf24", "tier": "S"  },
+          { "name": "Lecliss",   "image": "https://your-cdn.com/chars/lecliss.png",   "color": "#f59e0b", "tier": "S"  },
+          { "name": "Priscilla", "image": "https://your-cdn.com/chars/priscilla.png", "color": "#d4b97a", "tier": "A"  }
+        ],
+        "description": "Eunass's Premonition Blaze melts Bares's shields. Anastasia stacks Dark Vulnerability while Arines keeps the team alive."
+      },
+      {
+        "rank": 2,
+        "name": "Solar Purge",
+        "clearRate": "94%",
+        "avgTurns": 5,
+        "tags": ["Light", "F2P-Friendly"],
+        "chars": [
+          { "name": "Seir",      "image": "https://your-cdn.com/chars/seir.png",      "color": "#8b5cf6", "tier": "SS" },
+          { "name": "Arines",    "image": "https://your-cdn.com/chars/arines.png",    "color": "#fbbf24", "tier": "S"  },
+          { "name": "Priscilla", "image": "https://your-cdn.com/chars/priscilla.png", "color": "#d4b97a", "tier": "S"  },
+          { "name": "Celia",     "image": "https://your-cdn.com/chars/celia.png",     "color": "#fde68a", "tier": "A"  },
+          { "name": "Lecliss",   "image": "https://your-cdn.com/chars/lecliss.png",   "color": "#f59e0b", "tier": "A"  }
+        ],
+        "description": "Seir's AoE amplification stacks with Celia's speed buffs. Priscilla absorbs phase 2 burst with her Ivory Shield passive."
+      },
+      {
+        "rank": 3,
+        "name": "Crimson Rush",
+        "clearRate": "89%",
+        "avgTurns": 6,
+        "tags": ["Fire", "Budget"],
+        "chars": [
+          { "name": "Blade",  "image": "https://dotgg.gg/brown-dust-2/wp-content/uploads/sites/17/2025/02/Blade.png",  "color": "#ef4444", "tier": "SS" },
+          { "name": "Zakan",  "image": "https://your-cdn.com/chars/zakan.png",  "color": "#dc2626", "tier": "A"  },
+          { "name": "Rafina", "image": "https://your-cdn.com/chars/rafina.png", "color": "#22c55e", "tier": "A"  },
+          { "name": "Walya",  "image": "https://your-cdn.com/chars/walya.png",  "color": "#a16207", "tier": "A"  },
+          { "name": "Seir",   "image": "https://your-cdn.com/chars/seir.png",   "color": "#8b5cf6", "tier": "S"  }
+        ],
+        "description": "Budget-friendly burn comp. Blade's triple-dash chains with Zakan's Rage Stack for sustained Fire pressure across all phases."
+      }
+    ]
+  }
+}
