@@ -1,0 +1,503 @@
+{
+  "slug": "eclipse",
+  "name": "Eclipse",
+  "title": "The Great Witch",
+  "element": "Dark",
+  "archetype": "Magic / DPS",
+  "tier": "S",
+  "stars": 5,
+  "color": "#7c3aed",
+  "colorAlt": "#5b21b6",
+  "emoji": "\ud83c\udf19",
+  "rarity": "5\u2605",
+  "investmentPriority": 7,
+  "investmentNote": "Strong PvP attacker and solid PvE dark DPS, but outclassed in endgame PvE by Blade and Luvencia. Nightmare Bunny is the key costume \u2014 without it, investment is questionable. Not recommended for heavy new investment as she's slowly losing meta relevance to newer units like Venaka.",
+  "fhAppearance": "Safe pick (Dark element FH)",
+  "externalLinks": [
+    {
+      "label": "dotgg.gg Guide",
+      "url": "https://dotgg.gg/brown-dust-2/character-guide-eclipse/",
+      "icon": "external"
+    },
+    {
+      "label": "Gamependium FH",
+      "url": "http://cymmina.gamependium.com/browndust2/costumes/fiend-hunt.html",
+      "icon": "book"
+    },
+    {
+      "label": "Gamependium Generalists",
+      "url": "http://cymmina.gamependium.com/browndust2/costumes/generalists.html",
+      "icon": "book"
+    },
+    {
+      "label": "Gamependium Teams",
+      "url": "http://cymmina.gamependium.com/browndust2/teams.html",
+      "icon": "book"
+    }
+  ],
+  "lore": "Eclipse is the owner of the Pagan Tower \u2014 a great witch of the eastern Svern Continent and a succubus who has lived far longer than any human. When Ratel's party first visited the tower on Olstein's instructions, they found Eclipse locked in a desperate defense against Cocytus' relentless assault. Despite her enigmatic and slightly haughty exterior, she ultimately joined the cause after uncovering a ring and sealed relic left behind by her former companion Charon. She was ranked first in the 1.5th Anniversary character popularity vote, earning the free Dream Bride costume as a reward from the community \u2014 a testament to her enduring fan favourite status.",
+  "overview": "Eclipse is a Magic Dark DPS who specializes in draining enemy SP while dealing respectable damage. Her impact on the PvP meta was massive when Nightmare Bunny released \u2014 it instantly became the most popular PvP costume in the game, changing defensive formations overnight and forcing players to gear 105-110% MRES just to counter her. Two years later, she's been somewhat power-crept by DJ Venaka (higher M.ATK, 50% MRES shred vs Eclipse's 20%) and newer 1000%+ multiplier costumes, but Nightmare Bunny remains one of the best value 3 SP PvP costumes in the game. In PvE, her base M.ATK is low (308 vs average of 352), which limits her damage ceiling \u2014 Blade and Luvencia sit a tier above her for endgame content. However, her SP battery utility via Nightmare Bunny is invaluable in Tower of Salvation and long fights where SP regeneration is scarce.",
+  "keyInsight": "Eclipse currently has four costumes \u2014 The Dimension Witch, Nightmare Bunny, Beach Vacation, and Dream Bride \u2014 giving her a complete rotation cycle with no downtime. Her core power comes entirely from Nightmare Bunny's unique pre-hit MRES shred mechanic: she reduces enemy MRES by 15-20% BEFORE the first hit lands, which is a property unique to her among all characters. Without Nightmare Bunny, investing in Eclipse is questionable.",
+  "modeRatings": {
+    "Fiend Hunt": 7,
+    "Guild Raid": 7,
+    "Last Night": 4,
+    "Mirror War": 8,
+    "Tower": 8
+  },
+  "synergies": [
+    {
+      "name": "Helena (B-Rank Idol)",
+      "note": "M.ATK + Crit Rate buff gets Eclipse to 100% crit",
+      "emoji": "\ud83c\udfa4"
+    },
+    {
+      "name": "Refithea (PWB)",
+      "note": "Property + chain bonus for dark advantage fights",
+      "emoji": "\ud83c\udf38"
+    },
+    {
+      "name": "Diana",
+      "note": "Elemental DMG aura \u2014 boosts Eclipse's dark damage on advantage targets",
+      "emoji": "\ud83e\udded"
+    },
+    {
+      "name": "Celia",
+      "note": "Chain stacking before Eclipse's nuke turn",
+      "emoji": "\ud83e\uddff"
+    },
+    {
+      "name": "Luvencia",
+      "note": "Complementary dark DPS \u2014 Luvencia carries, Eclipse supports with SP battery",
+      "emoji": "\ud83d\udd2e"
+    }
+  ],
+  "costumes": [
+    {
+      "id": "dimension-witch",
+      "name": "The Dimension Witch",
+      "rarity": "Standard",
+      "emoji": "\ud83e\uddd9\u200d\u2640\ufe0f",
+      "color": "#5b21b6",
+      "featured": false,
+      "spCost": "4 SP \u2192 3 SP at Skill Potential 3",
+      "cooldown": "5 turns",
+      "upgrade": {
+        "min": "+0",
+        "recommended": "+3",
+        "ideal": "+5"
+      },
+      "description": "Eclipse's base costume, recruitable from the Story Pack 6 \u2014 Pagan Tower pub. Terra Drain heals 35% Max HP, attacks 3 times at 120% Magic ATK each (360% total), and decreases 3 SP for each enemy hit. The skip-shaped AoE pattern is awkward to position \u2014 you'll often wish it were 'very front' instead. SP drain is irrelevant in PvE (making this effectively a vanilla dark attack), but in PvP it forces the enemy team down to only 6 SP on their following turn. Solid baseline damage but unspectacular without Nightmare Bunny.",
+      "skills": [
+        {
+          "name": "Terra Drain",
+          "desc": "Heal HP based off 35% Max HP. Attack 3 times, each dealing Magic DMG at 120% M.ATK. Decrease 3 SP for each attacked target.",
+          "tags": [
+            "Damage",
+            "SP Drain",
+            "Self Heal"
+          ]
+        }
+      ],
+      "tips": [
+        "Recruitable from Story Pack 6 pub \u2014 get a free copy early.",
+        "SP drain only matters in PvP. In PvE this is just a damage skill.",
+        "Skip-shaped AoE is hard to position \u2014 consider enemy layouts carefully.",
+        "Skill Potential 3 for the SP reduction is the main upgrade target."
+      ]
+    },
+    {
+      "id": "nightmare-bunny",
+      "name": "Nightmare Bunny",
+      "rarity": "Limited",
+      "emoji": "\ud83d\udc30",
+      "color": "#7c3aed",
+      "featured": false,
+      "spCost": "3 SP",
+      "cooldown": "5 turns",
+      "upgrade": {
+        "min": "+3",
+        "recommended": "+5",
+        "ideal": "+5 full potential"
+      },
+      "description": "Eclipse's signature limited costume and the reason she defined the PvP meta for over a year. Dream Eater decreases Magic Resist by 15% (20% with potentials) for 4 turns BEFORE dealing damage \u2014 a pre-hit shred mechanic unique to Eclipse. Then attacks 3 times at 75% M.ATK each (up to 3\u00d7220% at +5 = 660% after shred), acquires 1 SP per unique hit, and drains 1 SP per unique hit from enemies. The long cross AoE (5 long, 5 wide) is nearly impossible to dodge in PvP. At only 3 SP, she needs to hit just one enemy to pay for herself via SP gain. At +0 her damage multipliers are low \u2014 battery utility is good immediately but damage needs dupes. She has been somewhat power-crept by DJ Venaka (50% MRES shred, higher M.ATK) but remains one of the best value 3 SP PvP costumes.",
+      "skills": [
+        {
+          "name": "Dream Eater",
+          "desc": "Decrease Magic Resist by 15% for 4 turns (pre-hit). Attack 3 times at 75% M.ATK each. Acquire 1 SP per unique hit. Decrease 1 SP per unique hit from enemies.",
+          "tags": [
+            "MRES Shred",
+            "Damage",
+            "SP Battery",
+            "SP Drain"
+          ]
+        }
+      ],
+      "tips": [
+        "The MRES shred applies BEFORE the first hit \u2014 unique mechanic in the entire game.",
+        "In Tower of Salvation (no SP regen), Eclipse can be swapped in/out repeatedly to refill team SP.",
+        "Forces enemies to build 90+ MRES to counter her in PvP \u2014 hugely warping effect on gear meta.",
+        "At +0, damage is low but SP utility is already excellent. Invest dupes for damage.",
+        "Skill Potential 1 for damage upgrades is the priority here.",
+        "No longer recommended for heavy NEW investment \u2014 better to pick up on rerun if available."
+      ]
+    },
+    {
+      "id": "beach-vacation",
+      "name": "Beach Vacation",
+      "rarity": "Limited",
+      "emoji": "\ud83c\udfd6\ufe0f",
+      "color": "#0ea5e9",
+      "featured": false,
+      "spCost": "5 SP",
+      "cooldown": "11 turns",
+      "upgrade": {
+        "min": "+3",
+        "recommended": "+4",
+        "ideal": "+5"
+      },
+      "description": "Eclipse's highest damage costume \u2014 her 'ultimate' skill. Summer Climax attacks 2 times at up to 450% M.ATK each (900% total before chains at +5) with reliable 3\u00d73 AoE coverage. The 11-turn cooldown means you can typically only use it once per fight, which makes it a nuke-turn save \u2014 fire it after Nightmare Bunny's MRES shred for maximum damage. Excellent for Fiend Hunts and Guild Raids as the big damage turn. At +0-2, Dream Bride (free +5) actually outdamages it \u2014 you need at least +3 Beach Vacation to surpass the free alternative.",
+      "skills": [
+        {
+          "name": "Summer Climax",
+          "desc": "Attack 2 times, each dealing Magic DMG at 200% M.ATK (up to 450% at +5).",
+          "tags": [
+            "High Damage",
+            "3\u00d73 AoE",
+            "Nuke"
+          ]
+        }
+      ],
+      "tips": [
+        "Save for nuke turn \u2014 11-turn CD means one use per fight in most content.",
+        "Needs +3 minimum to outdamage the free Dream Bride +5.",
+        "Best used after Nightmare Bunny's MRES shred for maximum output.",
+        "Not worth pulling if you don't have Nightmare Bunny."
+      ]
+    },
+    {
+      "id": "dream-bride",
+      "name": "Dream Bride",
+      "rarity": "Limited (Free)",
+      "emoji": "\ud83d\udc92",
+      "color": "#e879f9",
+      "featured": false,
+      "spCost": "5 SP \u2192 4 SP at Skill Potential 3",
+      "cooldown": "5 turns",
+      "upgrade": {
+        "min": "+5 (free)",
+        "recommended": "+5",
+        "ideal": "+5"
+      },
+      "description": "Eclipse's free limited costume, obtainable at +5 through the 2nd Anniversary event missions \u2014 awarded after she won the 1.5th Anniversary popularity poll. The skill Honeymoon Getaway deals Magic DMG in a heart-shaped AoE with excellent tile coverage. With a 5-turn cooldown (much more usable than Beach Vacation's 11 turns) and the unique pattern, this fills the gap in Eclipse's rotation nicely. Since it's free at +5, it provides immediate value to all players and serves as Eclipse's second-strongest damage option after Beach Vacation +5. Skill Potential 3 for SP cost reduction is the key upgrade.",
+      "skills": [
+        {
+          "name": "Honeymoon Getaway",
+          "desc": "Deal Magic DMG equal to 350% of M.ATK with wide tile coverage (heart-shaped AoE, up to 625% total at +5).",
+          "tags": [
+            "Damage",
+            "Heart AoE",
+            "Wide Coverage"
+          ]
+        }
+      ],
+      "tips": [
+        "Free at +5 from the 2nd Anniversary event \u2014 no investment needed.",
+        "Outdamages Beach Vacation at +0-+2, so use this until Beach Vacation is +3+.",
+        "5-turn cooldown is much more rotation-friendly than Beach Vacation's 11 turns.",
+        "Good bond potential for both PvP and general PvE due to offensive stats.",
+        "Skill Potential 3 for SP reduction is the main upgrade target."
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "name": "Star Caller Ornament",
+      "type": "Accessory (Exclusive)",
+      "priority": "Situational",
+      "stats": [
+        "M.ATK +45%",
+        "Crit DMG (main stat)"
+      ],
+      "description": "Eclipse's exclusive accessory. Gives M.ATK% and Crit DMG. Despite sounding good, in PvE a Venomous Touch (Crit DMG / Crit DMG) typically gives more damage output than the exclusive. In PvP, the exclusive is good for tankier Eclipse builds where you trade some damage for survivability. Not a must-pull."
+    },
+    {
+      "name": "Venomous Touch",
+      "type": "Accessory",
+      "priority": "BiS (PvE)",
+      "stats": [
+        "Crit DMG (main)",
+        "Crit DMG (sub)"
+      ],
+      "description": "Best-in-slot for Eclipse in PvE damage builds. Double Crit DMG stacking outperforms her exclusive gear's M.ATK% bonus when paired with Helena's Crit Rate buff to reach 100% crit."
+    }
+  ],
+  "gear": [
+    {
+      "slot": "Armor",
+      "stat": "Crit DMG %"
+    },
+    {
+      "slot": "Helmet",
+      "stat": "Crit DMG %"
+    },
+    {
+      "slot": "Gloves",
+      "stat": "Crit Rate % (to reach 50% \u2014 Helena brings to 100%)"
+    },
+    {
+      "slot": "Boots",
+      "stat": "M.ATK % or Crit DMG %"
+    }
+  ],
+  "statPriority": [
+    "Crit DMG %",
+    "M.ATK %",
+    "Crit Rate % (to 50% cap with Helena)",
+    "HP % (PvP builds)"
+  ],
+  "potentialUpgrades": [
+    {
+      "label": "Nightmare Bunny Skill Potential 1",
+      "note": "Damage upgrades \u2014 primary investment target"
+    },
+    {
+      "label": "Dimension Witch Skill Potential 3",
+      "note": "SP cost reduction (4\u21923 SP)"
+    },
+    {
+      "label": "Nightmare Bunny MRES Shred",
+      "note": "Increases from 15% \u2192 20% MRES shred"
+    },
+    {
+      "label": "Dream Bride Skill Potential 3",
+      "note": "SP cost reduction (5\u21924 SP)"
+    }
+  ],
+  "teams": [
+    {
+      "name": "PvP Magic Opener",
+      "mode": "Mirror War",
+      "clearRate": "S Tier (PvP)",
+      "description": "Eclipse's primary use case. Nightmare Bunny opens with 3 SP \u2014 MRES shred lands before damage, SP drain disrupts the enemy, and SP gain refills your own bar. Follow up with Beach Vacation or Dream Bride on subsequent turns for lethal damage on MRES-shredded targets. Helena provides the M.ATK buff and Crit Rate to push Eclipse to 100% crit. Granhildr can taunt Nightmare Bunny away, so position carefully.",
+      "tags": [
+        "PvP",
+        "Magic",
+        "SP Drain"
+      ],
+      "rotation": [
+        {
+          "turn": "T1 Opener",
+          "action": "Nightmare Bunny \u2192 MRES shred + SP drain + damage (3 SP)"
+        },
+        {
+          "turn": "T2",
+          "action": "Dimension Witch or Honeymoon Getaway \u2192 Follow-up damage + SP drain"
+        },
+        {
+          "turn": "T3+",
+          "action": "Beach Vacation or Dream Bride \u2192 Nuke on MRES-shredded targets"
+        }
+      ],
+      "members": [
+        {
+          "name": "Eclipse",
+          "role": "Magic DPS",
+          "costume": "Nightmare Bunny + Beach Vacation",
+          "emoji": "\ud83c\udf19",
+          "color": "#7c3aed",
+          "isCore": true
+        },
+        {
+          "name": "Helena",
+          "role": "M.ATK Buffer",
+          "costume": "B-Rank Idol",
+          "emoji": "\ud83c\udfa4",
+          "color": "#f472b6"
+        },
+        {
+          "name": "Granhildr",
+          "role": "Tank / Taunt",
+          "costume": "Comeback Idol",
+          "emoji": "\ud83d\udee1\ufe0f",
+          "color": "#6d28d9"
+        },
+        {
+          "name": "Scheherazade",
+          "role": "Dispel / Opener",
+          "costume": "Pool Party",
+          "emoji": "\ud83d\udcab",
+          "color": "#38bdf8"
+        },
+        {
+          "name": "Eleaneer",
+          "role": "Follow-up DPS",
+          "costume": "Piercing Magic Bow",
+          "emoji": "\ud83c\udff9",
+          "color": "#4c1d95"
+        }
+      ]
+    },
+    {
+      "name": "Tower of Salvation SP Battery",
+      "mode": "Tower",
+      "clearRate": "A+ Tier",
+      "description": "In Tower of Salvation's higher floors, SP regeneration is zero \u2014 you get no SP regen at all. Nightmare Bunny Eclipse is a lifesaver here: she generates 1 SP per unique hit and only costs 3 SP, meaning she can be swapped in and out repeatedly to keep the team's SP bar full. She can even be rotated through Crystal Battle Lv10 as a dedicated SP refill tool. Her damage is secondary \u2014 the SP battery function is the primary value.",
+      "tags": [
+        "Tower",
+        "SP Battery",
+        "Utility"
+      ],
+      "rotation": [
+        {
+          "turn": "Any Turn",
+          "action": "Swap Eclipse in \u2192 Nightmare Bunny \u2192 Generate SP \u2192 Swap out"
+        },
+        {
+          "turn": "Repeat",
+          "action": "Cycle Eclipse in whenever SP runs low"
+        }
+      ],
+      "members": [
+        {
+          "name": "Eclipse",
+          "role": "SP Battery",
+          "costume": "Nightmare Bunny",
+          "emoji": "\ud83c\udf19",
+          "color": "#7c3aed",
+          "isCore": true
+        },
+        {
+          "name": "Diana",
+          "role": "Property Buffer",
+          "costume": "Adventurer of the Unknown",
+          "emoji": "\ud83e\udded",
+          "color": "#22c55e"
+        },
+        {
+          "name": "Helena",
+          "role": "M.ATK Buffer",
+          "costume": "B-Rank Idol",
+          "emoji": "\ud83c\udfa4",
+          "color": "#f472b6"
+        },
+        {
+          "name": "Luvencia",
+          "role": "Main DPS",
+          "costume": "Dark carries",
+          "emoji": "\ud83d\udd2e",
+          "color": "#a855f7"
+        }
+      ]
+    },
+    {
+      "name": "Dark FH / Guild Raid",
+      "mode": "Fiend Hunt",
+      "clearRate": "A Tier",
+      "description": "When dark has elemental advantage, Eclipse serves as a safe-pick DPS on team 2 or 3. Open with Nightmare Bunny for MRES shred and SP battery, then save Beach Vacation for the nuke turn. She is outclassed by Luvencia and Blade for team 1 damage, but fills the dark DPS slot reliably when you need multiple teams. Her various AoE shapes can sometimes be awkward for hitting boss weak tiles \u2014 check the layout before committing.",
+      "tags": [
+        "Fiend Hunt",
+        "Dark",
+        "Safe Pick"
+      ],
+      "rotation": [
+        {
+          "turn": "T1",
+          "action": "Nightmare Bunny \u2192 MRES shred + SP battery"
+        },
+        {
+          "turn": "T2+",
+          "action": "Dimension Witch or Dream Bride \u2192 Sustain damage"
+        },
+        {
+          "turn": "Nuke Turn",
+          "action": "Beach Vacation \u2192 Maximum burst on shredded target"
+        }
+      ],
+      "members": [
+        {
+          "name": "Eclipse",
+          "role": "DPS (Dark)",
+          "costume": "All costumes",
+          "emoji": "\ud83c\udf19",
+          "color": "#7c3aed",
+          "isCore": true
+        },
+        {
+          "name": "Helena",
+          "role": "M.ATK Buffer",
+          "costume": "B-Rank Idol + Top Idol",
+          "emoji": "\ud83c\udfa4",
+          "color": "#f472b6"
+        },
+        {
+          "name": "Diana",
+          "role": "Property Buffer",
+          "costume": "Adventurer of the Unknown",
+          "emoji": "\ud83e\udded",
+          "color": "#22c55e"
+        },
+        {
+          "name": "Celia",
+          "role": "Chain Stacker",
+          "costume": "Masquerade Bunny + Descendant",
+          "emoji": "\ud83e\uddff",
+          "color": "#a855f7"
+        },
+        {
+          "name": "Refithea",
+          "role": "Chain Bonus",
+          "costume": "Pure White Blessing",
+          "emoji": "\ud83c\udf38",
+          "color": "#f472b6"
+        }
+      ]
+    }
+  ],
+  "tips": [
+    {
+      "icon": "\u26a0\ufe0f",
+      "title": "Nightmare Bunny or Bust",
+      "body": "Eclipse as a DPS requires an invested Nightmare Bunny, which is a limited costume. Her base Dimension Witch is serviceable but unremarkable, and Beach Vacation's 11-turn cooldown is prohibitive without Nightmare Bunny's rotation support. If you don't have Nightmare Bunny, investing in Eclipse is questionable."
+    },
+    {
+      "icon": "\ud83d\udd2e",
+      "title": "Unique Pre-Hit MRES Shred",
+      "body": "Nightmare Bunny decreases Magic Resist BEFORE the first hit lands \u2014 a property unique to Eclipse in the entire game. Normally, shreds apply after the first hit. This makes her opening burst significantly scarier and is the reason she's still competitive despite power creep."
+    },
+    {
+      "icon": "\ud83d\udcc9",
+      "title": "Low Base M.ATK",
+      "body": "Eclipse's base M.ATK is only 308 \u2014 below the 352 average and far below Venaka (363) or Scheherazade (385). This inherently caps her damage ceiling in endgame PvE, making Blade and Luvencia strictly better for dark advantage Fiend Hunts."
+    },
+    {
+      "icon": "\ud83d\udd0b",
+      "title": "Tower of Salvation MVP",
+      "body": "In Tower of Salvation's highest floors (no SP regen), Nightmare Bunny Eclipse is a lifesaver. She generates 1 SP per hit at only 3 SP cost \u2014 swap her in/out repeatedly to keep your team's SP bar full. This utility alone justifies owning her at +0."
+    },
+    {
+      "icon": "\ud83c\udf81",
+      "title": "Free Dream Bride at +5",
+      "body": "Dream Bride Eclipse is obtainable at +5 for free from the 2nd Anniversary event. It deals 625% in a heart-shaped AoE with a 5-turn CD. This means every player already has a solid Eclipse damage costume \u2014 only pull Beach Vacation if you can get it to +3+ to outdamage the freebie."
+    },
+    {
+      "icon": "\ud83d\udc51",
+      "title": "Fan Favourite Hall of Famer",
+      "body": "Eclipse won the 1.5th Anniversary popularity poll and entered the Hall of Fame alongside Dalvi and Morpeah in the 2nd Anniversary vote. Her cultural impact on the BD2 community is enormous \u2014 the Dream Bride costume was a direct community reward."
+    }
+  ],
+  "benchmarks": [
+    {
+      "value": "660%",
+      "label": "Nightmare Bunny total DMG at +5 (post-shred)"
+    },
+    {
+      "value": "900%",
+      "label": "Beach Vacation total DMG at +5"
+    },
+    {
+      "value": "308",
+      "label": "Base M.ATK (below 352 avg)"
+    }
+  ]
+}

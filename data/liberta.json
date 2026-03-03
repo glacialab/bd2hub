@@ -1,0 +1,187 @@
+{
+  "slug": "liberta",
+  "name": "Liberta",
+  "title": "The Dark Saintess",
+  "element": "Fire",
+  "archetype": "Physical / Buffer",
+  "tier": "SS",
+  "stars": 5,
+  "color": "#a855f7",
+  "colorAlt": "#7c3aed",
+  "emoji": "😇",
+  "rarity": "5★ Limited",
+  "investmentPriority": 10,
+  "investmentNote": "Top pull priority for all players. Dark Saintess is the single most important physical buffer in the game — must-have for endgame Fiend Hunt, Guild Raid, Last Night, and Tower of Salvation. Both costumes should reach +5 with full Skill Potential.",
+  "fhAppearance": "~90% of physical teams",
+  "externalLinks": [
+    { "label": "dotgg.gg Guide", "url": "https://dotgg.gg/brown-dust-2/character-guide-liberta/", "icon": "external" },
+    { "label": "Gamependium FH", "url": "http://cymmina.gamependium.com/browndust2/costumes/fiend-hunt.html", "icon": "book" },
+    { "label": "Gamependium Supports", "url": "http://cymmina.gamependium.com/browndust2/costumes/supports.html", "icon": "book" },
+    { "label": "Selective Draw", "url": "http://cymmina.gamependium.com/browndust2/costumes/selective-draw.html", "icon": "gem" }
+  ],
+  "lore": "Liberta is a devout saintess cloaked in dark vestments — a figure of quiet faith and fierce devotion whose prayers manifest as tangible power on the battlefield. Once an outcast of a fallen religious order, she now channels her unshakable belief into buffing her allies with holy fervor. Her demeanor is calm and enigmatic, her combat role deceptively passive — yet the teams she supports deal devastatingly more damage than those without her blessing. Her tanky constitution (base 3,885 HP — far higher than most supports) lets her absorb hits while sustaining her team through extended engagements.",
+  "overview": "Liberta is the premier physical ATK buffer in Brown Dust 2 and the physical counterpart to B-Rank Idol Helena. Her two costumes — Dark Saintess and Onsen Manager — form a dual-buffing package that covers ATK, Crit Rate, damage amplification, healing, and SP recovery. At full investment (+5 with all Skill Potentials), Dark Saintess provides +115% ATK and +50% Crit Rate for physical allies, while Onsen Manager amplifies damage dealt to chain-stacked targets by up to 130%. Together they make Liberta one of only three characters in the game with two offensive buff costumes (alongside Teresse and Refithea), and she is a fixture on roughly 90% of competitive physical teams in Fiend Hunt.",
+  "keyInsight": "Liberta is classified as an 'Essential' support in Fiend Hunt tier lists — she appears in nearly every physical composition. Dark Saintess alone is the physical equivalent of B-Rank Helena (identical buff values at max investment), but Liberta edges ahead overall because her second costume (Onsen Manager) adds damage amplification and healing, giving her two offensive buff costumes instead of one.",
+  "modeRatings": {
+    "Fiend Hunt": 10,
+    "Guild Raid": 9,
+    "Last Night": 9,
+    "Mirror War": 7,
+    "Tower": 8
+  },
+  "synergies": [
+    { "name": "Refithea (PWB)", "note": "Property + chain bonus; always paired on physical teams", "emoji": "🌸" },
+    { "name": "Celia", "note": "Chain stacker — activates Onsen Manager's 10-chain threshold", "emoji": "🧿" },
+    { "name": "Wilhelmina", "note": "Single-target chainer — feeds Onsen Manager's chain requirement", "emoji": "👑" },
+    { "name": "Nebris", "note": "Top physical carry — benefits enormously from ATK + Crit buffs", "emoji": "💨" },
+    { "name": "Blade", "note": "Counter damage scales with ATK buff; Liberta's tankiness outlasts Lathel", "emoji": "⚔️" },
+    { "name": "Zenith", "note": "Poolside Guardian's vulnerability stacks with Onsen Manager amplification", "emoji": "🎯" }
+  ],
+  "costumes": [
+    {
+      "id": "dark-saintess",
+      "name": "Dark Saintess",
+      "rarity": "Limited",
+      "emoji": "😇",
+      "color": "#a855f7",
+      "featured": false,
+      "spCost": "3 SP → 1 SP at Skill Potential 3",
+      "cooldown": "3 turns",
+      "upgrade": { "min": "+4", "recommended": "+5", "ideal": "+5 full potential" },
+      "description": "Liberta's signature costume and the reason she is mandatory for physical teams. At full investment (+5 with all Skill Potentials), Prayer of Duality provides +115% ATK and +50% Crit Rate for 4 turns (2 player turns) at only 1 SP cost with a 3-turn cooldown — identical values to B-Rank Idol Helena but for physical teams. She also restores 3 SP to the team. This costume single-handedly elevated physical teams across all competitive modes: Fiend Hunt, Guild Raid, Last Night, and Tower of Salvation. At low upgrade levels the buffs are significantly weaker (only +65% ATK at +4 without potentials — worse than 3-star Arines), so full investment is non-negotiable.",
+      "skills": [
+        { "name": "Prayer of Duality", "desc": "Gain 3 SP. Ally ATK increased by 35% (+115% at +5 full potential) for 4 turns. Ally Crit Rate increased by 25% (+50% at +5) for 4 turns.", "tags": ["ATK Buff", "Crit Rate", "SP Recovery"] }
+      ],
+      "tips": [
+        "Needs +5 and Skill Potential 3 for the 1 SP cost — non-negotiable for competitive content.",
+        "At low upgrades, her ATK buff is worse than Arines. Do not use below +4.",
+        "She is pub-recruitable — grab a copy there before spending selective draw tickets.",
+        "In Last Night, buffs are halved, so she provides 25% Crit Rate — still one of only 3 costumes with a 50% crit buff.",
+        "Replaces Lathel as the primary physical buffer for sustained multi-turn fights."
+      ]
+    },
+    {
+      "id": "onsen-manager",
+      "name": "Onsen Manager",
+      "rarity": "Limited",
+      "emoji": "♨️",
+      "color": "#7c3aed",
+      "featured": false,
+      "spCost": "3 SP → 1 SP at Skill Potential 3",
+      "cooldown": "5 turns → full uptime at +5 with Skill Potential 3",
+      "upgrade": { "min": "+4", "recommended": "+5", "ideal": "+5 full potential" },
+      "description": "The amplifier half of Liberta's dual-costume kit. At +5 full potential, Onsen Manager provides 130% damage amplification for 6 turns (no downtime) against enemies with 10 or more chains applied, plus a heal based on 15% of allies' Max HP per turn. The chain threshold (10 chains) means this costume is designed for Fiend Hunt and Guild Raid compositions that already run chain stackers like Celia, Wilhelmina, or Refithea. The damage amplification stacks additively with other enemy-side amplification buffs (like Levia's Track and Field or Rafina's Code Name A). When chain damage multipliers are factored in, high-chain Liberta teams typically outclass low-chain Teresse teams in total damage output.",
+      "skills": [
+        { "name": "It's the Protection of the Oni!", "desc": "Damage dealt to target with 10+ chains applied increases by 80% (+130% at +5 full potential) for 4 turns (+6 turns at +5). Heal ally HP based on 15% Max HP per turn for 4 turns.", "tags": ["Damage Amp", "Chain Conditional", "Heal"] }
+      ],
+      "tips": [
+        "Requires 10 chains on the target before the buff matters — pair with Celia + Refithea to instantly meet the threshold.",
+        "Stacks additively with other enemy-side amplification (Levia, Rafina) — use different buff types for multiplicative scaling.",
+        "The healing scales off ally Max HP, not Liberta's stats — Crit Rate gear won't affect heal strength.",
+        "Not useful in PvP — stacking 10 chains is nearly impossible in Mirror War.",
+        "Useless without a chain-stacking team. Don't bring it to content where chains aren't relevant."
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "name": "Dark Rosarium",
+      "type": "Accessory (Exclusive)",
+      "priority": "Low Priority",
+      "stats": ["HP +54%"],
+      "description": "Liberta's exclusive accessory. Provides a large HP boost for survivability, but does not improve her buff power. Since Liberta is already one of the tankiest supports (3,885 base HP), survivability is rarely an issue even in late-game content. Not strongly recommended to pull for."
+    },
+    {
+      "name": "Any ATK% Sword",
+      "type": "Sword",
+      "priority": "Budget",
+      "stats": ["ATK %", "Crit Rate %"],
+      "description": "Liberta's personal damage is irrelevant — she is a pure buffer. Gear her defensively or for Crit Rate to improve consistency of her Onsen Manager healing. No specific weapon is needed."
+    }
+  ],
+  "gear": [
+    { "slot": "Armor", "stat": "HP % or DEF %" },
+    { "slot": "Helmet", "stat": "Crit DMG % (for exclusive) or HP %" },
+    { "slot": "Gloves", "stat": "Crit Rate % (improves heal consistency)" },
+    { "slot": "Boots", "stat": "HP % or MRES %" }
+  ],
+  "statPriority": ["HP %", "DEF %", "Crit Rate % (for heal consistency)", "MRES %"],
+  "potentialUpgrades": [
+    { "label": "Dark Saintess SP Reduction (P3)", "note": "Mandatory — reduces SP cost to 1. Massive difference between 2 SP and 1 SP." },
+    { "label": "Onsen Manager SP Reduction (P3)", "note": "Full uptime on amplification buff — mandatory for FH/GR." },
+    { "label": "Dark Saintess Buff Values", "note": "Increases ATK and Crit Rate buff values toward +115% / +50% cap." },
+    { "label": "Onsen Manager Buff Duration", "note": "Extends amplification duration to 6 turns — eliminates downtime." }
+  ],
+  "teams": [
+    {
+      "name": "FH Physical Standard",
+      "mode": "Fiend Hunt",
+      "clearRate": "S Tier",
+      "description": "The gold standard Fiend Hunt physical team. Liberta provides ATK + Crit Rate via Dark Saintess and damage amplification via Onsen Manager. Refithea doubles chain counts to instantly meet Onsen Manager's 10-chain threshold. Celia stacks chains. Wilhelmina adds single-target chain generation. The carry slot rotates based on elemental advantage (Nebris for Wind, Liatris for Fire, Sylvia for Water, etc).",
+      "tags": ["Physical", "Top Tier", "Fiend Hunt"],
+      "rotation": [
+        { "turn": "T0 Setup", "action": "Dark Saintess → Apply ATK + Crit Rate buff (1 SP)" },
+        { "turn": "T1", "action": "Onsen Manager → Amplify damage on chained target + heal" },
+        { "turn": "T1+", "action": "Cycle Dark Saintess and Onsen Manager alternately for full uptime" },
+        { "turn": "Carry Turn", "action": "Main DPS fires on chain-stacked, amplified target" }
+      ],
+      "members": [
+        { "name": "Liberta", "role": "ATK Buffer + Amplifier", "costume": "Dark Saintess + Onsen Manager", "emoji": "😇", "color": "#a855f7", "isCore": true },
+        { "name": "Refithea", "role": "Property + Chain Bonus", "costume": "Pure White Blessing + Gluttonous", "emoji": "🌸", "color": "#f472b6" },
+        { "name": "Celia", "role": "Chain Stacker", "costume": "Masquerade Bunny + Descendant", "emoji": "🧿", "color": "#a855f7" },
+        { "name": "Diana", "role": "Property Buffer", "costume": "Adventurer of the Unknown", "emoji": "🧭", "color": "#22c55e" },
+        { "name": "Nebris", "role": "Main DPS (Wind)", "costume": "New Hire + Lifeguard", "emoji": "💨", "color": "#22c55e" }
+      ]
+    },
+    {
+      "name": "Last Night Score Push",
+      "mode": "Last Night",
+      "clearRate": "S Tier",
+      "description": "Dark Saintess Liberta is one of the premier Last Night opening buffers. She is one of only three costumes in the game with a 50% Crit Rate buff (halved to 25% in Last Night). Combined with Onsen Manager's amplification and chain-based score multipliers, Liberta teams achieve top-tier score outputs. Granadair and Lathel provide additional burst buffing for the nuke turn.",
+      "tags": ["Last Night", "Score Push", "Physical"],
+      "rotation": [
+        { "turn": "T0", "action": "Dark Saintess → ATK + Crit buff" },
+        { "turn": "T1", "action": "Onsen Manager → Amplify chained target + heal" },
+        { "turn": "Nuke Turn", "action": "Main DPS fires with full chain + amp stack" }
+      ],
+      "members": [
+        { "name": "Liberta", "role": "ATK Buffer + Amplifier", "costume": "Dark Saintess + Onsen Manager", "emoji": "😇", "color": "#a855f7", "isCore": true },
+        { "name": "Granadair", "role": "Burst Buffer", "costume": "Shrine Maiden", "emoji": "⛩️", "color": "#f59e0b" },
+        { "name": "Refithea", "role": "Chain Bonus", "costume": "Pure White Blessing", "emoji": "🌸", "color": "#f472b6" },
+        { "name": "Wilhelmina", "role": "Chainer", "costume": "Iron Monarch + Water Park Queen", "emoji": "👑", "color": "#38bdf8" },
+        { "name": "Nebris", "role": "Main DPS", "costume": "New Hire", "emoji": "💨", "color": "#22c55e" }
+      ]
+    },
+    {
+      "name": "Guild Raid Physical",
+      "mode": "Guild Raid",
+      "clearRate": "S Tier",
+      "description": "In Guild Raids, Liberta anchors the primary physical team. Dark Saintess provides consistent ATK buffing every turn, while Onsen Manager amplifies damage on the boss once chains are stacked. Blade's counterattacks scale enormously with Liberta's ATK and Crit buffs. Wilhelmina or Celia handle chain generation depending on the boss's weak tile layout.",
+      "tags": ["Guild Raid", "Physical", "Blade Synergy"],
+      "rotation": [
+        { "turn": "T1", "action": "Dark Saintess on opener → Immediate ATK + Crit" },
+        { "turn": "T2", "action": "Onsen Manager once chains reach 10+" },
+        { "turn": "T3+", "action": "Alternate costumes for full uptime on both buffs" }
+      ],
+      "members": [
+        { "name": "Liberta", "role": "ATK Buffer + Amplifier", "costume": "Dark Saintess + Onsen Manager", "emoji": "😇", "color": "#a855f7", "isCore": true },
+        { "name": "Blade", "role": "Main DPS / Counter", "costume": "Apostle + Young Lady", "emoji": "⚔️", "color": "#6d28d9" },
+        { "name": "Celia", "role": "Chain Stacker", "costume": "Descendant + The Curse", "emoji": "🧿", "color": "#a855f7" },
+        { "name": "Helena", "role": "M.ATK Buffer + SP", "costume": "Top Idol", "emoji": "🎤", "color": "#f472b6" }
+      ]
+    }
+  ],
+  "tips": [
+    { "icon": "⚠️", "title": "Low Investment = Worse Than Arines", "body": "At +4 without Skill Potentials, Dark Saintess gives only 65% ATK — literally weaker than the free 3-star buffer Arines. Liberta must be fully invested (+5, all potentials) to be worth using in competitive content." },
+    { "icon": "💎", "title": "Pub Recruitable", "body": "Liberta can be recruited from the Pub with a contract. Grab a base copy there before spending selective draw tickets on duplicates — this saves significant resources." },
+    { "icon": "🔗", "title": "Onsen Manager Needs 10 Chains", "body": "The damage amplification only activates when the target has 10+ chains. Always pair with a chain stacker (Celia, Wilhelmina, or Refithea) — without them, Onsen Manager's buff is completely wasted." },
+    { "icon": "🏆", "title": "Physical Helena — But Better Overall", "body": "Dark Saintess has identical values to B-Rank Helena at max investment (+115% ATK, +50% Crit Rate, 1 SP, 4-turn duration). But Liberta wins overall because she has two offensive costumes instead of one, giving her both ATK buffing AND damage amplification." },
+    { "icon": "🛡️", "title": "Tankiest Buffer in the Game", "body": "With 3,885 base HP (vs Lathel's 2,877), plus HP-focused awakening and exclusive gear, Liberta is extremely durable. She can soak hits for the team without dedicated protection — freeing up team slots for more offensive units." },
+    { "icon": "🎯", "title": "Always Pair with Refithea", "body": "With Dark Saintess Liberta's release, the standard physical team composition shifted: Liberta + Refithea on physical teams, Diana + Teresse on magic teams. This pairing is now considered default for endgame." }
+  ],
+  "benchmarks": [
+    { "value": "~90%", "label": "Physical FH teams with Liberta" },
+    { "value": "+115%", "label": "ATK buff at +5 full potential" },
+    { "value": "130%", "label": "Damage amp from Onsen Manager at +5" }
+  ]
+}

@@ -1,0 +1,478 @@
+{
+  "slug": "wilhelmina",
+  "name": "Wilhelmina",
+  "title": "The Iron Monarch",
+  "element": "Water",
+  "archetype": "Physical / Chainer",
+  "tier": "S",
+  "stars": 5,
+  "color": "#38bdf8",
+  "colorAlt": "#0ea5e9",
+  "emoji": "\ud83d\udc51",
+  "rarity": "5\u2605 Limited",
+  "investmentPriority": 9,
+  "investmentNote": "Top 5 pull priority for physical FH/GR players. Both costumes required \u2014 skip if you don't plan to pull Iron Monarch.",
+  "fhAppearance": "~70% of top runs",
+  "externalLinks": [
+    {
+      "label": "dotgg.gg Guide",
+      "url": "https://dotgg.gg/brown-dust-2/character-guide-wilhelmina/",
+      "icon": "external"
+    },
+    {
+      "label": "Gamependium FH",
+      "url": "http://cymmina.gamependium.com/browndust2/costumes/fiend-hunt.html",
+      "icon": "book"
+    },
+    {
+      "label": "Selective Draw",
+      "url": "http://cymmina.gamependium.com/browndust2/costumes/selective-draw.html",
+      "icon": "gem"
+    }
+  ],
+  "lore": "Wilhelmina is a regal, iron-willed queen of water \u2014 a character whose cold authority on the battlefield is matched only by the devastating precision of her strikes. Once a monarch of a fallen kingdom, she now channels her sovereignty into combat, each ability a declaration of absolute dominion over a single target. Her presence on any roster signals that the enemy's most dangerous foe will be shattered under an icy chain of relentless, compounding strikes.",
+  "overview": "Wilhelmina is the premier single-target chainer in Brown Dust 2, capable of generating more chains on one enemy than anyone else in the game. Her kit revolves around her two core costumes \u2014 Iron Monarch and Water Park Queen \u2014 which work in tandem to create a loop of escalating chain counts that supercharge every physical attacker on the team. She is a fixture in Fiend Hunt and Guild Raid, appearing in roughly 70% of top compositions, and is one of the rare Combat Supports who also contributes serious damage in her own right.",
+  "keyInsight": "Wilhelmina is classified as a \"Combat Support\" in Fiend Hunt tier lists \u2014 she belongs to both support and damage categories. This means she can fill a damage-dealer slot while still providing essential chain utility, making her exceptionally flexible and space-efficient in team building.",
+  "modeRatings": {
+    "Fiend Hunt": 10,
+    "Guild Raid": 9,
+    "Last Night": 8,
+    "Mirror War": 4,
+    "Tower": 5
+  },
+  "synergies": [
+    {
+      "name": "Zenith",
+      "note": "Converts chains \u2192 physical vulnerability",
+      "emoji": "\ud83c\udfaf"
+    },
+    {
+      "name": "Refithea (PWB)",
+      "note": "Stacks chain bonus additively",
+      "emoji": "\ud83c\udf38"
+    },
+    {
+      "name": "Nebris",
+      "note": "Biggest DPS beneficiary of chains",
+      "emoji": "\ud83d\udca8"
+    },
+    {
+      "name": "Blade",
+      "note": "Counter damage scales with chains",
+      "emoji": "\u2694\ufe0f"
+    },
+    {
+      "name": "Lathel",
+      "note": "ATK buffer for physical teams",
+      "emoji": "\ud83d\udd2c"
+    }
+  ],
+  "costumes": [
+    {
+      "id": "iron-monarch",
+      "name": "Iron Monarch",
+      "rarity": "Limited",
+      "emoji": "\u2694\ufe0f",
+      "color": "#38bdf8",
+      "spCost": "4 SP \u2192 3 SP at -1SP unlock",
+      "cooldown": "1 turn at +4",
+      "upgrade": {
+        "min": "+4",
+        "recommended": "+4",
+        "ideal": "+5"
+      },
+      "description": "Wilhelmina's signature costume and the reason she's irreplaceable. Iron Monarch applies a massive chain-generation hit to a single target, stacking chains that boost every subsequent physical attack in the turn. At +4, the cooldown drops to 1 turn, meaning she can be used every single round \u2014 making chain maintenance effortless across the entire fight. The chain count generated scales with the number of prior chains on the target, creating an exponential feedback loop with Water Park Queen.",
+      "skills": [
+        {
+          "name": "Sovereign Chain",
+          "desc": "Generates a high number of chains on a single target. Chains scale chain bonuses for all physical attackers.",
+          "tags": [
+            "Chain",
+            "Single Target"
+          ]
+        },
+        {
+          "name": "Royal Presence (Passive)",
+          "desc": "Increases chain count generated based on current enemy chain stack. Synergizes with Water Park Queen bonus.",
+          "tags": [
+            "Passive",
+            "Chain Scaling"
+          ]
+        }
+      ],
+      "tips": [
+        "Needs +4 to reach 1-turn cooldown \u2014 non-negotiable for competitive content.",
+        "Pair with Poolside Guardian Zenith who amplifies chain-based vulnerability.",
+        "Always use on the same target as your main damage dealer."
+      ],
+      "featured": true
+    },
+    {
+      "id": "water-park-queen",
+      "name": "Water Park Queen",
+      "rarity": "Limited",
+      "emoji": "\ud83d\udc59",
+      "color": "#0ea5e9",
+      "spCost": "5 SP",
+      "cooldown": "Buff duration increases at +4",
+      "upgrade": {
+        "min": "+4",
+        "recommended": "+4",
+        "ideal": "+5"
+      },
+      "description": "The amplifier to Iron Monarch's foundation. Water Park Queen increases the number of chains Wilhelmina generates per use, and the buff stacks additively with Pure White Blessing Refithea's chain bonus. The buff duration is short at lower upgrades \u2014 at +4, the duration extends enough to cover meaningful multi-turn windows. This costume transforms Wilhelmina from a great chainer into the single best chain generator in the game, period.",
+      "skills": [
+        {
+          "name": "Torrent Authority",
+          "desc": "Increases chain count generated by Wilhelmina's abilities. Stacks with external chain bonus buffs like Refithea.",
+          "tags": [
+            "Buff",
+            "Chain Bonus"
+          ]
+        },
+        {
+          "name": "Queen's Decree",
+          "desc": "Buff duration increased at +4. Must be maintained alongside Iron Monarch rotation.",
+          "tags": [
+            "Duration",
+            "Upgrade"
+          ]
+        }
+      ],
+      "tips": [
+        "Useless without Iron Monarch. Always bring both.",
+        "+4 is mandatory to maintain buff duration across turns.",
+        "Stacks with Pure White Blessing Refithea for maximum chains per turn."
+      ],
+      "featured": false
+    },
+    {
+      "id": "frozen-queen",
+      "name": "Frozen Queen",
+      "rarity": "Standard",
+      "emoji": "\u2744\ufe0f",
+      "color": "#7dd3fc",
+      "spCost": "4 SP",
+      "cooldown": "2 turns",
+      "upgrade": {
+        "min": "+0",
+        "recommended": "N/A",
+        "ideal": "+5 (niche)"
+      },
+      "description": "Wilhelmina's accessible standard costume. Frozen Queen is a single-target specialist that provides solid water-element physical damage without chain utility. Useful in Last Night early on but falls off dramatically once Iron Monarch is obtained. Invest here only if you need water single-target coverage and lack her limited costumes.",
+      "skills": [
+        {
+          "name": "Glacial Judgment",
+          "desc": "Single-target water physical attack. No chain generation. Good damage modifier for early-game content.",
+          "tags": [
+            "Single Target",
+            "Water DMG"
+          ]
+        }
+      ],
+      "tips": [
+        "Free to obtain \u2014 solid for Last Night in early game.",
+        "Do not invest upgrade resources here if you plan to pull Iron Monarch.",
+        "Can serve as a filler on turns where Iron Monarch is on cooldown at low investment."
+      ],
+      "featured": false
+    }
+  ],
+  "weapons": [
+    {
+      "name": "Sovereign's Edge",
+      "type": "Sword",
+      "priority": "BiS",
+      "stats": [
+        "ATK +18%",
+        "Crit DMG +25%",
+        "Chain Bonus +12%"
+      ],
+      "description": "Best-in-slot for Wilhelmina in chain-focused compositions. The chain bonus directly amplifies the chains she generates, creating a multiplicative loop with her kit."
+    },
+    {
+      "name": "Frost Blade",
+      "type": "Sword",
+      "priority": "Strong Alt",
+      "stats": [
+        "ATK +15%",
+        "Water DMG +20%",
+        "Crit Rate +10%"
+      ],
+      "description": "Excellent when running Wilhelmina as a hybrid damage/chainer. The water DMG bonus adds meaningful personal damage in water-advantage fights."
+    },
+    {
+      "name": "Commander's Scepter",
+      "type": "Scepter",
+      "priority": "Budget",
+      "stats": [
+        "ATK +12%",
+        "Crit Rate +15%"
+      ],
+      "description": "A reliable budget option. Lacks the chain-specific bonus of BiS weapons but is a solid all-rounder for players without specialized gear."
+    }
+  ],
+  "gear": [
+    {
+      "slot": "Armor",
+      "stat": "ATK %"
+    },
+    {
+      "slot": "Helmet",
+      "stat": "Crit DMG %"
+    },
+    {
+      "slot": "Gloves",
+      "stat": "Crit Rate %"
+    },
+    {
+      "slot": "Boots",
+      "stat": "ATK % or Chain Bonus"
+    }
+  ],
+  "statPriority": [
+    "ATK %",
+    "Crit DMG %",
+    "Crit Rate (to cap)",
+    "Chain Bonus"
+  ],
+  "potentialUpgrades": [
+    {
+      "label": "Iron Monarch P3",
+      "note": "CD reduction \u2014 mandatory, enables 1-turn CD at +4"
+    },
+    {
+      "label": "Iron Monarch DMG",
+      "note": "Personal damage \u2014 invest after P3"
+    },
+    {
+      "label": "Water Park Queen P3",
+      "note": "Buff duration extension"
+    }
+  ],
+  "teams": [
+    {
+      "name": "FH Physical Core",
+      "mode": "Fiend Hunt",
+      "clearRate": "S Tier",
+      "description": "The gold standard Fiend Hunt physical team. Zenith's Poolside Guardian amplifies chain-based vulnerability, making Wilhelmina's chain generation directly increase Nebris's damage. Diana covers elemental advantage. This is the team you build toward for endgame FH.",
+      "tags": [
+        "Physical",
+        "Top Tier",
+        "Fiend Hunt"
+      ],
+      "rotation": [
+        {
+          "turn": "T0 Setup",
+          "action": "Use Water Park Queen \u2192 Apply chain bonus buff"
+        },
+        {
+          "turn": "T1+",
+          "action": "Use Iron Monarch every turn \u2192 Chains accumulate on target"
+        },
+        {
+          "turn": "Carry Turn",
+          "action": "Main DPS fires on target with stacked chains"
+        },
+        {
+          "turn": "Rebuff",
+          "action": "Reapply Water Park Queen when buff expires"
+        }
+      ],
+      "members": [
+        {
+          "name": "Wilhelmina",
+          "role": "Chainer",
+          "costume": "Iron Monarch + Water Park Queen",
+          "emoji": "\ud83d\udc51",
+          "color": "#38bdf8",
+          "isCore": true
+        },
+        {
+          "name": "Zenith",
+          "role": "Vulnerability",
+          "costume": "Poolside Guardian",
+          "emoji": "\ud83c\udfaf",
+          "color": "#f59e0b"
+        },
+        {
+          "name": "Nebris",
+          "role": "Main DPS",
+          "costume": "New Hire + Lifeguard",
+          "emoji": "\ud83d\udca8",
+          "color": "#22c55e"
+        },
+        {
+          "name": "Diana",
+          "role": "Property Buffer",
+          "costume": "Adventurer of the Unknown",
+          "emoji": "\ud83e\udded",
+          "color": "#22c55e"
+        },
+        {
+          "name": "Lathel",
+          "role": "ATK Buffer",
+          "costume": "Homunculus",
+          "emoji": "\ud83d\udd2c",
+          "color": "#a855f7"
+        }
+      ]
+    },
+    {
+      "name": "Last Night Score Push",
+      "mode": "Last Night",
+      "clearRate": "A+ Tier",
+      "description": "Wilhelmina's chains create massive score multipliers in Last Night. Paired with Onsen Liberta and Shrine Maiden Granadair, the chain count can reach astronomical levels by the final turn, producing score-doubling outputs.",
+      "tags": [
+        "Last Night",
+        "Chain Score",
+        "A+"
+      ],
+      "rotation": [
+        {
+          "turn": "T0 Setup",
+          "action": "Use Water Park Queen + Shrine Maiden Granadair"
+        },
+        {
+          "turn": "T1+",
+          "action": "Iron Monarch + Onsen Liberta every turn"
+        },
+        {
+          "turn": "Final Turn",
+          "action": "Nebris fires with massive accumulated chains"
+        }
+      ],
+      "members": [
+        {
+          "name": "Wilhelmina",
+          "role": "Chainer",
+          "costume": "Iron Monarch + Water Park Queen",
+          "emoji": "\ud83d\udc51",
+          "color": "#38bdf8",
+          "isCore": true
+        },
+        {
+          "name": "Liberta",
+          "role": "Augmentation",
+          "costume": "Onsen Manager",
+          "emoji": "\u2668\ufe0f",
+          "color": "#a855f7"
+        },
+        {
+          "name": "Granadair",
+          "role": "Augmentation",
+          "costume": "Shrine Maiden",
+          "emoji": "\u26e9\ufe0f",
+          "color": "#f59e0b"
+        },
+        {
+          "name": "Refithea",
+          "role": "Chain Bonus",
+          "costume": "Pure White Blessing",
+          "emoji": "\ud83c\udf38",
+          "color": "#f472b6"
+        },
+        {
+          "name": "Nebris",
+          "role": "Main DPS",
+          "costume": "New Hire",
+          "emoji": "\ud83d\udca8",
+          "color": "#22c55e"
+        }
+      ]
+    },
+    {
+      "name": "Guild Raid Comp",
+      "mode": "Guild Raid",
+      "clearRate": "A Tier",
+      "description": "In Guild Raids, Wilhelmina fills the single-target chainer role for Team 1 or 2. Celia handles multi-target debuffs while Wilhelmina piles chains on the primary target. Blade's counterattacks benefit enormously from the chain count accumulation.",
+      "tags": [
+        "Guild Raid",
+        "Physical",
+        "Blade Synergy"
+      ],
+      "rotation": [
+        {
+          "turn": "T1",
+          "action": "Use Iron Monarch on primary target"
+        },
+        {
+          "turn": "T2+",
+          "action": "Cycle Iron Monarch + Blade Apostle for compounding chain/counter damage"
+        }
+      ],
+      "members": [
+        {
+          "name": "Wilhelmina",
+          "role": "Chainer",
+          "costume": "Iron Monarch",
+          "emoji": "\ud83d\udc51",
+          "color": "#38bdf8",
+          "isCore": true
+        },
+        {
+          "name": "Blade",
+          "role": "Main DPS",
+          "costume": "Apostle + Young Lady",
+          "emoji": "\u2694\ufe0f",
+          "color": "#6d28d9"
+        },
+        {
+          "name": "Celia",
+          "role": "Multi Chains",
+          "costume": "Descendant + The Curse",
+          "emoji": "\ud83e\uddff",
+          "color": "#a855f7"
+        },
+        {
+          "name": "Liberta",
+          "role": "ATK + Crit",
+          "costume": "Dark Saintess",
+          "emoji": "\ud83d\ude07",
+          "color": "#a855f7"
+        }
+      ]
+    }
+  ],
+  "tips": [
+    {
+      "icon": "\u26a0\ufe0f",
+      "title": "Both Costumes or None",
+      "body": "Water Park Queen is useless without Iron Monarch. Never bring one without the other in endgame content \u2014 they function as a single unit."
+    },
+    {
+      "icon": "\ud83d\udcc8",
+      "title": "+4 is the Minimum",
+      "body": "Both core costumes need +4. At lower investments, Iron Monarch can't maintain 1-turn cooldown and Water Park Queen's buff won't last long enough to matter."
+    },
+    {
+      "icon": "\ud83c\udfaf",
+      "title": "Always Target the Same Enemy",
+      "body": "Chain counts accumulate on a single target. Make sure every ability \u2014 yours and your carry's \u2014 hits the same unit to maximize the chain bonus."
+    },
+    {
+      "icon": "\ud83e\udd1d",
+      "title": "Zenith is Her Best Partner",
+      "body": "Poolside Guardian Zenith converts chain counts into physical vulnerability, turning Wilhelmina's chains into a direct damage multiplier. This pair appears in 70%+ of top FH runs."
+    },
+    {
+      "icon": "\u2728",
+      "title": "Stack Refithea's Chain Bonus",
+      "body": "Water Park Queen's chain bonus stacks additively with Pure White Blessing Refithea's chain bonus. Running both maximizes total chains per turn \u2014 a must for Last Night score pushing."
+    }
+  ],
+  "benchmarks": [
+    {
+      "value": "~70%",
+      "label": "FH Top Comps with Wilhelmina"
+    },
+    {
+      "value": "80-100+",
+      "label": "Chains per turn at +5 (with WPQ)"
+    },
+    {
+      "value": "Common",
+      "label": "FH Classification (Zenith pair)"
+    }
+  ]
+}
