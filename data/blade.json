@@ -1,0 +1,323 @@
+{
+  "slug": "blade",
+  "name": "Blade",
+  "title": "Apostle of Cocytus",
+  "element": "Dark",
+  "archetype": "Physical / DPS",
+  "tier": "S",
+  "stars": 5,
+  "color": "#a855f7",
+  "colorAlt": "#7c3aed",
+  "emoji": "⚔️",
+  "rarity": "5★ Limited",
+  "investmentPriority": 10,
+  "investmentNote": "Top-priority pull for any physical DPS player. Described by multiple tier lists as 'GOAT — you have to pull her.' All three costumes are required to fill her 5-turn cooldown rotation. Exclusive gear is a luxury, not a requirement.",
+  "fhAppearance": "~65% of top physical FH runs",
+  "externalLinks": [
+    {
+      "label": "Apostle Blade Banner Guide",
+      "url": "https://dotgg.gg/brown-dust-2/banner-guide-apostle-blade/",
+      "icon": "external"
+    },
+    {
+      "label": "Young Lady Blade Banner Guide",
+      "url": "https://dotgg.gg/brown-dust-2/banner-guide-young-lady-blade/",
+      "icon": "external"
+    },
+    {
+      "label": "Onsen Swordfighter Blade Banner Guide",
+      "url": "https://dotgg.gg/brown-dust-2/banner-guide-onsen-swordfighter-blade/",
+      "icon": "external"
+    },
+    {
+      "label": "Basilisk Fiend Hunt Guide",
+      "url": "https://dotgg.gg/brown-dust-2/fiend-hunt-guide-basilisk/",
+      "icon": "book"
+    },
+    {
+      "label": "Gamependium Team Builder",
+      "url": "http://cymmina.gamependium.com/browndust2/teams.html",
+      "icon": "book"
+    }
+  ],
+  "lore": "Blade is the foremost swordswoman of Cocytus and the game's first playable Apostle — a cold, ruthless enforcer who eliminates anything that interferes with her mission without question or remorse. Though she never speaks of it outwardly, she holds her identity and law as a swordswoman as sacred, and fiercely despises any act that violates the blade's code. Her true power lies in the Basilisk's Eye: a rare magical ability that lets her read and neutralize any variable, tangible or not. She was born into the Silverstein family in the Rian Republic, and her tragic origins form the backdrop of the Crimson Destiny season event.",
+  "overview": "Blade is the premier physical DPS in Brown Dust 2 and widely considered a must-pull character. She holds the highest base ATK in the game at 429 — far above the 5-star average of roughly 352. Her kit is built around three costumes that interlock into a single rotation: Apostle Blade delivers a T-shaped AOE initial hit for 700% plus a full-team counterattack buff that fires up to 10 times at 200% each (up to 2,700% total); Young Lady Blade fills the 5-turn cooldown gap with an AOE that applies physical vulnerability; and Onsen Swordfighter Blade nukes for 600% + 120% per debuff on the target, reaching 1,080% with Celia and Eleaneer. Her fatal weakness is her HP: at 1,050 she has the lowest HP of any character in the game other than Wiggle — lower than all 3-stars except Emma and Julie, and less than half of Justia's 2,121. She requires energy guard support in almost every piece of serious content.",
+  "keyInsight": "Blade has a 5-turn cooldown on Apostle — her defining skill. Without Young Lady (3-turn CD) and Onsen (4-turn CD), two full turns per cycle are completely wasted. All three costumes are mandatory for full efficiency. A single-costume Blade is always underperforming.",
+  "modeRatings": {
+    "Fiend Hunt": 10,
+    "Guild Raid": 10,
+    "Tower": 7,
+    "Mirror War": 3,
+    "Last Night": 5
+  },
+  "synergies": [
+    {
+      "name": "Celia (Descendant + The Curse)",
+      "note": "Applies 3 AOE debuffs — mandatory for Onsen Blade. Also the best chain stacker for raids.",
+      "emoji": "🧿"
+    },
+    {
+      "name": "Eleaneer (Shadow Bunny + B-Rank Idol)",
+      "note": "Adds 1–2 more AOE debuffs. Shadow Bunny's debuff carries between Fiend Hunt teams.",
+      "emoji": "🐰"
+    },
+    {
+      "name": "Liberta (Dark Saintess)",
+      "note": "Mandatory ATK + crit buffer for physical teams. Described as must-have for any physical DPS.",
+      "emoji": "😇"
+    },
+    {
+      "name": "Diana / Rou (Anti-Dystopia / RH.Rou)",
+      "note": "Energy guard keeps Blade alive long enough to proc counterattacks — non-negotiable in boss content.",
+      "emoji": "🛡️"
+    },
+    {
+      "name": "Sonya (Shadowed Dream)",
+      "note": "Dark-type vulnerability overlaps perfectly with Blade's AOE in Guild Raids.",
+      "emoji": "🌙"
+    },
+    {
+      "name": "Zenith (Poolside Guardian)",
+      "note": "Strong single-target synergy — converts chains into physical vulnerability on Blade's main target.",
+      "emoji": "🎯"
+    }
+  ],
+  "costumes": [
+    {
+      "id": "apostle",
+      "name": "Apostle Blade",
+      "rarity": "Limited",
+      "emoji": "⚔️",
+      "color": "#a855f7",
+      "spCost": "4 SP → 3 SP at Skill Potential unlock",
+      "cooldown": "5 turns",
+      "upgrade": {
+        "min": "+3",
+        "recommended": "+5",
+        "ideal": "+5"
+      },
+      "description": "Blade's signature costume and the reason she tops every physical DPS tier list. Apostle Blade hits a T-shaped AOE for a single hit at up to 700% Physical DMG, then applies a full-team counterattack buff that fires up to 10 times at 200% each — a potential 2,000% counter damage, totalling 2,700% maximum per skill use. Apostle Blade is the ONLY costume in the game whose counterattack hits the ENTIRE enemy team simultaneously. This makes her uniquely devastating in Fiend Hunt and Guild Raid, where bosses occupy many tiles. The counterattack does NOT trigger if Blade dies before it fires, making energy guard support from Diana or Rou essential. Bond stats at +5 full potential: +52% ATK / +5% DEF / +47.20% crit. Base crit damage is 75% — above the standard 50% base — adding further burst ceiling.",
+      "featured": true,
+      "videoUrl": "/cutscenes/blade-apostle.mp4",
+      "skills": [
+        {
+          "name": "Apostolic Judgement",
+          "desc": "Single hit in a T-shaped AOE for up to 700% Physical DMG (ATK-based). Applies a counterattack buff that fires up to 10 times when Blade is struck by enemies, each counter hitting ALL enemy tiles simultaneously for 200% Physical DMG.",
+          "tags": ["T-AOE", "Physical DMG", "Counterattack", "All-Enemy Counter"]
+        },
+        {
+          "name": "Basilisk Sight (Passive)",
+          "desc": "Counterattack uniquely targets every enemy tile at once — the only such skill in the game. Does not fire if Blade is killed before triggering.",
+          "tags": ["Passive", "All-Enemy Counter", "Unique"]
+        }
+      ],
+      "tips": [
+        "Check enemy attack patterns before each turn and position Blade to absorb the most incoming hits.",
+        "In Guild Raids the large field means the boss often hits all 10 counterattack triggers — full 2,000% counter DMG.",
+        "Apostle Blade abuses the Basilisk Fiend Hunt's C3 (10-hit attack phase) — this can trigger her counters up to three times.",
+        "Always bring an energy guard buffer (Anti-Dystopia Diana or RH.Rou) — she dies to almost any attack.",
+        "Counterattack buff has no time limit — set it up before the boss's biggest multi-hit turn.",
+        "In PvP the only semi-viable setup is Apostle (3 SP) + Killer Doll Lecliss (1 SP) + Anti-Dystopia Diana (1 SP) = 5 SP. Even then her low HP is a severe liability."
+      ]
+    },
+    {
+      "id": "young-lady",
+      "name": "Young Lady Blade",
+      "rarity": "Limited",
+      "emoji": "🎀",
+      "color": "#c084fc",
+      "spCost": "5 SP",
+      "cooldown": "3 turns",
+      "upgrade": {
+        "min": "+3",
+        "recommended": "+5",
+        "ideal": "+5"
+      },
+      "description": "The mandatory filler costume that completes Blade's rotation. With Apostle on a 5-turn cooldown, Young Lady fills the two dead turns with a 4-hit attack in a 3x3 AOE targeting the FRONT tile (distinct from the standard center-tile targeting), and applies 100% Physical Vulnerability to the main target for 4 turns. Because Young Lady's 3-turn cooldown is shorter than its 4-turn buff duration, the Physical Vulnerability has 100% uptime — it stays active indefinitely and amplifies all subsequent Apostle hits and counter damage against the same target. Damage scaling at +0 is below average — upgrade investment is more impactful here than on typical skills. Also solid in Tower of Salvation for its broad AOE and boss-killing capability. Vulnerability effect does NOT work in Last Night. Not competitive in PvP.",
+      "featured": false,
+      "skills": [
+        {
+          "name": "Ruthless Fervor",
+          "desc": "Attacks 4 times, each dealing Physical DMG based on 50% of ATK, in a 3x3 AOE targeting the front tile. Applies 100% Physical Vulnerability to the main target for 4 turns.",
+          "tags": ["AOE", "Physical DMG", "Multi-Hit", "Vulnerability", "Front-Tile"]
+        },
+        {
+          "name": "Young Blade's Pride (Passive)",
+          "desc": "Physical Vulnerability lasts 4 turns on a 3-turn CD skill — providing 100% uptime that consistently amplifies Apostle and Onsen damage on the main target.",
+          "tags": ["Passive", "Vulnerability Uptime"]
+        }
+      ],
+      "tips": [
+        "Mandatory if you own Apostle Blade — fills the 2 dead turns in the 5-turn CD cycle.",
+        "The 3x3 AOE targets the FRONT tile, not center — especially effective against forward-heavy enemy formations.",
+        "Physical Vulnerability (4 turns, 3-turn CD) has permanent 100% uptime — amplifies Apostle initial hit and all counter hits.",
+        "Vulnerability is single-target only and does not work in Last Night — purely an AOE damage tool there.",
+        "Damage scaling is poor at +0 — prioritize upgrade investment here more than on average skills.",
+        "High SP cost and low HP make Blade uncompetitive in Mirror Wars even with this costume."
+      ]
+    },
+    {
+      "id": "onsen-swordfighter",
+      "name": "Onsen Swordfighter Blade",
+      "rarity": "Limited",
+      "emoji": "♨️",
+      "color": "#7c3aed",
+      "spCost": "4 SP",
+      "cooldown": "4 turns",
+      "upgrade": {
+        "min": "+3",
+        "recommended": "+5",
+        "ideal": "+5"
+      },
+      "description": "Blade's debuff-scaling nuke costume, released January 28 2026. At +5 full potential, Onsen Swordfighter deals 600% base Physical DMG plus 120% for every debuff currently on the target — with no cap on bonus stacks. With Descendant Celia + Curse Celia applying 3 debuffs and Shadow Bunny Eleaneer adding 1 more, the target carries 4 debuffs: 600% + (4 × 120%) = 1,080% total — competitive at current power levels. Without debuffs, 600% is solid but on the low side for the current meta. Blade cannot self-apply meaningful debuffs; she depends entirely on teammates. Single-hit mechanic is vulnerable to evasion blessings in Golden Colosseum. Useless in Last Night (bosses immune to debuffs) and poor in Mirror Wars. Other Blade costumes are not strictly required to use Onsen, but without them her rotation has multiple wasted turns.",
+      "featured": false,
+      "skills": [
+        {
+          "name": "Boiling Slash",
+          "desc": "Single-target Physical DMG at 600% of ATK at +5 full potential, plus 120% additional DMG per debuff on the target. No stack cap on bonus damage.",
+          "tags": ["Single Target", "Physical DMG", "Debuff Scaling", "Nuke"]
+        }
+      ],
+      "tips": [
+        "With 4 debuffs (Descendant Celia + Curse Celia + Shadow Bunny Eleaneer): 600% + 480% = 1,080% total damage.",
+        "Shadow Bunny Eleaneer's debuff is AOE and carries between Fiend Hunt teams — pre-stack before Blade's wave begins.",
+        "Celia's debuffs are ATK/M.ATK reduction and DEF/M.RES reduction — always use both Celia costumes before firing Onsen.",
+        "In Guild Raids the boss break status itself counts as a debuff — time Onsen Blade on the break turn for maximum output.",
+        "Rafina, Gray, and Rubia are valid debuff partners when Celia or Eleaneer are unavailable.",
+        "Single-hit skill is countered by evasion blessings in Golden Colosseum — avoid relying on Onsen there.",
+        "Exclusive gear (45% ATK bonus stat) is a luxury ranking item only — fully functional without it in all content."
+      ]
+    }
+  ],
+  "weapons": [
+    {
+      "name": "Blade's Exclusive Weapon",
+      "type": "Sword",
+      "priority": "Luxury BiS",
+      "stats": ["ATK +45% (bonus stat)", "Crit DMG +25%"],
+      "description": "Gives a 45% ATK bonus stat on top of Blade's already highest-in-game base ATK of 429. Enormously impactful for competitive Fiend Hunt and Guild Raid ranking. Not recommended to spend tickets on unless you are a big spender aiming for top ranking scores — she clears all content comfortably without it."
+    },
+    {
+      "name": "Dark Executor",
+      "type": "Sword",
+      "priority": "BiS (non-exclusive)",
+      "stats": ["ATK +18%", "Crit DMG +30%", "Dark DMG +15%"],
+      "description": "Best non-exclusive option. Crit DMG amplifies Blade's high ATK base and 75% base crit damage, while the Dark DMG bonus adds meaningful output on every hit."
+    },
+    {
+      "name": "Abyss Blade",
+      "type": "Sword",
+      "priority": "Budget",
+      "stats": ["ATK +15%", "Crit Rate +12%"],
+      "description": "Reliable budget option. No dark-specific bonus but solid universal offensive stats — crit rate helps reach consistent damage thresholds."
+    }
+  ],
+  "gear": [
+    { "slot": "Armor",    "stat": "ATK %" },
+    { "slot": "Necklace", "stat": "Crit DMG %" },
+    { "slot": "Ring",     "stat": "ATK %" },
+    { "slot": "Earring",  "stat": "Crit Rate %" }
+  ],
+  "teams": [
+    {
+      "name": "Basilisk Fiend Hunt — Core Physical Team",
+      "mode": "Fiend Hunt",
+      "clearRate": "S Tier",
+      "description": "The Basilisk Fiend Hunt was built for Blade. Its C3 phase fires 10 hits — every single one triggers Apostle Blade's all-enemy counterattack, potentially procing all 10 counters for the full 2,000% counter DMG in a single boss phase. Young Lady applies vulnerability to the Basilisk's head, massively amplifying counter damage. Trigger C1 (physical) at the start of combat to reduce the Fiend's DEF to zero, then position Blade to absorb the most hits possible.",
+      "tags": ["Dark", "Physical", "Fiend Hunt", "Basilisk", "S Tier"],
+      "rotation": [
+        { "turn": "Pre-Battle", "action": "Trigger Fiend C1 (physical) to reduce Basilisk DEF to 0. Position Blade on tiles that absorb the most hits." },
+        { "turn": "T1", "action": "Dark Saintess Liberta buffs ATK + crit. Descendant Celia stacks chains and applies ATK/M.ATK reduction debuff." },
+        { "turn": "T2", "action": "Young Lady Blade — 4-hit AOE + Physical Vulnerability on Basilisk head. Curse Celia applies DEF reduction debuff." },
+        { "turn": "T3 — Counter Turn", "action": "Apostle Blade fires T-AOE + counterattack buff. Basilisk C3 (10 hits) fires — all 10 trigger Blade's counters = 2,000% counter DMG." },
+        { "turn": "T4", "action": "Onsen Swordfighter Blade fires — 4 debuffs (3 Celia + 1 Eleaneer) = 1,080% total DMG." },
+        { "turn": "T5", "action": "Young Lady Blade refreshes Physical Vulnerability. Cycle repeats from T1." }
+      ],
+      "members": [
+        { "name": "Blade",    "role": "Main DPS",                  "costume": "Apostle + Young Lady + Onsen", "emoji": "⚔️", "color": "#a855f7", "isCore": true },
+        { "name": "Celia",    "role": "Chain Stacker + Debuffer",  "costume": "Descendant + The Curse",        "emoji": "🧿", "color": "#a855f7" },
+        { "name": "Eleaneer", "role": "AOE Debuffer (carry-over)", "costume": "Shadow Bunny",                  "emoji": "🐰", "color": "#ec4899" },
+        { "name": "Liberta",  "role": "ATK + Crit Buffer",         "costume": "Dark Saintess",                 "emoji": "😇", "color": "#a855f7" },
+        { "name": "Diana",    "role": "Energy Guard",               "costume": "Anti-Dystopia",                 "emoji": "🗺️", "color": "#22c55e" }
+      ]
+    },
+    {
+      "name": "Guild Raid Physical Team",
+      "mode": "Guild Raid",
+      "clearRate": "S Tier",
+      "description": "In Guild Raids the boss field is much larger than normal battles, meaning Apostle Blade's all-enemy counterattack hits every single boss tile — routinely achieving all 10 counter hits for the full 2,000% counter DMG in one attack sequence. Celia stacks chains and debuffs simultaneously. Onsen Blade detonates on the break turn, where the break status itself adds an extra debuff to push damage even higher.",
+      "tags": ["Dark", "Physical", "Guild Raid", "S Tier"],
+      "rotation": [
+        { "turn": "T1", "action": "Liberta buffs ATK + crit. Descendant Celia stacks chains and applies ATK/M.ATK reduction." },
+        { "turn": "T2", "action": "Young Lady Blade applies Physical Vulnerability. Sonya applies dark vulnerability AOE." },
+        { "turn": "T3 — Counter Turn", "action": "Apostle Blade fires — guild boss's multi-tile attacks trigger all 10 counterattacks = 2,000% counter DMG." },
+        { "turn": "Break Turn", "action": "Onsen Swordfighter fires — boss break counts as extra debuff, pushing total beyond 1,080%." }
+      ],
+      "members": [
+        { "name": "Blade",   "role": "Main DPS",              "costume": "Apostle + Young Lady + Onsen", "emoji": "⚔️", "color": "#a855f7", "isCore": true },
+        { "name": "Celia",   "role": "Chain Stacker + Debuffer", "costume": "Descendant + The Curse",   "emoji": "🧿", "color": "#a855f7" },
+        { "name": "Sonya",   "role": "Dark Vulnerability AOE", "costume": "Shadowed Dream",              "emoji": "🌙", "color": "#6d28d9" },
+        { "name": "Liberta", "role": "ATK + Crit Buffer",      "costume": "Dark Saintess",               "emoji": "😇", "color": "#a855f7" },
+        { "name": "Rou",     "role": "Energy Guard",            "costume": "Red Riding Hood",             "emoji": "🔴", "color": "#ef4444" }
+      ]
+    },
+    {
+      "name": "Mirror Wars Attack (Niche — Not Recommended)",
+      "mode": "Mirror War",
+      "clearRate": "C Tier",
+      "description": "Blade is not recommended for Mirror Wars. Her 1,050 HP makes her die to nearly any attack, and Apostle's counterattack does not trigger until Turn 3 — by which time she will usually be dead. The only semi-viable setup uses Lecliss to absorb buff removals and Diana for energy guard. Even then her unbuffed initial hit is likely wasted against Granhildr, and both Blade and Diana have empty turns on T3. Onsen Blade is equally poor in Mirror Wars — bonus damage is unreliable and her HP remains the core problem.",
+      "tags": ["PvP", "Niche", "Not Recommended"],
+      "rotation": [
+        { "turn": "T1", "action": "Killer Doll Lecliss absorbs enemy buff removal skills and priority attacks." },
+        { "turn": "T1", "action": "Anti-Dystopia Diana applies energy guard — critical for Blade to survive long enough to counter." },
+        { "turn": "T1", "action": "Apostle Blade fires T-AOE and sets counterattack buff." },
+        { "turn": "T3", "action": "If Blade survived, counters begin. Both Blade and Diana have nothing to do this turn." }
+      ],
+      "members": [
+        { "name": "Blade",   "role": "Burst DPS",     "costume": "Apostle",      "emoji": "⚔️", "color": "#a855f7", "isCore": true },
+        { "name": "Lecliss", "role": "Bait / Absorb", "costume": "Killer Doll",  "emoji": "🪆", "color": "#f97316" },
+        { "name": "Diana",   "role": "Energy Guard",  "costume": "Anti-Dystopia","emoji": "🗺️", "color": "#22c55e" }
+      ]
+    }
+  ],
+  "tips": [
+    {
+      "icon": "💀",
+      "title": "Lowest HP in the Game — Always Protect Her",
+      "body": "Blade's base HP is 1,050 — the lowest of any character other than Wiggle, lower than every 3-star except Emma and Julie, and less than half of Justia's 2,121 HP. She dies to almost any attack. Energy guard from Anti-Dystopia Diana or RH.Rou is non-negotiable in Fiend Hunt and Guild Raid. The counterattack does NOT trigger if she is killed first."
+    },
+    {
+      "icon": "⏱️",
+      "title": "Three Costumes — One Full Rotation, Zero Wasted Turns",
+      "body": "Apostle (5-turn CD) + Young Lady (3-turn CD) + Onsen (4-turn CD) interlock perfectly. Missing any one of them creates 2+ empty turns per cycle. All three costumes are mandatory for Blade to reach her full potential — do not pull Apostle unless you plan to get all three."
+    },
+    {
+      "icon": "🧿",
+      "title": "Celia is Her #1 Partner — Always Bring Both Celia Costumes",
+      "body": "Descendant Celia + Curse Celia together apply 3 debuffs AND stack chains simultaneously. This dual role — debuffer AND chain stacker — makes Celia Blade's mandatory partner in every serious team. Shadow Bunny Eleaneer adds a 4th debuff for 1,080% total Onsen damage."
+    },
+    {
+      "icon": "🎯",
+      "title": "Position for Maximum Counterattack Hits",
+      "body": "Apostle Blade's counterattack fires on ALL enemy tiles simultaneously — the only skill of its kind in the game. In Guild Raids the large field means the boss hits many tiles, routinely triggering all 10 counters for 2,000% counter DMG. In the Basilisk Fiend Hunt, C3 fires 10 hits — triggering the full counter sequence."
+    },
+    {
+      "icon": "🚫",
+      "title": "Skip Last Night and PvP",
+      "body": "Last Night bosses are fully immune to debuffs — Onsen Blade deals only the base 600% with no bonus, and Young Lady's vulnerability does not apply. In Mirror Wars, 1,050 HP means Blade dies before her counterattack triggers. Invest exclusively in Fiend Hunt and Guild Raid."
+    },
+    {
+      "icon": "💎",
+      "title": "Exclusive Gear is Luxury Only",
+      "body": "Her exclusive gear grants 45% ATK as a bonus stat — powerful for ranking pushers. However she is already the highest physical DPS in the game without it. Only spend tickets on exclusive gear if you are a competitive big spender targeting top leaderboard placements."
+    }
+  ],
+  "benchmarks": [
+    { "value": "429",     "label": "Base ATK — Highest in the entire game" },
+    { "value": "1,050",   "label": "Base HP — Lowest of any character except Wiggle" },
+    { "value": "2,700%",  "label": "Max theoretical DMG — Apostle 700% hit + 10 × 200% counters" },
+    { "value": "1,080%",  "label": "Onsen Blade with 4 debuffs — Descendant Celia + Curse Celia + Shadow Bunny Eleaneer" },
+    { "value": "75%",     "label": "Base Crit DMG — Higher than the standard 5-star base of 50%" },
+    { "value": "+52% ATK","label": "Bond stat bonus at Apostle Blade +5 full potential" }
+  ]
+}

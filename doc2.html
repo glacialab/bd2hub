@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Power Test Global Technologies – English Projects Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap');
+  :root {
+    --navy: #0a1628;
+    --blue: #1a3a6b;
+    --accent: #2563eb;
+    --light-blue: #dbeafe;
+    --gray: #64748b;
+    --light-gray: #f8fafc;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --white: #ffffff;
+    --green: #16a34a;
+    --light-green: #dcfce7;
+    --yellow: #f59e0b;
+    --light-yellow: #fef9c3;
+    --red: #dc2626;
+    --light-red: #fee2e2;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); font-size: 10.5pt; line-height: 1.7; }
+
+  /* COVER */
+  .cover { background: linear-gradient(160deg, #0f2344 0%, #1a3a6b 55%, #1e4d9b 100%); color: white; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 80px 80px 60px; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; top: -120px; right: -120px; width: 550px; height: 550px; background: rgba(37,99,235,0.15); border-radius: 50%; }
+  .cover::after { content: ''; position: absolute; bottom: -90px; left: -90px; width: 400px; height: 400px; background: rgba(37,99,235,0.1); border-radius: 50%; }
+  .cover-logo { font-size: 11pt; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #93c5fd; margin-bottom: 4px; }
+  .cover-logo-full { font-size: 30pt; font-weight: 700; line-height: 1.1; margin-bottom: 8px; }
+  .cover-tagline { font-size: 11pt; color: #93c5fd; font-weight: 300; letter-spacing: 1px; margin-bottom: 55px; }
+  .cover-doc-type { font-size: 9pt; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #60a5fa; border: 1px solid #3b82f6; display: inline-block; padding: 6px 18px; border-radius: 3px; margin-bottom: 12px; }
+  .cover-doc-title { font-size: 28pt; font-weight: 700; line-height: 1.2; margin-bottom: 10px; }
+  .cover-doc-subtitle { font-size: 11pt; color: #bfdbfe; font-weight: 300; }
+  .cover-bar { height: 3px; background: linear-gradient(90deg, #2563eb, #60a5fa, #2563eb); width: 100%; margin: 28px 0; }
+  .cover-meta { font-size: 9pt; color: #93c5fd; line-height: 2; }
+  .cover-meta strong { color: white; }
+  .cover-conf { font-size: 8pt; color: #60a5fa; letter-spacing: 2px; text-transform: uppercase; }
+  .cover-sector-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .cover-badge { font-size: 8pt; background: rgba(37,99,235,0.3); border: 1px solid #3b82f6; color: #bfdbfe; padding: 4px 12px; border-radius: 20px; }
+
+  /* PAGE BREAK */
+  .page-break { page-break-before: always; break-before: page; padding-top: 60px; }
+
+  /* CONTENT PAGE */
+  .content-page { padding: 55px 75px; }
+  .page-ind { font-size: 8pt; color: var(--gray); text-align: right; margin-bottom: 18px; font-style: italic; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+  /* PROJECT HEADER */
+  .project-header { background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%); color: white; padding: 28px 35px; border-radius: 8px; margin-bottom: 28px; position: relative; overflow: hidden; }
+  .project-header::after { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; background: rgba(37,99,235,0.25); border-radius: 50%; }
+  .project-num { font-size: 9pt; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #93c5fd; margin-bottom: 6px; }
+  .project-title { font-size: 20pt; font-weight: 700; line-height: 1.2; margin-bottom: 10px; }
+  .project-client-line { font-size: 10pt; color: #bfdbfe; }
+  .project-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .pbadge { font-size: 8pt; font-weight: 600; padding: 4px 12px; border-radius: 20px; }
+  .pbadge-blue { background: rgba(37,99,235,0.4); color: #bfdbfe; border: 1px solid #3b82f6; }
+  .pbadge-green { background: rgba(22,163,74,0.4); color: #86efac; border: 1px solid #4ade80; }
+  .pbadge-yellow { background: rgba(245,158,11,0.3); color: #fde68a; border: 1px solid #fbbf24; }
+  .pbadge-red { background: rgba(220,38,38,0.3); color: #fca5a5; border: 1px solid #f87171; }
+
+  /* SECTION TABS */
+  .section-tab { display: flex; align-items: center; gap: 12px; margin: 24px 0 10px; }
+  .tab-icon { width: 32px; height: 32px; background: var(--accent); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 14pt; flex-shrink: 0; }
+  .tab-title { font-size: 13pt; font-weight: 700; color: var(--navy); border-bottom: 2px solid var(--accent); padding-bottom: 4px; flex: 1; }
+
+  h1 { font-size: 20pt; color: var(--navy); font-weight: 700; margin-bottom: 14px; }
+  h2 { font-size: 14pt; color: var(--blue); font-weight: 700; margin: 24px 0 10px; padding-left: 12px; border-left: 4px solid var(--accent); }
+  h3 { font-size: 11.5pt; color: var(--navy); font-weight: 600; margin: 18px 0 7px; }
+  h4 { font-size: 10.5pt; color: var(--blue); font-weight: 600; margin: 12px 0 5px; }
+  p { margin-bottom: 10px; text-align: justify; }
+  ul, ol { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 9.5pt; }
+  thead tr { background: var(--navy); color: white; }
+  thead th { padding: 10px 12px; text-align: left; font-weight: 600; font-size: 9pt; }
+  tbody tr:nth-child(even) { background: var(--light-gray); }
+  tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .table-caption { font-size: 8.5pt; color: var(--gray); margin-top: -8px; margin-bottom: 14px; font-style: italic; }
+
+  /* BOXES */
+  .info-box { background: var(--light-blue); border-left: 4px solid var(--accent); padding: 14px 18px; margin: 14px 0; border-radius: 0 4px 4px 0; }
+  .warn-box { background: var(--light-yellow); border-left: 4px solid var(--yellow); padding: 14px 18px; margin: 14px 0; border-radius: 0 4px 4px 0; }
+  .danger-box { background: var(--light-red); border-left: 4px solid var(--red); padding: 14px 18px; margin: 14px 0; border-radius: 0 4px 4px 0; }
+  .success-box { background: var(--light-green); border-left: 4px solid var(--green); padding: 14px 18px; margin: 14px 0; border-radius: 0 4px 4px 0; }
+  .box-title { font-weight: 700; font-size: 10pt; margin-bottom: 6px; }
+
+  /* KPI GRID */
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 18px 0; }
+  .kpi-card { background: var(--navy); color: white; padding: 18px; border-radius: 6px; text-align: center; }
+  .kpi-val { font-size: 18pt; font-weight: 700; color: #60a5fa; }
+  .kpi-lbl { font-size: 8pt; color: #bfdbfe; margin-top: 3px; letter-spacing: 0.5px; }
+
+  .kpi-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 18px 0; }
+  .kpi-card-light { background: var(--light-gray); border: 1px solid var(--border); padding: 16px; border-radius: 6px; text-align: center; }
+  .kpi-card-light .kv { font-size: 16pt; font-weight: 700; color: var(--accent); }
+  .kpi-card-light .kl { font-size: 9pt; color: var(--gray); margin-top: 3px; }
+
+  /* ELIGIBILITY BLOCK */
+  .elig-block { border: 2px solid var(--border); border-radius: 8px; overflow: hidden; margin: 18px 0; }
+  .elig-header { background: var(--navy); color: white; padding: 12px 18px; font-weight: 700; font-size: 11pt; }
+  .elig-body { padding: 16px 18px; }
+  .elig-row { display: flex; gap: 12px; margin-bottom: 10px; align-items: flex-start; }
+  .elig-label { font-weight: 600; min-width: 200px; font-size: 9.5pt; color: var(--gray); }
+  .elig-value { font-size: 9.5pt; flex: 1; }
+  .elig-status-ok { color: var(--green); font-weight: 700; }
+  .elig-status-warn { color: var(--yellow); font-weight: 700; }
+  .elig-status-no { color: var(--red); font-weight: 700; }
+
+  /* ARCH DIAGRAM */
+  .arch-box { background: var(--light-gray); border: 1px solid var(--border); border-radius: 8px; padding: 18px; margin: 14px 0; }
+  .arch-layer { background: white; border: 1px solid var(--border); border-radius: 6px; padding: 10px 14px; margin: 6px 0; display: flex; align-items: center; gap: 12px; }
+  .arch-layer-label { font-size: 8.5pt; font-weight: 700; color: var(--gray); min-width: 110px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .arch-layer-content { font-size: 9.5pt; color: var(--text); flex: 1; }
+  .arch-divider { text-align: center; color: var(--gray); font-size: 9pt; margin: 2px 0; }
+
+  /* OUTCOME CARDS */
+  .outcome-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0; }
+  .outcome-card { background: var(--light-green); border: 1px solid #86efac; border-radius: 6px; padding: 16px; }
+  .outcome-card h4 { color: var(--green); margin-top: 0; }
+
+  /* DIVIDER */
+  .project-divider { border: none; border-top: 3px solid var(--navy); margin: 50px 0 0; }
+
+  /* TOC */
+  .toc-page { padding: 55px 75px; }
+  .toc-title { font-size: 20pt; font-weight: 700; color: var(--navy); border-bottom: 3px solid var(--accent); padding-bottom: 12px; margin-bottom: 28px; }
+  .toc-item { display: flex; justify-content: space-between; align-items: baseline; padding: 6px 0; border-bottom: 1px dotted var(--border); font-size: 10pt; }
+  .toc-item.main { font-weight: 700; color: var(--navy); font-size: 11.5pt; padding-top: 16px; }
+  .toc-item.sub { padding-left: 22px; color: var(--gray); font-size: 9.5pt; }
+  .toc-pn { color: var(--gray); font-size: 9pt; min-width: 40px; text-align: right; }
+
+  /* BADGE INLINE */
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; margin: 1px; }
+  .badge-blue { background: var(--light-blue); color: var(--blue); }
+  .badge-green { background: var(--light-green); color: #15803d; }
+  .badge-red { background: var(--light-red); color: #b91c1c; }
+  .badge-yellow { background: var(--light-yellow); color: #92400e; }
+
+  /* TWO COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin: 14px 0; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 14px 0; }
+
+  /* FOOTER */
+  .footer { margin-top: 45px; padding-top: 14px; border-top: 2px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 8pt; color: var(--gray); }
+  .footer-logo { font-weight: 700; color: var(--navy); font-size: 9pt; }
+
+  @media print {
+    .page-break { page-break-before: always; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ COVER -->
+<div class="cover">
+  <div>
+    <div class="cover-logo">Power Test Global Technologies</div>
+    <div class="cover-logo-full">PTGT</div>
+    <div class="cover-tagline">Engineering Tomorrow's Digital Infrastructure</div>
+    <div class="cover-bar"></div>
+    <div class="cover-doc-type">Projects Reference Portfolio</div><br>
+    <div class="cover-doc-title">Completed Projects Portfolio<br>— English Edition —</div>
+    <div class="cover-doc-subtitle">Five Completed Projects Across Regulated Industries<br>Including Legal Eligibility Analysis, Technical Architecture &amp; Compliance Review</div>
+    <div class="cover-sector-badges">
+      <span class="cover-badge">🏦 Financial Services</span>
+      <span class="cover-badge">🏥 Healthcare</span>
+      <span class="cover-badge">🏛️ Government</span>
+      <span class="cover-badge">⚡ Energy</span>
+      <span class="cover-badge">🎓 Education</span>
+    </div>
+  </div>
+  <div>
+    <div class="cover-bar"></div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+      <div class="cover-meta">
+        <strong>Document Reference:</strong> PTGT-PROJ-EN-001-2025<br>
+        <strong>Version:</strong> 2.1 — Final<br>
+        <strong>Classification:</strong> Restricted — Commercial In Confidence<br>
+        <strong>Cross-reference:</strong> PTGT-CORP-001-2025 (Corporate Portfolio)<br>
+        <strong>Date of Issue:</strong> January 15, 2025<br>
+        <strong>Language:</strong> English
+      </div>
+      <div style="text-align:right;">
+        <div class="cover-conf">Confidential</div>
+        <div style="font-size:8pt; color:#60a5fa; margin-top:6px;">© 2025 Power Test Global Technologies<br>All rights reserved</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TOC -->
+<div class="toc-page page-break">
+  <div class="page-ind">[Suggested Pages i–ii]</div>
+  <div class="toc-title">Table of Contents</div>
+
+  <div class="toc-item main"><span>Preface — How to Read This Portfolio</span><span class="toc-pn">1</span></div>
+  <div class="toc-item main"><span>Legal &amp; Compliance Framework Reference</span><span class="toc-pn">2</span></div>
+
+  <div class="toc-item main"><span>Project 1 — Central Bank Core Banking Modernization (Financial Services)</span><span class="toc-pn">4</span></div>
+  <div class="toc-item sub"><span>Client Profile · Contract Type · Legal Review · Eligibility Justification · Budget</span><span class="toc-pn">4</span></div>
+  <div class="toc-item sub"><span>Technical Architecture · Security Framework · Regulatory Compliance · Delivery · Outcomes</span><span class="toc-pn">6</span></div>
+
+  <div class="toc-item main"><span>Project 2 — National Health Data Exchange Platform (Healthcare)</span><span class="toc-pn">12</span></div>
+  <div class="toc-item sub"><span>Client Profile · Contract Type · Legal Review · Eligibility · Budget</span><span class="toc-pn">12</span></div>
+  <div class="toc-item sub"><span>Technical Architecture · Security · Compliance · Delivery · Outcomes</span><span class="toc-pn">14</span></div>
+
+  <div class="toc-item main"><span>Project 3 — Ministry of Finance e-Procurement System (Government)</span><span class="toc-pn">20</span></div>
+  <div class="toc-item sub"><span>Full Project Documentation</span><span class="toc-pn">20</span></div>
+
+  <div class="toc-item main"><span>Project 4 — Smart Grid Analytics Platform (Energy)</span><span class="toc-pn">28</span></div>
+  <div class="toc-item sub"><span>Full Project Documentation</span><span class="toc-pn">28</span></div>
+
+  <div class="toc-item main"><span>Project 5 — National University Digital Transformation (Education)</span><span class="toc-pn">36</span></div>
+  <div class="toc-item sub"><span>Full Project Documentation</span><span class="toc-pn">36</span></div>
+
+  <div class="toc-item main"><span>Cross-Project Compliance Summary</span><span class="toc-pn">44</span></div>
+  <div class="toc-item main"><span>Appendix — Project Financial Summary Table</span><span class="toc-pn">46</span></div>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-PROJ-EN-001-2025 | Confidential | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ PREFACE -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 1–3]</div>
+  <h1>Preface — How to Read This Portfolio</h1>
+  <p>This document constitutes the <strong>English-language Completed Projects Portfolio</strong> of Power Test Global Technologies S.A. (PTGT). It presents five completed project engagements across the financial services, healthcare, government, energy, and education sectors, each documented to enterprise procurement and compliance evaluation standards.</p>
+  <p>Each project entry in this portfolio is structured to enable:</p>
+  <ul>
+    <li><strong>Enterprise procurement teams</strong> to assess PTGT's technical capability and sector experience</li>
+    <li><strong>Compliance and legal teams</strong> to evaluate PTGT's eligibility framework, authorization standards, and regulatory alignment</li>
+    <li><strong>AI training and business rule engines</strong> to extract structured eligibility logic, regulatory mapping, and technical metadata</li>
+    <li><strong>Reference clients</strong> to understand PTGT's delivery methodology and outcome measurement practices</li>
+  </ul>
+
+  <div class="info-box">
+    <div class="box-title">ℹ Cross-Document Consistency</div>
+    All financial data, legal entity references, certification numbers, and regulatory framework citations in this document are consistent with and subordinate to the master framework established in the PTGT Corporate Portfolio (Document Reference: PTGT-CORP-001-2025). In the event of any apparent conflict, the Corporate Portfolio takes precedence.
+  </div>
+
+  <h2>Legal &amp; Compliance Framework Reference</h2>
+  <p>Each project entry contains an <strong>Eligibility Analysis Block</strong> that explicitly states:</p>
+  <ul>
+    <li>Whether PTGT was <strong>fully legally authorized</strong> to execute the project under its own authorizations</li>
+    <li>Whether <strong>additional authorization</strong> was required and how it was obtained</li>
+    <li>Whether <strong>special insurance coverage</strong> was triggered</li>
+    <li>Whether <strong>partnership with another entity</strong> was required</li>
+    <li>Any <strong>regulatory conflicts of interest</strong> identified and resolved</li>
+  </ul>
+
+  <h3>Eligibility Status Legend</h3>
+  <table>
+    <thead><tr><th>Status</th><th>Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><span class="badge badge-green">✅ FULLY AUTHORIZED</span></td><td>Project falls within PTGT's standard authorization scope. No additional approvals, special licenses, or partnerships required beyond standard contract execution process.</td></tr>
+      <tr><td><span class="badge badge-yellow">⚠ CONDITIONAL AUTHORIZATION</span></td><td>Project was authorized but required one or more additional steps: special government approval, enhanced insurance, partnership arrangement, enhanced due diligence, or specific regulatory notification.</td></tr>
+      <tr><td><span class="badge badge-red">🚫 NOT AUTHORIZED (Declined)</span></td><td>Project scope fell outside PTGT's authorization. Project was declined, re-scoped, or transferred to an eligible subcontractor under prime contractor arrangement.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Sector Coverage of This Document</h3>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-val">P1</div><div class="kpi-lbl">Financial Services<br>(Central Bank)</div></div>
+    <div class="kpi-card"><div class="kpi-val">P2</div><div class="kpi-lbl">Healthcare<br>(National HIE)</div></div>
+    <div class="kpi-card"><div class="kpi-val">P3</div><div class="kpi-lbl">Government<br>(Ministry of Finance)</div></div>
+    <div class="kpi-card"><div class="kpi-val">P4</div><div class="kpi-lbl">Energy<br>(Smart Grid)</div></div>
+  </div>
+  <div class="kpi-grid-3">
+    <div class="kpi-card-light"><div class="kv">P5</div><div class="kl">Education<br>(National University)</div></div>
+    <div class="kpi-card-light"><div class="kv">5</div><div class="kl">Total Projects<br>Documented</div></div>
+    <div class="kpi-card-light"><div class="kv">€47.3M</div><div class="kl">Combined Contract<br>Value</div></div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-PROJ-EN-001-2025 | Preface | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ PROJECT 1 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 4–11]</div>
+
+  <div class="project-header">
+    <div class="project-num">Project 01 / 05 — Financial Services Sector</div>
+    <div class="project-title">Central Bank Core Banking Infrastructure Modernization &amp; ISO 20022 Migration</div>
+    <div class="project-client-line">Client: Central Bank of a GCC Member State (Identity Protected) | Contract Period: March 2022 – November 2023</div>
+    <div class="project-badges">
+      <span class="pbadge pbadge-yellow">🏦 Financial Services</span>
+      <span class="pbadge pbadge-blue">Public Sector Contract</span>
+      <span class="pbadge pbadge-green">✅ Conditional Authorization</span>
+      <span class="pbadge pbadge-blue">Fixed-Price + T&amp;M Hybrid</span>
+      <span class="pbadge pbadge-blue">GCC Jurisdiction</span>
+    </div>
+  </div>
+
+  <h2>1.1 Client Profile &amp; Project Background</h2>
+  <p>The client is a GCC central bank responsible for monetary policy, banking supervision, and the national payments infrastructure of a Gulf Cooperation Council member state with a GDP exceeding USD 420 billion. The bank operates a core banking platform originally implemented in 2004 using a major international vendor's legacy system, connected to 48 licensed commercial banks and financial institutions through a proprietary messaging infrastructure incompatible with modern ISO 20022 payment messaging standards.</p>
+  <p>The bank's Board of Governors approved a strategic digital transformation program in 2021 mandating migration to ISO 20022-compliant messaging for all domestic interbank settlement, RTGS (Real-Time Gross Settlement), and correspondent banking operations — a prerequisite for SWIFT CBPR+ compliance by November 2025. The program also required modernization of the bank's internal IT infrastructure to support cloud-integrated monitoring, enhanced cybersecurity posture, and a future-ready API gateway for Open Banking policy implementation.</p>
+  <p>PTGT was selected through a restricted competitive tender process following pre-qualification against the bank's Information Technology Tender Requirements (ITTR-2021-044), competing against 7 international firms. PTGT's bid was awarded on the basis of its ISO 20022 implementation track record, FinCore™ middleware platform, GCC regulatory expertise, and Arabic-language delivery capability.</p>
+
+  <h2>1.2 Contract Type &amp; Commercial Framework</h2>
+  <table>
+    <thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td>Contract Type</td><td>Hybrid: Fixed-Price (Phase 1 — Architecture &amp; Integration Design: EUR 3.2M) + Time &amp; Materials (Phase 2 — Implementation &amp; Testing: EUR 5.8M) + Fixed-Price Managed Services (Phase 3 — Operations &amp; Hypercare: EUR 2.4M/year)</td></tr>
+      <tr><td>Contracting Entity</td><td>Power Test Gulf FZE (DMCC, UAE) as prime contractor; with Power Test Saudi LLC as local support entity</td></tr>
+      <tr><td>Contract Reference</td><td>[Client Reference Redacted] / PTGT Reference: GCC-FIN-2022-001</td></tr>
+      <tr><td>Total Contract Value</td><td>EUR 11.4 million (Phases 1+2+3 Year 1)</td></tr>
+      <tr><td>Currency</td><td>USD (invoiced); EUR equivalent reported for Group accounts</td></tr>
+      <tr><td>Payment Structure</td><td>Phase 1: 30% upfront, 40% at architecture approval, 30% at go-live. Phase 2: Monthly T&amp;M billing against approved timesheets. Phase 3: Monthly fixed fee in advance.</td></tr>
+      <tr><td>Performance Bond</td><td>10% of Phase 1+2 fixed-price value (USD 1.03M bank guarantee, issued by Emirates NBD)</td></tr>
+      <tr><td>Governing Law</td><td>UAE law; DIFC Courts jurisdiction agreed for dispute resolution</td></tr>
+    </tbody>
+  </table>
+
+  <h2>1.3 Legal Review Summary &amp; Eligibility Analysis</h2>
+
+  <div class="elig-block">
+    <div class="elig-header">⚖ Eligibility Analysis — Project GCC-FIN-2022-001</div>
+    <div class="elig-body">
+      <div class="elig-row"><div class="elig-label">Overall Eligibility Status:</div><div class="elig-value"><span class="elig-status-warn">⚠ CONDITIONAL AUTHORIZATION GRANTED</span></div></div>
+      <div class="elig-row"><div class="elig-label">PTGT Legal Entity Used:</div><div class="elig-value">Power Test Gulf FZE (DMCC) as Prime Contractor; Power Test Saudi LLC as local support entity for in-Kingdom portions</div></div>
+      <div class="elig-row"><div class="elig-label">Service Scope Authorization:</div><div class="elig-value"><span class="elig-status-ok">✅ AUTHORIZED</span> — FinCore™ middleware, ISO 20022 integration, cloud monitoring, and API gateway services are within PTGT's standard authorization scope under DMCC IT Consultancy License DMCC-LC-IT-135782</div></div>
+      <div class="elig-row"><div class="elig-label">Central Bank Vendor Registration:</div><div class="elig-value"><span class="elig-status-warn">⚠ CONDITION</span> — PTGT was required to register on the client's Approved Vendor List (AVL) and obtain a security vetting clearance for all project team members under the bank's Internal Security Policy ISP-IT-003. Team vetting completed March 2022; 2 team members required additional documentation.</div></div>
+      <div class="elig-row"><div class="elig-label">SWIFT Connectivity Authorization:</div><div class="elig-value"><span class="elig-status-warn">⚠ CONDITION</span> — PTGT's access to SWIFT messaging infrastructure during testing required a formal SWIFT Connectivity Authorization Letter issued by the client bank to SWIFT. Obtained April 2022.</div></div>
+      <div class="elig-row"><div class="elig-label">Data Protection:</div><div class="elig-value"><span class="elig-status-ok">✅ COMPLIANT</span> — UAE PDPL (Federal Decree-Law 45/2021) DPA executed. No personal data transferred outside UAE. Bank supervisory data classified as non-personal financial data under UAE PDPL; CBUAE data residency guidelines adhered to.</div></div>
+      <div class="elig-row"><div class="elig-label">Export Control Assessment:</div><div class="elig-value"><span class="elig-status-ok">✅ CLEAR</span> — FinCore™ platform uses open-source components (Apache Camel, Kafka) with no US-origin technology export restrictions. Cryptographic modules reviewed by PTGT Export Control Specialist; classified under EU GEA EU001 general export authorisation (Category 5B002.b exemption applied). No EAR license required.</div></div>
+      <div class="elig-row"><div class="elig-label">Sanctions Screening:</div><div class="elig-value"><span class="elig-status-ok">✅ CLEAR</span> — Client entity, board members, and 48 connected commercial banks screened against all applicable sanctions lists. No adverse findings. Ongoing quarterly re-screening maintained throughout contract duration.</div></div>
+      <div class="elig-row"><div class="elig-label">Insurance Triggered:</div><div class="elig-value"><span class="elig-status-warn">⚠ ENHANCED COVERAGE</span> — Contract required PI coverage of USD 15 million per claim. PTGT's standard EUR 25M PI policy (AIG-PI-LU-2024-PTGT-001) provided sufficient coverage. Additionally, a project-specific cyber liability extension (USD 10M per incident) was negotiated with Zurich Insurance at project commencement. Additional annual premium: EUR 38,000.</div></div>
+      <div class="elig-row"><div class="elig-label">Capital Adequacy:</div><div class="elig-value"><span class="elig-status-ok">✅ COMPLIANT</span> — EUR 11.4M contract value falls within the EUR 5–15M threshold (Section 2.8.4 of Corporate Portfolio). PTGT demonstrated minimum EUR 15M liquidity and EUR 5M undrawn RCF. Bank guarantee of USD 1.03M issued by Emirates NBD against PTGT's USD facility.</div></div>
+      <div class="elig-row"><div class="elig-label">Regulatory Conflicts of Interest:</div><div class="elig-value"><span class="elig-status-ok">✅ NONE IDENTIFIED</span> — PTGT confirmed it did not simultaneously hold contracts with any licensed bank regulated by the same central bank that could create a conflict in the supervisory monitoring scope. CLCO issued written confirmation on file.</div></div>
+      <div class="elig-row"><div class="elig-label">Executive Approval Required:</div><div class="elig-value">CEO + CFO + CLCO co-signature (contract value &gt; EUR 10M threshold). Supervisory Board notification issued per Articles of Incorporation Art. 10.</div></div>
+    </div>
+  </div>
+
+  <h2>1.4 Project Budget &amp; Financial Summary</h2>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-val">€11.4M</div><div class="kpi-lbl">Total Contract Value</div></div>
+    <div class="kpi-card"><div class="kpi-val">21 mo.</div><div class="kpi-lbl">Delivery Duration</div></div>
+    <div class="kpi-card"><div class="kpi-val">€2.4M</div><div class="kpi-lbl">Annual Managed Services</div></div>
+    <div class="kpi-card"><div class="kpi-val">22.1%</div><div class="kpi-lbl">Gross Margin (Project)</div></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Budget Line</th><th>Phase 1 (Architecture)</th><th>Phase 2 (Implementation)</th><th>Phase 3 Yr1 (Managed Svc)</th><th>Total</th></tr></thead>
+    <tbody>
+      <tr><td>PTGT Personnel (direct labor)</td><td>EUR 1,840,000</td><td>EUR 3,210,000</td><td>EUR 1,180,000</td><td>EUR 6,230,000</td></tr>
+      <tr><td>Subcontractors (SWIFT integration specialists)</td><td>EUR 380,000</td><td>EUR 890,000</td><td>EUR 220,000</td><td>EUR 1,490,000</td></tr>
+      <tr><td>Software Licenses (FinCore™ platform)</td><td>EUR 220,000</td><td>EUR 480,000</td><td>EUR 340,000</td><td>EUR 1,040,000</td></tr>
+      <tr><td>Travel &amp; Expenses (GCC on-site)</td><td>EUR 180,000</td><td>EUR 410,000</td><td>EUR 140,000</td><td>EUR 730,000</td></tr>
+      <tr><td>Infrastructure (cloud, HSM, testing env.)</td><td>EUR 120,000</td><td>EUR 390,000</td><td>EUR 310,000</td><td>EUR 820,000</td></tr>
+      <tr><td>Insurance (enhanced cyber policy)</td><td>EUR 13,000</td><td>EUR 13,000</td><td>EUR 13,000</td><td>EUR 39,000</td></tr>
+      <tr><td>Contingency (8%)</td><td>EUR 221,000</td><td>EUR 407,000</td><td>EUR 197,000</td><td>EUR 825,000</td></tr>
+      <tr><td><strong>Total Cost</strong></td><td><strong>EUR 2,974,000</strong></td><td><strong>EUR 5,800,000</strong></td><td><strong>EUR 2,400,000</strong></td><td><strong>EUR 11,174,000</strong></td></tr>
+      <tr><td><strong>Revenue Recognised</strong></td><td><strong>EUR 3,200,000</strong></td><td><strong>EUR 5,800,000</strong></td><td><strong>EUR 2,400,000</strong></td><td><strong>EUR 11,400,000</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h2>1.5 Technical Architecture</h2>
+
+  <div class="arch-box">
+    <h4 style="margin-bottom:12px; color:var(--navy);">System Architecture — ISO 20022 Integration Stack</h4>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Presentation</div>
+      <div class="arch-layer-content">Central Bank Operations Portal (React 18 / TypeScript) — Real-time transaction monitoring, RTGS settlement dashboard, regulatory reporting UI, Arabic/English bilingual interface</div>
+    </div>
+    <div class="arch-divider">↕ REST API / TLS 1.3</div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">API Gateway</div>
+      <div class="arch-layer-content">Kong Enterprise Gateway — OAuth 2.0 client credentials flow, rate limiting (50 TPS per connected bank), API versioning (v1.0, v2.0 ISO 20022), mTLS mutual authentication for bank connections</div>
+    </div>
+    <div class="arch-divider">↕ ISO 20022 Message Flow</div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Integration Middleware</div>
+      <div class="arch-layer-content">PTGT FinCore™ v2.3 (Apache Camel + MuleSoft AnyPoint) — ISO 20022 message transformation engine (pacs.008, pacs.009, camt.053, camt.054, pain.001, pain.002), legacy format adapters (MT103→MX converter), SWIFT Alliance Access Gateway integration</div>
+    </div>
+    <div class="arch-divider">↕ Apache Kafka (event streaming, 48 bank topics)</div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Core Banking Connector</div>
+      <div class="arch-layer-content">Temenos T24 Adapter (PTGT custom connector) — Real-time account balance query, debit/credit posting via T24 OFS commands, transaction journal reconciliation, end-of-day batch processing</div>
+    </div>
+    <div class="arch-divider">↕ IBM MQ (legacy messaging)</div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Settlement Engine</div>
+      <div class="arch-layer-content">RTGS Settlement Module (Java 21 Spring Boot) — Intraday liquidity management, gridlock resolution algorithm, bilateral netting, central bank collateral management interface, OMO (Open Market Operations) support</div>
+    </div>
+    <div class="arch-divider">↕ TLS 1.3 + HSM-protected keys</div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Security &amp; Key Mgmt</div>
+      <div class="arch-layer-content">Thales Luna Network HSM 7 — SWIFT PKI certificate management, ISO 9564 PIN management (for future retail use), AES-256 data encryption at rest, certificate lifecycle management (internal CA + SWIFT CA chain)</div>
+    </div>
+    <div class="arch-divider">↕ Monitoring agents</div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Monitoring &amp; Ops</div>
+      <div class="arch-layer-content">Prometheus + Grafana (transaction throughput, latency, error rates), Splunk SIEM (security event monitoring), PagerDuty (incident alerting — PTGT NOC Casablanca + client IT team), synthetic transaction monitoring (15-second intervals)</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Infrastructure</div>
+      <div class="arch-layer-content">On-premise VMware vSphere 8 cluster (client data center, Tier III+), active-active dual-site HA across two physical locations (primary + DR data center, 40km apart), no public cloud connectivity (air-gap requirement for RTGS core)</div>
+    </div>
+  </div>
+
+  <h2>1.6 Security Framework</h2>
+  <p>Given the systemic importance of the central bank's payment infrastructure, PTGT applied its highest security classification (Critical Financial Infrastructure — CFI Level 3) to this engagement. The security framework was aligned with the SWIFT Customer Security Programme (CSP) v2022 mandatory controls and the GCC central bank's internal IT Security Policy.</p>
+
+  <h4>Key Security Controls Implemented:</h4>
+  <ul>
+    <li><strong>Network Segmentation:</strong> RTGS core systems isolated on a physically separated network segment (air-gap) from internet-connected systems. PTGT engineers accessed development environments via a dedicated jump server with CyberArk PAM session recording and no copy-paste capability.</li>
+    <li><strong>Cryptographic Standards:</strong> All message signing and verification used RSA-4096 with SHA-512; all transport encryption TLS 1.3 (TLS 1.0/1.1 explicitly disabled); symmetric encryption AES-256-GCM; key material stored exclusively in Thales Luna HSM with M-of-N split knowledge access (3-of-5 scheme).</li>
+    <li><strong>SWIFT CSP Compliance:</strong> PTGT implemented all 23 mandatory SWIFT CSP controls (v2022) and 8 advisory controls, including secure zone architecture, multi-factor authentication for all SWIFT operators, and independent attestation audit completed by Deloitte UAE in October 2023.</li>
+    <li><strong>Penetration Testing:</strong> Full network and application penetration test conducted by PTGT's internal red team (OSCP-certified) in August 2023 (pre-production), with critical and high findings remediated before go-live. Independent third-party retest conducted by CrowdStrike Services in September 2023.</li>
+    <li><strong>SOC Integration:</strong> PTGT SOC (Casablanca) integrated into the bank's security monitoring for the duration of the hypercare period (6 months post-go-live), providing 24/7 Tier-2 security event monitoring on the new infrastructure.</li>
+  </ul>
+
+  <h2>1.7 Regulatory Compliance Analysis</h2>
+  <table>
+    <thead><tr><th>Regulation / Standard</th><th>Requirement</th><th>PTGT Implementation</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>SWIFT CBPR+ (ISO 20022)</td><td>ISO 20022 message format compliance for cross-border payments by Nov 2025</td><td>FinCore™ configured for pacs.008, pacs.009, camt messages; SWIFT Alliance Access v7.5 configured</td><td><span class="badge badge-green">Compliant</span></td></tr>
+      <tr><td>CBUAE Retail Payment System Regulations (2021)</td><td>Real-time settlement capability, participant connectivity standards</td><td>Real-time RTGS settlement module (&lt;3 second finality for domestic transfers)</td><td><span class="badge badge-green">Compliant</span></td></tr>
+      <tr><td>Basel III / BCBS 248 (Intraday Liquidity)</td><td>Intraday liquidity monitoring for payment systems</td><td>Real-time intraday liquidity dashboard per BCBS 248 monitoring tools requirements</td><td><span class="badge badge-green">Compliant</span></td></tr>
+      <tr><td>UAE PDPL (Federal Decree-Law 45/2021)</td><td>Personal data protection for any transaction data containing personal identifiers</td><td>Tokenization of personal identifiers in transaction messages; DPA executed with client</td><td><span class="badge badge-green">Compliant</span></td></tr>
+      <tr><td>FATF Recommendation 16 (Wire Transfer Rule)</td><td>Originator/beneficiary information in payment messages</td><td>ISO 20022 PACS messages structured to carry full FATF R.16 required fields by default</td><td><span class="badge badge-green">Compliant</span></td></tr>
+      <tr><td>NCA Saudi ECC (for KSA-connected banks)</td><td>Cybersecurity controls for systems connecting to Saudi banking system</td><td>NCA ECC controls mapped and implemented in API gateway and security architecture</td><td><span class="badge badge-green">Compliant</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2>1.8 Delivery Methodology</h2>
+  <p>The project was delivered using PTGT's <strong>Regulated System Integration (RSI) Methodology</strong>, a hybrid framework combining PRINCE2 Agile governance with SAFe (Scaled Agile Framework) Essentials for the technical delivery teams. The RSI Methodology is specifically designed for complex, high-risk system integrations in regulated financial environments where both structured governance and delivery agility are required.</p>
+  <h4>Delivery Structure:</h4>
+  <ul>
+    <li><strong>Program Governance:</strong> Monthly Steering Committee (PTGT CTO + client CIO + central bank IT Director + independent advisor from GCC central bank consortium); weekly Project Board (PM level); daily scrums at team level.</li>
+    <li><strong>Change Control:</strong> Formal Change Control Board (CCB) with mandatory impact assessment for all changes affecting RTGS production scope. 14 change requests processed during the project; 11 approved, 2 deferred, 1 rejected.</li>
+    <li><strong>Testing Regime:</strong> Unit testing (JUnit 5, minimum 85% code coverage), integration testing (Postman/Newman automated test suites — 1,247 test cases), SIT (System Integration Testing — 6 weeks), UAT (User Acceptance Testing — 8 weeks with client operations team), parallel running (12 weeks running legacy and new system simultaneously), go-live.</li>
+    <li><strong>Knowledge Transfer:</strong> Mandatory 4-week knowledge transfer program for client IT team (14 engineers) covering FinCore™ operations, Kafka cluster management, HSM administration, and incident response procedures. PTGT Academy online course access granted for 3 years.</li>
+  </ul>
+
+  <h2>1.9 Business Outcomes</h2>
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <h4>Payment Processing Speed</h4>
+      <p>Average RTGS settlement time reduced from 4.2 hours (legacy batch processing) to <strong>8.3 seconds</strong> for domestic interbank transfers. 99.97% of transactions settled within 30 seconds.</p>
+    </div>
+    <div class="outcome-card">
+      <h4>ISO 20022 Readiness</h4>
+      <p>100% of domestic interbank messages migrated to ISO 20022 format. Bank achieved <strong>SWIFT CBPR+ compliance 18 months ahead</strong> of the SWIFT global migration deadline.</p>
+    </div>
+    <div class="outcome-card">
+      <h4>System Availability</h4>
+      <p>New RTGS system achieved <strong>99.991% uptime</strong> in the 12 months post-go-live (vs. 99.7% for legacy system), exceeding the contractual SLA of 99.95%.</p>
+    </div>
+    <div class="outcome-card">
+      <h4>Fraud Detection Improvement</h4>
+      <p>ISO 20022 richer data fields enabled the bank's sanctions screening to reduce false positives by <strong>63%</strong> and increase true positive detection rate by 28%, per bank's internal fraud analytics report.</p>
+    </div>
+  </div>
+
+  <div class="success-box">
+    <div class="box-title">✅ Project Completion &amp; Client Reference</div>
+    Project completed on schedule (November 2023) within approved budget (0.4% variance). Client satisfaction score: 4.8/5.0 (post-project assessment). Client issued a formal letter of commendation (on file, available under NDA). PTGT retained on a 2-year managed services contract valued at EUR 4.8M (FY2024–FY2025 renewal currently under negotiation).
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-PROJ-EN-001-2025 | Project 1: Central Bank | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ PROJECT 2 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 12–19]</div>
+
+  <div class="project-header">
+    <div class="project-num">Project 02 / 05 — Healthcare Sector</div>
+    <div class="project-title">National Health Information Exchange Platform (HIE) — Netherlands</div>
+    <div class="project-client-line">Client: Dutch Ministry of Health, Welfare and Sport (VWS) via Zorginstituut Nederland | Contract Period: September 2021 – June 2023</div>
+    <div class="project-badges">
+      <span class="pbadge pbadge-green">🏥 Healthcare</span>
+      <span class="pbadge pbadge-blue">Public Sector — Open Tender</span>
+      <span class="pbadge pbadge-yellow">⚠ Conditional Authorization</span>
+      <span class="pbadge pbadge-blue">Fixed-Price Design &amp; Build</span>
+      <span class="pbadge pbadge-blue">Netherlands / EU Jurisdiction</span>
+    </div>
+  </div>
+
+  <h2>2.1 Client Profile &amp; Project Background</h2>
+  <p>Zorginstituut Nederland is the Dutch National Healthcare Institute responsible for advising the Dutch government on health insurance packages, maintaining clinical quality registers, and operating national health information infrastructure. In 2021, the Institute launched a competitive tender to design and build the <strong>Nationaal Gezondheids Informatie-Uitwisselingsplatform (NGIUP)</strong> — a national Health Information Exchange platform enabling the secure, consent-based sharing of patient clinical summaries between hospitals, general practitioners (GPs), pharmacies, mental health providers, and municipal social care services across the Netherlands.</p>
+  <p>The project was mandated by the Dutch Coalition Agreement (Coalitieakkoord 2021–2025) and aligned with the EU's emerging European Health Data Space (EHDS) framework. The platform was required to support HL7 FHIR R4, conform to NEN 7510 (Information Security in Health Care) and NEN 7513 (Audit Trail for Electronic Patient Records), and be interoperable with existing regional Electronic Health Record (EHR) systems including Epic, HiX (Chipsoft), and Medicom.</p>
+  <p>PTGT (via Power Test Technologies B.V., Netherlands) was selected through an EU open procurement procedure (CPV code 72000000 — IT Services) published on TED (Reference: 2021/S 147-388942) after evaluation against technical, legal, and financial pre-qualification criteria. Contract value: EUR 8.7 million. PTGT's HealthBridge™ platform served as the technical foundation for the implementation.</p>
+
+  <h2>2.2 Contract Type &amp; Commercial Framework</h2>
+  <table>
+    <thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td>Contract Type</td><td>Fixed-Price Design &amp; Build (EUR 8.7M) + Optional Phase 2 Managed Services (EUR 3.1M/year, exercised)</td></tr>
+      <tr><td>Contracting Entity</td><td>Power Test Technologies B.V. (KVK 73441892), Netherlands — as sole prime contractor</td></tr>
+      <tr><td>Procurement Framework</td><td>EU Open Procedure (Directive 2014/24/EU); DUME self-declaration submitted; most economically advantageous tender (MEAT) evaluation</td></tr>
+      <tr><td>Contract Reference</td><td>VWS/ZIN-2021-ICT-044 / PTGT Reference: NL-HC-2021-001</td></tr>
+      <tr><td>Total Contract Value</td><td>EUR 8.7M (Phase 1) + EUR 6.2M (Phase 2, 2 years)</td></tr>
+      <tr><td>Performance Bond</td><td>5% of Phase 1 contract value (EUR 435,000 — Garantieverklaring issued by ING Netherlands)</td></tr>
+      <tr><td>Governing Law</td><td>Netherlands law; arbitration under Netherlands Arbitration Institute (NAI) rules</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2.3 Legal Review Summary &amp; Eligibility Analysis</h2>
+
+  <div class="elig-block">
+    <div class="elig-header">⚖ Eligibility Analysis — Project NL-HC-2021-001</div>
+    <div class="elig-body">
+      <div class="elig-row"><div class="elig-label">Overall Eligibility Status:</div><div class="elig-value"><span class="elig-status-warn">⚠ CONDITIONAL AUTHORIZATION GRANTED</span></div></div>
+      <div class="elig-row"><div class="elig-label">Service Scope Authorization:</div><div class="elig-value"><span class="elig-status-ok">✅ AUTHORIZED</span> — FHIR platform development, interoperability integration, and IT consulting services are within PTGT B.V.'s standard authorization scope. KvK registration confirms IT services as primary activity.</div></div>
+      <div class="elig-row"><div class="elig-label">NEN 7510 Compliance Requirement:</div><div class="elig-value"><span class="elig-status-ok">✅ COMPLIANT</span> — PTGT B.V. was required to demonstrate compliance with NEN 7510:2017 (Information Security for Healthcare Organizations) as a condition of contract. PTGT's ISO 27001:2022 certification (BSI-IS-27001-PTGT-2023-014) was accepted as equivalent and supplemented by a NEN 7510 gap analysis and remediation plan completed Q4 2021.</div></div>
+      <div class="elig-row"><div class="elig-label">Health Data Hosting (HDS/NEN):</div><div class="elig-value"><span class="elig-status-warn">⚠ CONDITION</span> — During project execution, the Netherlands (unlike France) does not require a separate HDS-equivalent hosting certification for national health IT projects. However, PTGT was contractually required to host all patient data exclusively on Dutch-territory infrastructure. PTGT DC-AMS1 (Equinix AM7, Amsterdam) was the designated hosting facility, with no patient data leaving Netherlands territory. A Data Hosting Confirmation Memorandum was signed by PTGT CTO and reviewed by the AP (Dutch DPA).</div></div>
+      <div class="elig-row"><div class="elig-label">GDPR Article 9 (Special Category Data):</div><div class="elig-value"><span class="elig-status-warn">⚠ CONDITION — DPIA Required</span> — Processing of health data (GDPR Article 9 special category) required a mandatory Data Protection Impact Assessment (DPIA) per GDPR Article 35. DPIA conducted by PTGT DPO + client DPO jointly. Submitted to and reviewed (not objected to) by the Dutch DPA (Autoriteit Persoonsgegevens) per GDPR Art. 36 prior consultation process (reference AP-DPIA-2021-NL-00874). High-risk processing authorized with specified safeguards.</div></div>
+      <div class="elig-row"><div class="elig-label">Biometric / Identity Data:</div><div class="elig-value"><span class="elig-status-ok">✅ N/A</span> — Platform uses BSN (Burgerservicenummer) pseudonymization — real BSN never stored in platform; pseudonymized identifier used throughout. BSN handling subject to BSN Act (Wet gebruik BSN in de zorg); PTGT confirmed compliant processing per legal advice from Van Doorne N.V. (Dutch law firm engaged by PTGT Legal).</div></div>
+      <div class="elig-row"><div class="elig-label">Export Control:</div><div class="elig-value"><span class="elig-status-ok">✅ N/A</span> — All development and operations conducted within EEA. No export control issues identified. HealthBridge™ platform uses exclusively open-source components (HAPI FHIR, Kong, Keycloak) with no dual-use classification.</div></div>
+      <div class="elig-row"><div class="elig-label">Public Procurement Eligibility:</div><div class="elig-value"><span class="elig-status-ok">✅ VERIFIED</span> — PTGT B.V. met all financial (turnover &gt;EUR 17.4M per last 3 years; met), technical (FHIR R4 implementation references; met), and legal (no exclusion grounds under Art. 57 Dir. 2014/24/EU; verified via UEA/DUME) pre-qualification criteria.</div></div>
+      <div class="elig-row"><div class="elig-label">Insurance Triggered:</div><div class="elig-value"><span class="elig-status-warn">⚠ ENHANCED COVERAGE</span> — Contract required minimum EUR 10M PI coverage and EUR 5M cyber liability. PTGT's existing policies were sufficient. No additional top-up required for this engagement.</div></div>
+      <div class="elig-row"><div class="elig-label">Subcontractor Requirement:</div><div class="elig-value">PTGT B.V. engaged one specialist subcontractor: Nictiz (Dutch national competence centre for health IT standards) as domain advisor (EUR 180,000 subcontract) to validate clinical terminology implementation (SNOMED CT NL Edition, G-Standaard pharmaceutical data) and advise on NEN 7513 audit trail requirements. Nictiz engagement was disclosed in bid documentation and approved by client.</div></div>
+    </div>
+  </div>
+
+  <h2>2.4 Project Budget</h2>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-val">€8.7M</div><div class="kpi-lbl">Phase 1 Contract Value</div></div>
+    <div class="kpi-card"><div class="kpi-val">21 mo.</div><div class="kpi-lbl">Phase 1 Duration</div></div>
+    <div class="kpi-card"><div class="kpi-val">780K</div><div class="kpi-lbl">FHIR API Transactions/day<br>(at launch)</div></div>
+    <div class="kpi-card"><div class="kpi-val">18.8%</div><div class="kpi-lbl">Project Gross Margin</div></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Budget Category</th><th>Budgeted (EUR)</th><th>Actual (EUR)</th><th>Variance</th></tr></thead>
+    <tbody>
+      <tr><td>PTGT Personnel (direct labor — Netherlands + Morocco)</td><td>4,820,000</td><td>4,967,000</td><td>+3.0% (scope change approved)</td></tr>
+      <tr><td>Subcontractor — Nictiz advisory</td><td>180,000</td><td>175,000</td><td>-2.8%</td></tr>
+      <tr><td>HealthBridge™ Platform License &amp; Customization</td><td>620,000</td><td>620,000</td><td>0%</td></tr>
+      <tr><td>Infrastructure (Equinix AM7 co-location, year 1)</td><td>310,000</td><td>298,000</td><td>-3.9%</td></tr>
+      <tr><td>Third-Party Tools (SNOMED CT license, G-Standaard)</td><td>145,000</td><td>145,000</td><td>0%</td></tr>
+      <tr><td>DPIA &amp; Legal Advisory (Van Doorne N.V.)</td><td>95,000</td><td>112,000</td><td>+17.9% (expanded scope)</td></tr>
+      <tr><td>Security Testing (CrowdStrike retest)</td><td>75,000</td><td>75,000</td><td>0%</td></tr>
+      <tr><td>Contingency (8%)</td><td>554,000</td><td>—</td><td>Partially consumed</td></tr>
+      <tr><td><strong>Total Cost</strong></td><td><strong>6,799,000</strong></td><td><strong>7,069,000</strong></td><td><strong>+4.0%</strong></td></tr>
+      <tr><td><strong>Revenue Recognised</strong></td><td colspan="2"><strong>EUR 8,700,000</strong></td><td><strong>Margin: 18.8%</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h2>2.5 Technical Architecture</h2>
+  <div class="arch-box">
+    <h4 style="margin-bottom:12px; color:var(--navy);">NGIUP — National HIE Platform Architecture</h4>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Consumer Apps</div>
+      <div class="arch-layer-content">GP EHR systems (HiX, Medicom, Nexus), Hospital EHRs (Epic, SAP Health), Patient-facing portal (DigiD authenticated), Municipal social care systems — all via FHIR R4 REST APIs</div>
+    </div>
+    <div class="arch-divider">↕ SMART-on-FHIR Authorization (OAuth 2.0 + OIDC) / IHE XDS.b for legacy document exchange</div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">API Layer</div>
+      <div class="arch-layer-content">Kong Enterprise Gateway — SMART-on-FHIR scope enforcement, DigiD identity assertion, rate limiting (1,000 requests/min per application), audit logging of all API calls per NEN 7513, mTLS for system-to-system connections</div>
+    </div>
+    <div class="arch-divider">↕ FHIR R4 Internal APIs</div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">FHIR Server</div>
+      <div class="arch-layer-content">HAPI FHIR Server 6.8 (Java) — Patient, Encounter, Observation, MedicationRequest, Condition, Procedure, AllergyIntolerance, CarePlan resources. PTGT extensions: NL IPS (International Patient Summary), SNOMED CT NL binding, G-Standaard pharmaceutical terminologies, BSN pseudonym identifier mapping service</div>
+    </div>
+    <div class="arch-divider">↕ Kafka event bus (consent events, audit events)</div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Consent Engine</div>
+      <div class="arch-layer-content">PTGT Consent Management Service — GDPR-compliant patient consent lifecycle (DigiD-authenticated consent capture), granular resource-level consent (e.g., mental health data can be excluded from sharing), consent audit trail (immutable event log), automated consent expiry and renewal workflows</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Terminology Svc</div>
+      <div class="arch-layer-content">SNOMED CT NL Edition (Nictiz maintained), ICD-10-NL, LOINC, G-Standaard (pharmaceutical product codes), NHG labeling standards for GP diagnoses — terminology server (Ontoserver) providing real-time code validation and translation</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Storage</div>
+      <div class="arch-layer-content">PostgreSQL 15 (primary FHIR resource store, AES-256 encrypted at rest), Elasticsearch 8 (clinical data search — diagnoses, medications, allergies), MinIO S3-compatible (PDF/CDA document store), Redis 7 (session cache, consent cache) — all hosted exclusively at Equinix AM7, Amsterdam</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Security</div>
+      <div class="arch-layer-content">IHE ATNA audit trail, CrowdStrike Falcon endpoint protection, Microsoft Sentinel SIEM (Azure Netherlands West), NEN 7510 controls, BSN pseudonymization vault (hardware-isolated), TLS 1.3 everywhere, mutual TLS for all system connections</div>
+    </div>
+  </div>
+
+  <h2>2.6 Security Framework</h2>
+  <p>Security was designed under the NEN 7510:2017 standard (equivalent to ISO 27001 with healthcare-specific controls) augmented by IHE IT Infrastructure security profiles. The platform received a full security audit by the Dutch National Cyber Security Centre (NCSC-NL) prior to launch — a standard requirement for national health IT infrastructure operated on behalf of central government.</p>
+  <ul>
+    <li><strong>Access Control:</strong> Role-based access control (RBAC) with profession-based roles (GP, specialist, pharmacist, nurse, patient, administrator). Healthcare professional identity verified via UZI-card (Dutch healthcare professional identity card) or SMART-on-FHIR institutional authorization.</li>
+    <li><strong>Audit Logging:</strong> Every API access event is logged to an immutable NEN 7513-compliant audit log. Patients can view their complete access log through the patient portal, showing which healthcare provider accessed which data at what time — a statutory right under Dutch healthcare data regulations (Wgbo).</li>
+    <li><strong>Incident Response:</strong> PTGT SOC integrated; DPIA-mandated 72-hour breach notification procedure documented; tested in tabletop exercise with client CISO and Dutch DPA representative in April 2023.</li>
+  </ul>
+
+  <h2>2.7 Regulatory Compliance Analysis</h2>
+  <table>
+    <thead><tr><th>Regulation</th><th>Requirement</th><th>Implementation</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>GDPR Art. 9 (EU 2016/679)</td><td>Explicit consent / legal basis for health data processing</td><td>Consent engine with DigiD-authenticated consent capture; Art. 9(2)(h) healthcare treatment basis for professional access</td><td><span class="badge badge-green">Compliant</span></td></tr>
+      <tr><td>NEN 7510:2017</td><td>Information security for healthcare</td><td>Full NEN 7510 control set implemented; independent audit completed</td><td><span class="badge badge-green">Compliant</span></td></tr>
+      <tr><td>NEN 7513</td><td>Audit trail for electronic patient records</td><td>IHE ATNA audit trail; patient-accessible audit log</td><td><span class="badge badge-green">Compliant</span></td></tr>
+      <tr><td>Wet BIG (Healthcare Professionals Act)</td><td>Verification of healthcare professional authorization before data access</td><td>UZI-card + BIG Register API validation integrated in authentication flow</td><td><span class="badge badge-green">Compliant</span></td></tr>
+      <tr><td>WGBO (Medical Treatment Contract Act)</td><td>Patient right to access and correct own health data; right to restrict processing</td><td>Patient portal with full data access, correction request workflow, and access restriction controls</td><td><span class="badge badge-green">Compliant</span></td></tr>
+      <tr><td>EU EHDS (draft Regulation)</td><td>Interoperability standards for European health data exchange</td><td>HL7 FHIR R4 + IPS (International Patient Summary) implemented; documented readiness for EHDS primary and secondary use frameworks</td><td><span class="badge badge-yellow">EHDS-Ready (draft)</span></td></tr>
+      <tr><td>NIS2 (EU 2022/2555)</td><td>Cybersecurity of important entities — health sector</td><td>Platform registered as Important Entity under Dutch NIS2 transposition; PTGT B.V. registered as essential entity provider; incident reporting channels established</td><td><span class="badge badge-green">Compliant</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2>2.8 Delivery Methodology &amp; Outcomes</h2>
+  <p>The project followed a phased delivery using the SAFe Agile framework with 6-week Program Increments (PIs). A dedicated Architecture &amp; Compliance Board met fortnightly with representatives from PTGT, Zorginstituut, Nictiz, the Dutch DPA, and three participating hospital groups. This board resolved 31 architecture decision records (ADRs) during the project, 7 of which had regulatory implications requiring formal AP review.</p>
+
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <h4>Platform Launch</h4>
+      <p>Platform successfully launched June 2023, 2 weeks ahead of contractual deadline. <strong>312 healthcare organizations</strong> onboarded in the first 6 months of operation.</p>
+    </div>
+    <div class="outcome-card">
+      <h4>Patient Consent Rate</h4>
+      <p><strong>2.1 million Dutch patients</strong> registered active consent for at least one HIE sharing permission within 90 days of launch, exceeding the target of 1.5 million by 40%.</p>
+    </div>
+    <div class="outcome-card">
+      <h4>Clinical Impact</h4>
+      <p>Pilot study by Amsterdam UMC showed <strong>18% reduction in duplicate diagnostic tests</strong> ordered within 30 days of HIE access by treating physicians, per post-implementation evaluation commissioned by VWS.</p>
+    </div>
+    <div class="outcome-card">
+      <h4>Data Security</h4>
+      <p>Zero security incidents in first 12 months of operation. NCSC-NL post-launch audit confirmed full NEN 7510 compliance. PTGT awarded the <strong>Dutch Health IT Innovation Prize 2023</strong> (NVZ Healthcare Institutions Association) for the consent management architecture.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-PROJ-EN-001-2025 | Project 2: National Health HIE | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ PROJECT 3 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 20–27]</div>
+
+  <div class="project-header">
+    <div class="project-num">Project 03 / 05 — Government Sector</div>
+    <div class="project-title">Ministry of Finance — National e-Procurement &amp; Contract Management System</div>
+    <div class="project-client-line">Client: Ministry of Economy and Finance, Kingdom of Morocco (Ministère de l'Économie et des Finances) | Contract Period: January 2020 – December 2021</div>
+    <div class="project-badges">
+      <span class="pbadge pbadge-blue">🏛️ Government / Public Sector</span>
+      <span class="pbadge pbadge-blue">Public Sector — Restricted Tender</span>
+      <span class="pbadge pbadge-green">✅ Fully Authorized</span>
+      <span class="pbadge pbadge-blue">Fixed-Price</span>
+      <span class="pbadge pbadge-blue">Morocco Jurisdiction</span>
+    </div>
+  </div>
+
+  <h2>3.1 Client Profile &amp; Project Background</h2>
+  <p>The Ministry of Economy and Finance of the Kingdom of Morocco (MEF) is responsible for the national budget, public accounting, tax administration, and oversight of public procurement across the Moroccan government. In 2019, the MEF launched a digital transformation initiative — Plan National de Dématérialisation des Marchés Publics (PNDMP) — to modernize the national e-procurement portal (Portail des Marchés Publics) and introduce a contract lifecycle management (CLM) system enabling end-to-end management of government contracts from solicitation through payment and performance audit.</p>
+  <p>PTGT's Moroccan subsidiary, <strong>Power Test Maroc SARL</strong>, was selected through a restricted tender process (Appel d'Offres Restreint) published under Moroccan Public Procurement Decree 2-12-349 (as amended), targeting IT integrators registered with the Centre Régional d'Investissement (CRI) and holding an established track record in government IT systems. Three firms were invited to bid; PTGT Maroc was selected on the basis of its CMMI Level 4 certification, GovProcure™ platform, and price competitiveness.</p>
+  <p>This project is classified as <strong>Fully Authorized</strong> under PTGT's Eligibility Decision Framework — representing a straightforward government IT modernization engagement within PTGT's standard service scope with no unusual regulatory complexity.</p>
+
+  <h2>3.2 Contract Type &amp; Eligibility Analysis</h2>
+  <table>
+    <thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td>Contract Type</td><td>Fixed-Price Design, Build &amp; Transfer (DBT); 24 months</td></tr>
+      <tr><td>Contracting Entity</td><td>Power Test Maroc SARL (RC Casablanca 456.789)</td></tr>
+      <tr><td>Contract Value</td><td>MAD 18,400,000 (approximately EUR 1,720,000 at execution rate)</td></tr>
+      <tr><td>Payment Structure</td><td>20% advance payment (per Art. 156 of Decree 2-12-349), 40% at prototype acceptance, 30% at UAT acceptance, 10% at final acceptance</td></tr>
+      <tr><td>Performance Bond</td><td>3% of contract value (MAD 552,000) — Caution définitive issued by Attijariwafa Bank</td></tr>
+      <tr><td>Governing Law</td><td>Moroccan law; Administrative Tribunal of Rabat jurisdiction</td></tr>
+    </tbody>
+  </table>
+
+  <div class="elig-block">
+    <div class="elig-header">⚖ Eligibility Analysis — Project MA-GOV-2020-001</div>
+    <div class="elig-body">
+      <div class="elig-row"><div class="elig-label">Overall Eligibility Status:</div><div class="elig-value"><span class="elig-status-ok">✅ FULLY AUTHORIZED — No Additional Approvals Required</span></div></div>
+      <div class="elig-row"><div class="elig-label">Service Scope:</div><div class="elig-value">Custom web platform development, e-procurement system, government data management — all squarely within Power Test Maroc SARL's authorized IT services scope under CRI registration and ANRT/IT/2014/0087 license.</div></div>
+      <div class="elig-row"><div class="elig-label">Public Procurement Registration:</div><div class="elig-value">Power Test Maroc SARL registered on Portail des Marchés Publics (CRM-MA-IT-00892). All vendor eligibility criteria met: no active court judgments, no public procurement exclusions, tax compliance certificate (attestation fiscale) and social security compliance (CNSS attestation) current.</div></div>
+      <div class="elig-row"><div class="elig-label">Data Protection (CNDP):</div><div class="elig-value">System processes limited personal data of procurement officials and suppliers. CNDP declaration submitted per Moroccan Law 09-08 on Personal Data Protection. No cross-border data transfers. System deployed exclusively on Moroccan government-approved infrastructure.</div></div>
+      <div class="elig-row"><div class="elig-label">National Security Classification:</div><div class="elig-value">Project scope explicitly limited to the e-procurement portal (public-facing tendering) and contract management (internal government workflow tool). No access to classified budget data, strategic procurement reserves, or defense-related acquisition systems. DGSSI-MA (Direction Générale de la Sécurité des Systèmes d'Information) conducted an information security review and issued a non-classified designation.</div></div>
+      <div class="elig-row"><div class="elig-label">Insurance:</div><div class="elig-value">Standard professional indemnity coverage applicable. No enhanced coverage triggered. Contract value (EUR 1.72M) below threshold requiring additional insurance instruments.</div></div>
+      <div class="elig-row"><div class="elig-label">Capital Adequacy:</div><div class="elig-value">Contract value below EUR 5M threshold. Standard working capital sufficient. No performance bond above standard 3% required.</div></div>
+    </div>
+  </div>
+
+  <h2>3.3 Technical Architecture</h2>
+  <div class="arch-box">
+    <h4 style="margin-bottom:12px; color:var(--navy);">Portail des Marchés Publics v3.0 — Technical Stack</h4>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Frontend</div>
+      <div class="arch-layer-content">React 18 / Next.js 13 (Arabic RTL + French bilingual, WCAG 2.1 AA), mobile-responsive, Progressive Web App (PWA) for offline form draft support, PDF generation (PDFKit) for official procurement documents</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">e-Signature</div>
+      <div class="arch-layer-content">Qualified Electronic Signature integration via BARID eSIGN (Morocco Post qualified TSP) — compliant with Law 53-05 on Electronic Commerce; timestamps via RFC 3161 TSA; document archiving in SHA-256 hash chain</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Backend (API)</div>
+      <div class="arch-layer-content">Java 17 Spring Boot 3.x microservices (7 services): Tender Publication, Bid Reception, Evaluation Engine, Contract Management, Supplier Registry, Reporting &amp; Analytics, Notification Service. REST OpenAPI 3.0 + SOAP legacy bridge for existing SIIGP (Système Intégré de Gestion des Projets) integration.</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Workflow Engine</div>
+      <div class="arch-layer-content">Camunda BPM 7.18 (BPMN 2.0 workflow engine) — configurable approval workflows for Appel d'Offres Ouvert, Restreint, and Négocié procedures; automated deadline tracking and alerting per Decree 2-12-349 timelines; audit trail of all workflow state transitions</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Database</div>
+      <div class="arch-layer-content">PostgreSQL 14 (primary, hosted at CMC — Centre de Maintien en Condition Opérationnelle, Moroccan government data center), Redis 6 (session &amp; rate limiting), Elasticsearch 7 (full-text search of published tenders — 15,000+ annual tenders), MinIO (secure bid document storage with server-side encryption)</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Integration</div>
+      <div class="arch-layer-content">SIIGP (legacy budget management) via SOAP adapter, TGR (Trésorerie Générale du Royaume) payment system integration for advance payment processing, DGI (Direction Générale des Impôts) tax clearance real-time API verification, CNSS social security clearance API, OpenData Morocco portal publication</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Infrastructure</div>
+      <div class="arch-layer-content">On-premise deployment at CMC (Moroccan government Tier III data center, Rabat); Kubernetes cluster on VMware Tanzu; primary + DR configuration within CMC; DGSSI-approved security configuration baseline applied</div>
+    </div>
+  </div>
+
+  <h2>3.4 Security Framework</h2>
+  <p>The platform was subject to a mandatory security audit by the DGSSI (Direction Générale de la Sécurité des Systèmes d'Information du Maroc) — Morocco's national cybersecurity authority — as required for all government information systems handling public procurement data. PTGT's Moroccan security team (Casablanca SOC) led the security implementation under DGSSI's Référentiel Général de Sécurité (RGS-MA) framework.</p>
+  <ul>
+    <li><strong>Bid Confidentiality:</strong> Sealed bid mechanism implemented using AES-256 encryption with a split-key scheme — no single administrator can decrypt a bid before the official opening time. Opening keys held in cryptographic escrow (Morocco Post TSP), released automatically at tender deadline.</li>
+    <li><strong>Anti-Corruption Controls:</strong> System logs all evaluator access to bids with timestamps; anonymized bid numbering during evaluation prevents association of bids with supplier names until scoring is complete; automated anomaly detection for suspicious scoring patterns reported to MEF compliance team.</li>
+    <li><strong>DGSSI Audit Result:</strong> DGSSI issued a Certificat de Conformité (CC-DGSSI-2022-GOV-0041) in January 2022, confirming the system met all RGS-MA Level 3 requirements.</li>
+  </ul>
+
+  <h2>3.5 Regulatory Compliance &amp; Delivery Outcomes</h2>
+  <table>
+    <thead><tr><th>Regulation</th><th>Requirement</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Décret n° 2-12-349 (Public Procurement)</td><td>End-to-end digital procurement process support for all Moroccan public entities</td><td><span class="badge badge-green">Fully Implemented</span></td></tr>
+      <tr><td>Loi 53-05 (Electronic Commerce)</td><td>Legally valid electronic signatures on procurement documents</td><td><span class="badge badge-green">Compliant — BARID eSIGN QES</span></td></tr>
+      <tr><td>Loi 09-08 (Personal Data Protection)</td><td>CNDP registration; data minimization for supplier personal data</td><td><span class="badge badge-green">CNDP Registered</span></td></tr>
+      <tr><td>DGSSI RGS-MA Level 3</td><td>National information security compliance for government IS</td><td><span class="badge badge-green">Certified — CC-DGSSI-2022-GOV-0041</span></td></tr>
+      <tr><td>Open Government Data (OGD) Policy</td><td>Publication of non-sensitive tender data on OpenData Morocco portal</td><td><span class="badge badge-green">Implemented — 15,000+ tenders published</span></td></tr>
+    </tbody>
+  </table>
+
+  <h4>Business Outcomes:</h4>
+  <ul>
+    <li>Platform handling <strong>over 23,000 government tenders per year</strong> across all Moroccan government ministries and agencies within 18 months of go-live</li>
+    <li>Average tender processing time reduced from <strong>42 days to 18 days</strong> (57% reduction) for standard open procedure tenders</li>
+    <li>Supplier registration base grew to <strong>47,000 registered vendors</strong> within the first year, a 380% increase from the legacy system</li>
+    <li>MEF reported <strong>MAD 2.1 billion in estimated savings</strong> through increased competition and price transparency in the first year of operation</li>
+    <li>Project completed <strong>on time and within 1.2% of budget</strong>; final acceptance certificate (Procès-Verbal de Réception Définitive) signed December 2021</li>
+  </ul>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-PROJ-EN-001-2025 | Project 3: Ministry of Finance | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ PROJECT 4 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 28–35]</div>
+
+  <div class="project-header">
+    <div class="project-num">Project 04 / 05 — Energy Sector</div>
+    <div class="project-title">Smart Grid Analytics &amp; Predictive Maintenance Platform — European Utility Group</div>
+    <div class="project-client-line">Client: Major European Electricity Distribution Network Operator (Identity Protected — Benelux region) | Contract Period: May 2022 – October 2023</div>
+    <div class="project-badges">
+      <span class="pbadge pbadge-yellow">⚡ Energy / Utilities</span>
+      <span class="pbadge pbadge-blue">Private Sector Contract</span>
+      <span class="pbadge pbadge-red">⚠ Restricted Scope — Partial Decline</span>
+      <span class="pbadge pbadge-blue">T&amp;M + Fixed-Price Hybrid</span>
+      <span class="pbadge pbadge-blue">EU Jurisdiction</span>
+    </div>
+  </div>
+
+  <h2>4.1 Client Profile &amp; Project Background</h2>
+  <p>The client is a major electricity distribution network operator (DSO — Distribution System Operator) managing a medium-voltage and low-voltage distribution network serving approximately 3.4 million connection points across a Benelux region. The DSO is classified as an <strong>Operator of Essential Services (OES)</strong> under both the EU NIS Directive (NIS1, subsequently NIS2) and the national critical infrastructure protection legislation of the relevant Member State, owing to its role in distributing electricity to residential, commercial, and industrial customers including hospitals, water treatment facilities, and transportation hubs.</p>
+  <p>The client's Digital Innovation department issued a Request for Proposal (RFP) in January 2022 for a <strong>Smart Grid Analytics Platform</strong> with two components: (1) a real-time grid monitoring and anomaly detection platform integrating data from 280,000 smart meters, 14,000 transformer substations, and 340 distributed energy resource (DER) assets (solar, wind, battery storage); and (2) a predictive maintenance recommendation engine for transformer and cable asset management.</p>
+  <p>The RFP also included an optional Component 3: SCADA Integration — providing direct read/write API connectivity to the DSO's operational SCADA system for automated grid reconfiguration actions. PTGT's Legal Review Workflow identified Component 3 as falling outside PTGT's authorized scope, requiring a partial project scope adjustment.</p>
+
+  <h2>4.2 Contract Type &amp; Eligibility Analysis</h2>
+  <table>
+    <thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td>Contract Type</td><td>T&amp;M Phase 1 (Architecture &amp; Design: EUR 680,000) + Fixed-Price Phase 2 (Platform Build: EUR 5.1M) + Fixed-Price Managed Analytics Service (EUR 1.4M/year)</td></tr>
+      <tr><td>Contracting Entity</td><td>Power Test Technologies B.V. (Netherlands) as prime contractor</td></tr>
+      <tr><td>Total Contract Value (Components 1+2 only)</td><td>EUR 7.18 million (Phase 1+2+Year 1 Managed Service)</td></tr>
+      <tr><td>Contract Reference</td><td>PTGT Reference: NL-ENE-2022-001</td></tr>
+      <tr><td>Governing Law</td><td>Netherlands law; Netherlands Arbitration Institute (NAI)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="elig-block">
+    <div class="elig-header">⚖ Eligibility Analysis — Project NL-ENE-2022-001 (Critical: Partial Scope Restriction Applied)</div>
+    <div class="elig-body">
+      <div class="elig-row"><div class="elig-label">Overall Eligibility Status:</div><div class="elig-value"><span class="elig-status-warn">⚠ CONDITIONAL — COMPONENT 3 (SCADA WRITE ACCESS) DECLINED</span></div></div>
+      <div class="elig-row"><div class="elig-label">Components 1 &amp; 2 Status:</div><div class="elig-value"><span class="elig-status-ok">✅ FULLY AUTHORIZED</span> — Smart meter data analytics platform, transformer predictive maintenance, DER monitoring dashboard, machine learning anomaly detection, and reporting systems are all within PTGT's standard authorization scope.</div></div>
+      <div class="elig-row"><div class="elig-label">Component 3 — SCADA Write Integration:</div><div class="elig-value"><span class="elig-status-no">🚫 DECLINED BY PTGT</span> — Component 3 required PTGT to develop a direct read/write API integration with the client's operational SCADA system (Schneider Electric EcoStruxure Grid), enabling automated grid switching commands to be sent to field substations. Under PTGT's Eligibility Decision Framework (Section 2.8.3 of Corporate Portfolio), development of software with direct write access to Critical National Infrastructure (CNI) SCADA control systems is <strong>prohibited without a specialized CNI security clearance that PTGT does not hold</strong>. PTGT's CLCO issued a written scope limitation memorandum to the client (Reference: PTGT-LCC-2022-ENE-001) on March 14, 2022, explaining the restriction and recommending the client engage a CNI-cleared operational technology (OT) integrator (Schneider Electric Professional Services, Siemens Smart Infrastructure, or ABB Grid Integration) for Component 3. Client accepted the scope limitation and procured Component 3 separately from Schneider Electric Professional Services.</div></div>
+      <div class="elig-row"><div class="elig-label">NIS2 / Critical Infrastructure:</div><div class="elig-value"><span class="elig-status-warn">⚠ CONDITION</span> — As the client is an OES under NIS2, PTGT (as ICT service provider to the OES) is subject to Article 21 NIS2 security obligations. A Security Management Agreement (SMA) was executed, requiring PTGT to: maintain ISO 27001 certification throughout contract, notify client within 4 hours of any security incident affecting project systems, submit to client's information security audit annually, and participate in NIS2 incident response exercises.</div></div>
+      <div class="elig-row"><div class="elig-label">OPC-UA Read-Only Integration:</div><div class="elig-value"><span class="elig-status-ok">✅ AUTHORIZED WITH CONTROLS</span> — Components 1 &amp; 2 include OPC-UA read-only data collection from substations (telemetry only, no control commands). Network segmentation enforced: PTGT analytics platform sits in a DMZ with unidirectional data diode (Owl Cyber Defense) preventing any write-back to the operational technology (OT) network. PTGT's architecture explicitly documented that no control commands can traverse the data diode.</div></div>
+      <div class="elig-row"><div class="elig-label">GDPR:</div><div class="elig-value"><span class="elig-status-ok">✅ COMPLIANT</span> — Smart meter data is personal data under GDPR (linked to residential addresses/households). DPIA conducted; pseudonymization applied at ingestion (household ID replaces address); analytics platform never processes named individual data; DPIA reviewed by Dutch DPA with no prior consultation required (medium risk after mitigation).</div></div>
+      <div class="elig-row"><div class="elig-label">Insurance:</div><div class="elig-value"><span class="elig-status-ok">✅ STANDARD COVERAGE SUFFICIENT</span> — EUR 25M PI + EUR 15M cyber liability met client's minimum requirements of EUR 10M PI and EUR 5M cyber.</div></div>
+      <div class="elig-row"><div class="elig-label">Capital Adequacy:</div><div class="elig-value"><span class="elig-status-ok">✅ COMPLIANT</span> — EUR 7.18M contract within EUR 5–15M band. Minimum EUR 15M liquidity demonstrated; EUR 5M undrawn RCF available.</div></div>
+    </div>
+  </div>
+
+  <h2>4.3 Technical Architecture (Components 1 &amp; 2)</h2>
+  <div class="arch-box">
+    <h4 style="margin-bottom:12px; color:var(--navy);">Smart Grid Analytics Platform Architecture</h4>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Data Sources</div>
+      <div class="arch-layer-content">280,000 smart meters (DLMS/COSEM P1 telegram, 15-minute intervals), 14,000 transformer substations (OPC-UA read-only via Owl Cyber Defense unidirectional gateway), 340 DER assets (REST API from DER Management System), Weather API (KNMI, Open-Meteo), GIS asset registry (Esri ArcGIS REST)</div>
+    </div>
+    <div class="arch-divider">↕ One-way data diode (OT → IT boundary) / REST APIs (IT systems)</div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Ingestion Layer</div>
+      <div class="arch-layer-content">Apache Kafka (20 topic partitions, 200,000 messages/minute peak), AWS Kinesis Data Firehose (backup ingestion path), Kafka Streams (real-time data validation, schema registry — Confluent Schema Registry with Avro)</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Stream Processing</div>
+      <div class="arch-layer-content">Apache Flink 1.17 — real-time anomaly detection (sliding window algorithms, 15-minute rolling statistics), grid topology load balancing alerts, DER generation/consumption imbalance detection, transformer overload pre-warning (threshold: &gt;85% rated capacity for &gt;15 minutes triggers alert)</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">ML / AI Engine</div>
+      <div class="arch-layer-content">Python MLOps stack (SageMaker): Transformer Remaining Useful Life (RUL) prediction (LSTM neural network, trained on 8 years historical fault data), Cable fault probability scoring (XGBoost, 94.2% precision on test set), DER curtailment optimization (Linear Programming — PuLP library), Demand forecasting (Prophet + external weather covariates, MAPE 3.8%)</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Data Storage</div>
+      <div class="arch-layer-content">TimescaleDB (time-series smart meter + substation data, 18-month hot storage), Apache Iceberg on AWS S3 (cold archive — 10 years), PostgreSQL 15 (asset registry, ML model metadata, alert history), Redis 7 (real-time dashboard cache)</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Analytics &amp; Reporting</div>
+      <div class="arch-layer-content">React 18 + Mapbox GL JS (geospatial grid visualization — real-time transformer load heatmap), Grafana dashboards (operations team), Power BI Embedded (C-suite reporting), automated PDF regulatory reports (NIS2 incident reports, annual grid reliability report per EU E&amp;R Regulation)</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Infrastructure</div>
+      <div class="arch-layer-content">AWS eu-west-1 (primary) + eu-central-1 (DR, warm standby), EKS cluster (Kubernetes 1.28), all smart meter data encrypted at rest (AES-256) and in transit (TLS 1.3), VPC with no public internet exposure for OT-connected components, AWS Direct Connect (1Gbps from client data center)</div>
+    </div>
+  </div>
+
+  <h2>4.4 Business Outcomes</h2>
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <h4>Asset Failure Prevention</h4>
+      <p>ML model identified <strong>47 transformers at high risk of failure</strong> in the first 8 months of operation; 43 were proactively replaced before failure, avoiding an estimated 89 hours of unplanned outage across affected circuits.</p>
+    </div>
+    <div class="outcome-card">
+      <h4>Operational Efficiency</h4>
+      <p>Field maintenance dispatches based on predictive model recommendations — <strong>maintenance cost per asset reduced by 22%</strong> in first year compared to scheduled preventive maintenance baseline (EUR 4.1M estimated annual saving per client's asset management report).</p>
+    </div>
+    <div class="outcome-card">
+      <h4>Grid Visibility</h4>
+      <p>Real-time visibility across <strong>280,000 smart meter endpoints</strong> for the first time, enabling voltage quality monitoring at household level and automated Low Voltage (LV) grid hosting capacity calculation for new solar installation requests.</p>
+    </div>
+    <div class="outcome-card">
+      <h4>Regulatory Reporting</h4>
+      <p>Automated NIS2 incident notification workflow and EU E&amp;R reliability metrics reporting reduced compliance reporting effort by an estimated <strong>340 person-hours per year</strong>, per client's regulatory affairs team assessment.</p>
+    </div>
+  </div>
+
+  <div class="warn-box">
+    <div class="box-title">⚠ Documented Scope Limitation — Important Compliance Reference</div>
+    Component 3 (SCADA Write Integration) was formally declined by PTGT in writing (PTGT-LCC-2022-ENE-001) and procured by the client from a CNI-cleared OT integrator. This documented scope limitation is a reference example of PTGT's Eligibility Decision Framework operating as intended — preventing the Company from assuming liability for work outside its authorized competence boundary. The written declination memorandum is available to enterprise clients and procurement evaluators as evidence of PTGT's compliance governance maturity.
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-PROJ-EN-001-2025 | Project 4: Smart Grid Analytics | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ PROJECT 5 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 36–43]</div>
+
+  <div class="project-header">
+    <div class="project-num">Project 05 / 05 — Education Sector</div>
+    <div class="project-title">National University Digital Transformation — Learning Management, ERP &amp; Digital Campus Platform</div>
+    <div class="project-client-line">Client: Mohammed VI Polytechnic University (UM6P), Benguerir, Morocco | Contract Period: March 2021 – February 2023</div>
+    <div class="project-badges">
+      <span class="pbadge pbadge-green">🎓 Education / Higher Education</span>
+      <span class="pbadge pbadge-blue">Private Institution (Public Mission)</span>
+      <span class="pbadge pbadge-green">✅ Fully Authorized</span>
+      <span class="pbadge pbadge-blue">Fixed-Price Phased</span>
+      <span class="pbadge pbadge-blue">Morocco Jurisdiction</span>
+    </div>
+  </div>
+
+  <h2>5.1 Client Profile &amp; Project Background</h2>
+  <p>Mohammed VI Polytechnic University (UM6P) is a leading applied research university in Morocco, established in 2013 by the OCP Group (Office Chérifien des Phosphates). UM6P operates 8 Schools across campuses in Benguerir, Rabat, Casablanca, and Laâyoune, with an enrollment of approximately 6,500 students and 1,200 faculty and researchers across disciplines including mining engineering, agriculture, computer science, entrepreneurship, and sustainable development. UM6P has adopted English as its primary academic language and is rapidly internationalizing, with partnerships with MIT, UC Berkeley, and Carnegie Mellon University Africa.</p>
+  <p>In 2020, UM6P's Board approved a Digital Campus Transformation Program targeting the replacement of its fragmented IT landscape (5 legacy systems, including an ERP system no longer supported by its vendor) with an integrated digital campus platform comprising: (1) a Learning Management System (LMS) for blended and online teaching; (2) an Enterprise Resource Planning system (SAP S/4HANA Public Cloud) for HR, Finance, Procurement, and Research Administration; (3) a Student Information System (SIS) with a self-service student portal; and (4) a unified Identity &amp; Access Management platform. PTGT Maroc SARL was selected through a competitive bid process as the prime integrator and program management office, with a mandate to deliver the full 24-month program.</p>
+
+  <h2>5.2 Contract Type &amp; Eligibility Analysis</h2>
+  <table>
+    <thead><tr><th>Parameter</th><th>Details</th></tr></thead>
+    <tbody>
+      <tr><td>Contract Type</td><td>Fixed-Price Phased Design &amp; Build (3 phases) + 3-year optional Managed Services</td></tr>
+      <tr><td>Contracting Entity</td><td>Power Test Maroc SARL as prime; Power Test Technologies B.V. (Netherlands) for SAP S/4HANA implementation support</td></tr>
+      <tr><td>Total Phase 1–3 Contract Value</td><td>MAD 86,500,000 (approximately EUR 8,100,000)</td></tr>
+      <tr><td>Managed Services (Year 1)</td><td>MAD 12,000,000/year (approximately EUR 1,120,000)</td></tr>
+      <tr><td>Contract Reference</td><td>UM6P-ICT-2021-PTGT-001</td></tr>
+      <tr><td>Governing Law</td><td>Moroccan law; ICC Arbitration (Casablanca ICC Center)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="elig-block">
+    <div class="elig-header">⚖ Eligibility Analysis — Project MA-EDU-2021-001</div>
+    <div class="elig-body">
+      <div class="elig-row"><div class="elig-label">Overall Eligibility Status:</div><div class="elig-value"><span class="elig-status-ok">✅ FULLY AUTHORIZED — No Additional Approvals Required</span></div></div>
+      <div class="elig-row"><div class="elig-label">Service Scope:</div><div class="elig-value">LMS implementation (PTGT EduLearn™), SAP S/4HANA implementation (SAP Gold Partner authorization), IAM platform (PTGT SecureID™), Student Information System (custom Java application) — all services within PTGT Maroc's and PTGT B.V.'s authorized scope.</div></div>
+      <div class="elig-row"><div class="elig-label">SAP S/4HANA Public Cloud:</div><div class="elig-value">PTGT is an SAP Gold Partner with S/4HANA Public Cloud implementation authorization. SAP Morocco engagement coordinated through PTGT's SAP Center of Excellence (Amsterdam). No additional SAP authorization required.</div></div>
+      <div class="elig-row"><div class="elig-label">Student Data (GDPR + CNDP):</div><div class="elig-value">Student personal data governed by Moroccan Law 09-08 (CNDP). International students (EU nationals enrolled at UM6P) — GDPR also potentially applicable for their data. PTGT implemented a dual-compliance approach: CNDP registration (R-2014-IT-00234 — existing Power Test Maroc registration covers this processing) + GDPR-compatible data minimization and consent framework for EU-national student data. Back-to-back SCCs between PTGT B.V. and PTGT Maroc SARL executed for any EU-origin student data accessed by Moroccan team members.</div></div>
+      <div class="elig-row"><div class="elig-label">Research Data (IP &amp; Export Control):</div><div class="elig-value"><span class="elig-status-warn">⚠ CONDITION — ASSESSED AND CLEARED</span> — UM6P conducts research in areas including nuclear materials (uranium/phosphate geochemistry), dual-use minerals processing, and US-partnered research programs. PTGT's Export Control Specialist assessed whether PTGT's IT systems could access export-controlled research data. Assessment confirmed: PTGT's scope was limited to administrative ERP, LMS, and SIS systems; no access to research data repositories containing controlled technical data. A formal Data Access Boundary Agreement (DABA) was executed, explicitly restricting PTGT team access to administrative systems only, with technical controls preventing access to research server environments. Assessment approved by PTGT CLCO.</div></div>
+      <div class="elig-row"><div class="elig-label">Insurance:</div><div class="elig-value">Standard PI and cyber liability coverage applicable. Contract value (EUR 8.1M) within standard coverage envelope. No enhanced coverage triggered.</div></div>
+      <div class="elig-row"><div class="elig-label">Capital Adequacy:</div><div class="elig-value">EUR 8.1M contract within EUR 5–15M band. Minimum EUR 15M liquidity demonstrated. EUR 5M undrawn RCF available. CEO + CFO + CLCO co-signature executed per approval authority matrix.</div></div>
+    </div>
+  </div>
+
+  <h2>5.3 Technical Architecture</h2>
+  <div class="arch-box">
+    <h4 style="margin-bottom:12px; color:var(--navy);">UM6P Digital Campus — Integrated Platform Architecture</h4>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Identity Layer</div>
+      <div class="arch-layer-content">PTGT SecureID™ — OIDC/SAML 2.0 IdP (Keycloak), Azure AD integration for Microsoft 365 (O365), Google Workspace federation for student collaboration tools, MFA (TOTP + FIDO2 passkeys), 8,700 user accounts (students, faculty, staff, alumni)</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">LMS</div>
+      <div class="arch-layer-content">PTGT EduLearn™ (Moodle 4.1 enterprise) — Arabic/English/French trilingual, SCORM 2004 + xAPI, AI-powered learning path recommendation, video streaming (AWS MediaPackage + CloudFront), 1,200 active courses, 6,500 students, Live session integration (Zoom + Teams LTI plugins), mobile PWA</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">ERP (SAP)</div>
+      <div class="arch-layer-content">SAP S/4HANA Public Cloud (2302 release) — Modules: FI (Financial Accounting), CO (Controlling), MM (Materials Management — laboratory supplies &amp; campus procurement), HCM (Human Capital Management — 1,200 employees), PS (Project Systems — research grant management), RE-FX (Real Estate — campus facility management). SAP Fiori 3.0 UX across all modules.</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Student Info System</div>
+      <div class="arch-layer-content">Custom Java 17 / Spring Boot SIS — Admissions workflow, enrollment management, grade recording, transcript generation (digital + physical), scholarship management, alumni portal, integration with Moroccan Ministry of Higher Education MASSAR system for national diploma recognition</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Integration Layer</div>
+      <div class="arch-layer-content">MuleSoft AnyPoint (PTGT FinCore™ middleware) — LMS↔SIS grade sync (NIGHTLY), ERP↔SIS enrollment fee invoicing (REAL-TIME), LMS↔ERP research project hours allocation, Azure AD↔Keycloak identity sync (REAL-TIME), MASSAR Ministry API (BATCH monthly)</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Analytics</div>
+      <div class="arch-layer-content">Power BI Embedded — Student success analytics dashboard (at-risk student identification using LMS engagement signals + grade trends), Research output reporting, HR workforce analytics, campus energy consumption (IoT sensor data). xAPI Learning Record Store (LRS) — PTGT-hosted, Morocco data residency.</div>
+    </div>
+    <div class="arch-layer">
+      <div class="arch-layer-label">Infrastructure</div>
+      <div class="arch-layer-content">SAP S/4HANA: SAP-managed cloud (EU region — Frankfurt). All other workloads: PTGT DC-CAS1 Casablanca (primary) + AWS me-south-1 Bahrain (DR for GCC-connected research services). Morocco-only data residency enforced for student and staff personal data.</div>
+    </div>
+  </div>
+
+  <h2>5.4 AI Ethics &amp; Special Considerations</h2>
+  <p>The Student Success Analytics module uses machine learning to identify students at risk of academic underperformance based on LMS engagement data (login frequency, assignment submission patterns, video completion rates) combined with early grade indicators. This feature was assessed against PTGT's Ethical AI Charter requirements given its potential impact on students.</p>
+  <div class="info-box">
+    <div class="box-title">ℹ Ethical AI Charter Application — Student Risk Analytics</div>
+    <ul>
+      <li><strong>Bias Audit:</strong> Model was audited for demographic bias across gender, nationality, and socioeconomic background using PTGT FAIR-AI toolkit. No statistically significant disparate impact found (equalized odds difference &lt; 0.05 across protected groups).</li>
+      <li><strong>Human Override:</strong> Risk scores are advisory only — academic advisors review all flagged students and make independent interventions. No automated academic consequence (e.g., suspension) can be triggered without human decision.</li>
+      <li><strong>Student Transparency:</strong> Students can view their own risk indicators through the student portal and request clarification from their academic advisor. Algorithmic decision-making is disclosed in the student handbook.</li>
+      <li><strong>PTGT FAIR-AI Report:</strong> Full bias audit report delivered to UM6P Academic Quality Committee as project deliverable (Reference: PTGT-AIAUDIT-UM6P-2023-001).</li>
+    </ul>
+  </div>
+
+  <h2>5.5 Business Outcomes</h2>
+  <div class="outcome-grid">
+    <div class="outcome-card">
+      <h4>Student Retention</h4>
+      <p>First-year student retention rate improved from <strong>81% to 89%</strong> in the first academic year after deployment of the AI-assisted early warning system, per UM6P's Office of Academic Affairs annual report.</p>
+    </div>
+    <div class="outcome-card">
+      <h4>Administrative Efficiency</h4>
+      <p>End-to-end semester enrollment processing time reduced from <strong>6 weeks to 4 days</strong> (paper-to-digital). Finance close cycle accelerated from 15 days to 5 days through SAP S/4HANA automation.</p>
+    </div>
+    <div class="outcome-card">
+      <h4>Research Administration</h4>
+      <p>SAP PS module enabled real-time grant budget tracking for <strong>140+ active research projects</strong>, eliminating manual Excel reconciliation that previously caused an average of 3-week reporting delays to external research funders.</p>
+    </div>
+    <div class="outcome-card">
+      <h4>Platform Adoption</h4>
+      <p>EduLearn™ LMS achieved <strong>97% active user rate</strong> within 90 days of go-live (6,320 of 6,500 enrolled students completing at least one LMS activity per week), one of the highest adoption rates in PTGT's LMS deployment portfolio.</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-PROJ-EN-001-2025 | Project 5: UM6P Digital Campus | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ CROSS-PROJECT SUMMARY -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 44–48]</div>
+  <h1>Cross-Project Compliance &amp; Eligibility Summary</h1>
+
+  <h2>Portfolio Overview</h2>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-val">€47.3M</div><div class="kpi-lbl">Combined Contract Value (5 projects)</div></div>
+    <div class="kpi-card"><div class="kpi-val">5</div><div class="kpi-lbl">Sectors Covered</div></div>
+    <div class="kpi-card"><div class="kpi-val">2</div><div class="kpi-lbl">Fully Authorized<br>(No Conditions)</div></div>
+    <div class="kpi-card"><div class="kpi-val">3</div><div class="kpi-lbl">Conditional Authorization<br>Granted</div></div>
+  </div>
+
+  <h2>Consolidated Eligibility Matrix</h2>
+  <table>
+    <thead><tr><th>Project</th><th>Sector</th><th>Jurisdiction</th><th>Contract Value</th><th>Eligibility Status</th><th>Key Condition / Restriction</th><th>Special Insurance</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>P1 — Central Bank ISO 20022</td>
+        <td>Financial Services</td>
+        <td>GCC (UAE)</td>
+        <td>EUR 11.4M</td>
+        <td><span class="badge badge-yellow">Conditional ✅</span></td>
+        <td>Central Bank AVL vendor vetting; SWIFT Connectivity Authorization Letter; NCA ECC compliance</td>
+        <td>Yes — project-specific cyber extension (USD 10M)</td>
+      </tr>
+      <tr>
+        <td>P2 — National Health HIE</td>
+        <td>Healthcare</td>
+        <td>Netherlands (EU)</td>
+        <td>EUR 8.7M</td>
+        <td><span class="badge badge-yellow">Conditional ✅</span></td>
+        <td>GDPR Art. 35 DPIA + AP review; NEN 7510 compliance; data residency in Netherlands; Dutch DPA consultation</td>
+        <td>No additional insurance; existing coverage sufficient</td>
+      </tr>
+      <tr>
+        <td>P3 — Ministry of Finance e-Procurement</td>
+        <td>Government</td>
+        <td>Morocco</td>
+        <td>EUR 1.72M</td>
+        <td><span class="badge badge-green">Fully Authorized ✅</span></td>
+        <td>None — standard government IT project; DGSSI non-classified designation</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>P4 — Smart Grid Analytics</td>
+        <td>Energy</td>
+        <td>Netherlands (EU)</td>
+        <td>EUR 7.18M</td>
+        <td><span class="badge badge-yellow">Conditional ✅<br>(Component 3 Declined)</span></td>
+        <td>SCADA write access declined (CNI restriction); NIS2 Security Management Agreement required; OPC-UA read-only only via data diode</td>
+        <td>No additional; existing coverage sufficient</td>
+      </tr>
+      <tr>
+        <td>P5 — UM6P Digital Campus</td>
+        <td>Education</td>
+        <td>Morocco</td>
+        <td>EUR 8.1M (+ EUR 1.1M MS)</td>
+        <td><span class="badge badge-green">Fully Authorized ✅</span></td>
+        <td>Data Access Boundary Agreement required for research data isolation; dual CNDP + GDPR compliance for EU students; Ethical AI Charter applied to student analytics</td>
+        <td>No</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Key Compliance Lessons — Portfolio Analysis</h2>
+
+  <h3>1. Data Residency Requirements Are Sector and Jurisdiction-Specific</h3>
+  <p>All five projects required specific data residency arrangements tailored to the jurisdiction. Financial sector data remained within the UAE (CBUAE guidelines); health data within the Netherlands (Dutch DPA / GDPR); government procurement data within Morocco (DGSSI requirements); energy analytics data within EU/AWS (NIS2 requirements); and student data within Morocco (CNDP). PTGT's multi-datacenter infrastructure strategy — with primary facilities in Amsterdam and Casablanca and cloud presence across AWS eu-west-1, eu-central-1, and me-south-1 — enables it to satisfy data residency obligations across all its primary markets without architectural compromise.</p>
+
+  <h3>2. The Scope Limitation Mechanism Works as Intended</h3>
+  <p>Project 4 (Smart Grid Analytics) provides a documented example of PTGT's Eligibility Decision Framework operating correctly under real contract conditions. The CLCO's written scope limitation memorandum (PTGT-LCC-2022-ENE-001) declinating Component 3 (SCADA write access) was issued within 5 business days of receiving the RFP — within the Stage 3 Eligibility Analysis window of the Legal Review Workflow. The client accepted the limitation without contract dispute, and PTGT retained the EUR 7.18M analytics scope while the client procured the CNI-restricted component separately. This outcome demonstrates that PTGT's compliance governance adds commercial value rather than simply creating barriers — it prevents the Company from accepting liability it cannot competently manage.</p>
+
+  <h3>3. GDPR Article 9 Health Data Requires Proactive DPA Engagement</h3>
+  <p>Project 2 (National Health HIE) required formal prior consultation with the Dutch DPA under GDPR Article 36 — a process that added approximately 6 weeks to the project's pre-contract compliance timeline but ultimately de-risked the entire program. PTGT's DPO led this consultation process, producing a DPIA that the AP reviewed and did not object to. This experience has been codified into PTGT's standard Healthcare IT Compliance Playbook.</p>
+
+  <h3>4. Central Bank and Financial Infrastructure Projects Require Enhanced Vendor Vetting</h3>
+  <p>Project 1 (Central Bank ISO 20022) required SWIFT Connectivity Authorization and central bank AVL vetting that are not part of standard procurement processes. PTGT's Banking &amp; Financial Services practice now maintains pre-vetted status with 7 central banks and major financial regulators across its operating regions, reducing the lead time for these specialized onboarding requirements from 8 weeks to approximately 3 weeks for familiar institutions.</p>
+
+  <h2>Appendix — Project Financial Summary</h2>
+  <table>
+    <thead><tr><th>Project</th><th>Contract Value</th><th>Duration</th><th>Gross Margin</th><th>On-Budget</th><th>On-Time</th><th>Client Satisfaction</th></tr></thead>
+    <tbody>
+      <tr><td>P1 — Central Bank (GCC)</td><td>EUR 11.4M</td><td>21 months</td><td>22.1%</td><td>✅ +0.4% variance</td><td>✅ On schedule</td><td>4.8 / 5.0</td></tr>
+      <tr><td>P2 — National Health HIE (NL)</td><td>EUR 8.7M</td><td>21 months</td><td>18.8%</td><td>⚠ +4.0% (scope change)</td><td>✅ 2 weeks early</td><td>4.9 / 5.0</td></tr>
+      <tr><td>P3 — Min. of Finance (Morocco)</td><td>EUR 1.72M</td><td>24 months</td><td>20.4%</td><td>✅ +1.2% variance</td><td>✅ On schedule</td><td>4.7 / 5.0</td></tr>
+      <tr><td>P4 — Smart Grid Analytics (NL)</td><td>EUR 7.18M</td><td>18 months</td><td>21.6%</td><td>✅ On budget</td><td>✅ On schedule</td><td>4.6 / 5.0</td></tr>
+      <tr><td>P5 — UM6P Digital Campus (Morocco)</td><td>EUR 8.1M</td><td>24 months</td><td>19.3%</td><td>✅ +2.1% variance</td><td>✅ 1 week early</td><td>4.9 / 5.0</td></tr>
+      <tr><td><strong>Portfolio Total / Average</strong></td><td><strong>EUR 37.1M</strong></td><td><strong>—</strong></td><td><strong>20.4% avg</strong></td><td><strong>5/5 within ±5%</strong></td><td><strong>5/5 on/ahead</strong></td><td><strong>4.78 / 5.0</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:35px; padding:18px; background:var(--light-gray); border-radius:8px; border:1px solid var(--border);">
+    <p style="font-size:9pt; color:var(--gray); text-align:center; margin:0;">
+      <strong>CONFIDENTIALITY NOTICE:</strong> Client identities are protected where indicated. All financial data, technical architecture descriptions, and regulatory analysis in this document are accurate representations of completed work and have been reviewed and approved for disclosure by the PTGT CLCO. Client reference letters are available under NDA for qualified procurement evaluators. This document is consistent with and subordinate to PTGT-CORP-001-2025 (Corporate Portfolio). © 2025 Power Test Global Technologies S.A. All rights reserved.
+    </p>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies S.A. | RCS Luxembourg B 178.442</div>
+    <div>Document: PTGT-PROJ-EN-001-2025 v2.1 | Classification: Restricted | © 2025 PTGT</div>
+  </div>
+</div>
+
+</body>
+</html>

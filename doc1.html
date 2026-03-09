@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Power Test Global Technologies – Corporate Portfolio</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+  :root {
+    --navy: #0a1628;
+    --blue: #1a3a6b;
+    --accent: #2563eb;
+    --light-blue: #dbeafe;
+    --gray: #64748b;
+    --light-gray: #f8fafc;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --white: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--white); font-size: 10.5pt; line-height: 1.7; }
+  
+  /* COVER PAGE */
+  .cover { background: linear-gradient(160deg, var(--navy) 0%, var(--blue) 60%, #1e4d9b 100%); color: white; min-height: 100vh; display: flex; flex-direction: column; justify-content: space-between; padding: 80px 80px 60px; position: relative; overflow: hidden; }
+  .cover::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: rgba(37,99,235,0.18); border-radius: 50%; }
+  .cover::after { content: ''; position: absolute; bottom: -80px; left: -80px; width: 350px; height: 350px; background: rgba(37,99,235,0.12); border-radius: 50%; }
+  .cover-logo { font-size: 13pt; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #93c5fd; margin-bottom: 6px; }
+  .cover-logo-full { font-size: 32pt; font-weight: 700; line-height: 1.1; margin-bottom: 10px; }
+  .cover-tagline { font-size: 12pt; color: #93c5fd; font-weight: 300; letter-spacing: 1px; margin-bottom: 60px; }
+  .cover-doc-type { font-size: 9pt; font-weight: 600; letter-spacing: 4px; text-transform: uppercase; color: #60a5fa; border: 1px solid #3b82f6; display: inline-block; padding: 6px 18px; border-radius: 3px; margin-bottom: 12px; }
+  .cover-doc-title { font-size: 26pt; font-weight: 700; line-height: 1.2; margin-bottom: 10px; }
+  .cover-doc-subtitle { font-size: 11pt; color: #bfdbfe; font-weight: 300; }
+  .cover-meta { font-size: 9pt; color: #93c5fd; line-height: 2; }
+  .cover-meta strong { color: white; }
+  .cover-bar { height: 3px; background: linear-gradient(90deg, #2563eb, #60a5fa, #2563eb); width: 100%; margin: 30px 0; }
+  .cover-conf { font-size: 8pt; color: #60a5fa; letter-spacing: 2px; text-transform: uppercase; }
+
+  /* PAGE BREAKS */
+  .page-break { page-break-before: always; break-before: page; padding-top: 60px; }
+
+  /* TOC */
+  .toc-page { padding: 60px 80px; }
+  .toc-title { font-size: 20pt; font-weight: 700; color: var(--navy); border-bottom: 3px solid var(--accent); padding-bottom: 12px; margin-bottom: 30px; }
+  .toc-section { margin-bottom: 4px; }
+  .toc-item { display: flex; justify-content: space-between; align-items: baseline; padding: 5px 0; border-bottom: 1px dotted var(--border); font-size: 10pt; }
+  .toc-item.main { font-weight: 600; color: var(--navy); font-size: 11pt; padding-top: 12px; }
+  .toc-item.sub { padding-left: 20px; color: var(--gray); }
+  .toc-item.sub2 { padding-left: 40px; color: var(--gray); font-size: 9.5pt; }
+  .toc-page-num { color: var(--gray); font-size: 9pt; min-width: 40px; text-align: right; }
+
+  /* MAIN CONTENT */
+  .content-page { padding: 60px 80px; }
+  .section-header { background: linear-gradient(135deg, var(--navy), var(--blue)); color: white; padding: 18px 30px; border-radius: 4px; margin-bottom: 30px; }
+  .section-num { font-size: 9pt; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: #93c5fd; margin-bottom: 4px; }
+  .section-title { font-size: 18pt; font-weight: 700; }
+
+  h1 { font-size: 22pt; color: var(--navy); font-weight: 700; margin-bottom: 16px; }
+  h2 { font-size: 15pt; color: var(--blue); font-weight: 700; margin: 28px 0 12px; padding-left: 12px; border-left: 4px solid var(--accent); }
+  h3 { font-size: 12pt; color: var(--navy); font-weight: 600; margin: 20px 0 8px; }
+  h4 { font-size: 10.5pt; color: var(--blue); font-weight: 600; margin: 14px 0 6px; }
+  p { margin-bottom: 10px; text-align: justify; }
+  ul, ol { margin: 8px 0 14px 22px; }
+  li { margin-bottom: 5px; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 9.5pt; }
+  thead tr { background: var(--navy); color: white; }
+  thead th { padding: 10px 12px; text-align: left; font-weight: 600; font-size: 9pt; letter-spacing: 0.5px; }
+  tbody tr:nth-child(even) { background: var(--light-gray); }
+  tbody tr:hover { background: var(--light-blue); }
+  tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .table-caption { font-size: 8.5pt; color: var(--gray); margin-top: -10px; margin-bottom: 16px; font-style: italic; }
+
+  /* BOXES */
+  .info-box { background: var(--light-blue); border-left: 4px solid var(--accent); padding: 14px 18px; margin: 14px 0; border-radius: 0 4px 4px 0; }
+  .warn-box { background: #fef3c7; border-left: 4px solid #f59e0b; padding: 14px 18px; margin: 14px 0; border-radius: 0 4px 4px 0; }
+  .danger-box { background: #fee2e2; border-left: 4px solid #dc2626; padding: 14px 18px; margin: 14px 0; border-radius: 0 4px 4px 0; }
+  .success-box { background: #dcfce7; border-left: 4px solid #16a34a; padding: 14px 18px; margin: 14px 0; border-radius: 0 4px 4px 0; }
+  .box-title { font-weight: 700; font-size: 10pt; margin-bottom: 6px; }
+
+  /* STAT CARDS */
+  .stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 20px 0; }
+  .stat-card { background: var(--navy); color: white; padding: 20px; border-radius: 6px; text-align: center; }
+  .stat-value { font-size: 22pt; font-weight: 700; color: #60a5fa; }
+  .stat-label { font-size: 8.5pt; color: #bfdbfe; margin-top: 4px; letter-spacing: 0.5px; }
+
+  .stat-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+  .stat-card-light { background: var(--light-gray); border: 1px solid var(--border); padding: 18px; border-radius: 6px; }
+  .stat-card-light .val { font-size: 18pt; font-weight: 700; color: var(--accent); }
+  .stat-card-light .lbl { font-size: 9pt; color: var(--gray); margin-top: 3px; }
+
+  /* BADGE */
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 8pt; font-weight: 600; margin: 2px; }
+  .badge-blue { background: var(--light-blue); color: var(--blue); }
+  .badge-green { background: #dcfce7; color: #15803d; }
+  .badge-red { background: #fee2e2; color: #b91c1c; }
+  .badge-yellow { background: #fef9c3; color: #92400e; }
+
+  /* ORG CHART */
+  .org-box { border: 2px solid var(--blue); border-radius: 6px; padding: 10px 16px; text-align: center; background: var(--light-gray); font-size: 9.5pt; }
+  .org-box.top { background: var(--navy); color: white; border-color: var(--navy); font-weight: 700; }
+  .org-row { display: flex; justify-content: center; gap: 12px; margin: 10px 0; flex-wrap: wrap; }
+
+  /* TIMELINE */
+  .timeline { position: relative; margin: 20px 0; }
+  .timeline-item { display: flex; gap: 20px; margin-bottom: 20px; }
+  .timeline-year { min-width: 60px; font-weight: 700; color: var(--accent); font-size: 11pt; padding-top: 2px; }
+  .timeline-content { flex: 1; background: var(--light-gray); border-radius: 6px; padding: 12px 16px; border-left: 3px solid var(--accent); }
+
+  /* PAGE NUMBER INDICATOR */
+  .page-ind { font-size: 8pt; color: var(--gray); text-align: right; margin-bottom: 20px; font-style: italic; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+
+  /* FOOTER */
+  .footer { margin-top: 50px; padding-top: 16px; border-top: 2px solid var(--border); display: flex; justify-content: space-between; align-items: center; font-size: 8pt; color: var(--gray); }
+  .footer-logo { font-weight: 700; color: var(--navy); font-size: 9pt; }
+
+  /* TWO COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 16px 0; }
+
+  @media print {
+    .page-break { page-break-before: always; }
+    .cover { min-height: 100vh; }
+    body { font-size: 10pt; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ COVER PAGE -->
+<div class="cover">
+  <div>
+    <div class="cover-logo">Power Test Global Technologies</div>
+    <div class="cover-logo-full">PTGT</div>
+    <div class="cover-tagline">Engineering Tomorrow's Digital Infrastructure</div>
+    <div class="cover-bar"></div>
+    <div class="cover-doc-type">Official Document</div><br>
+    <div class="cover-doc-title">Corporate Portfolio &amp;<br>Eligibility Framework</div>
+    <div class="cover-doc-subtitle">A Comprehensive Guide to Corporate Identity, Legal Compliance,<br>Technical Capabilities, and Strategic Direction</div>
+  </div>
+  <div>
+    <div class="cover-bar"></div>
+    <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+      <div class="cover-meta">
+        <strong>Document Reference:</strong> PTGT-CORP-001-2025<br>
+        <strong>Version:</strong> 4.2 — Final<br>
+        <strong>Classification:</strong> Restricted — Commercial In Confidence<br>
+        <strong>Prepared by:</strong> Corporate Strategy &amp; Legal Division<br>
+        <strong>Date of Issue:</strong> January 15, 2025<br>
+        <strong>Next Review:</strong> January 15, 2026
+      </div>
+      <div style="text-align:right;">
+        <div class="cover-conf">Confidential</div>
+        <div style="font-size:8pt; color:#60a5fa; margin-top:6px;">© 2025 Power Test Global Technologies<br>All rights reserved</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ TABLE OF CONTENTS -->
+<div class="toc-page page-break">
+  <div class="page-ind">[Suggested Pages i–iii]</div>
+  <div class="toc-title">Table of Contents</div>
+
+  <div class="toc-item main"><span>Executive Summary</span><span class="toc-page-num">1</span></div>
+
+  <div class="toc-item main"><span>Section 1 — Corporate Identity</span><span class="toc-page-num">3</span></div>
+  <div class="toc-item sub"><span>1.1 Legal Name, Structure &amp; Jurisdiction</span><span class="toc-page-num">3</span></div>
+  <div class="toc-item sub"><span>1.2 Corporate Governance Model</span><span class="toc-page-num">5</span></div>
+  <div class="toc-item sub"><span>1.3 Board of Directors &amp; Executive Committee</span><span class="toc-page-num">6</span></div>
+  <div class="toc-item sub"><span>1.4 Shareholding Structure &amp; Capital</span><span class="toc-page-num">8</span></div>
+  <div class="toc-item sub"><span>1.5 Articles of Incorporation Summary</span><span class="toc-page-num">9</span></div>
+
+  <div class="toc-item main"><span>Section 2 — Legal Framework &amp; Regulatory Compliance</span><span class="toc-page-num">11</span></div>
+  <div class="toc-item sub"><span>2.1 Corporate Legal Form &amp; Registration</span><span class="toc-page-num">11</span></div>
+  <div class="toc-item sub"><span>2.2 Tax Identification &amp; Operating Licenses</span><span class="toc-page-num">12</span></div>
+  <div class="toc-item sub"><span>2.3 IT Services Authorization Scope</span><span class="toc-page-num">14</span></div>
+  <div class="toc-item sub"><span>2.4 Public Procurement Eligibility</span><span class="toc-page-num">15</span></div>
+  <div class="toc-item sub"><span>2.5 Data Protection &amp; Privacy Compliance</span><span class="toc-page-num">16</span></div>
+  <div class="toc-item sub"><span>2.6 Cybersecurity Regulatory Compliance</span><span class="toc-page-num">18</span></div>
+  <div class="toc-item sub"><span>2.7 Export Controls &amp; Government Contracting</span><span class="toc-page-num">19</span></div>
+  <div class="toc-item sub"><span>2.8 Eligibility Decision Framework</span><span class="toc-page-num">20</span></div>
+
+  <div class="toc-item main"><span>Section 3 — Risk &amp; Compliance Governance</span><span class="toc-page-num">23</span></div>
+  <div class="toc-item sub"><span>3.1 Internal Compliance Department</span><span class="toc-page-num">23</span></div>
+  <div class="toc-item sub"><span>3.2 Risk Classification Matrix</span><span class="toc-page-num">24</span></div>
+  <div class="toc-item sub"><span>3.3 Legal Review Workflow</span><span class="toc-page-num">25</span></div>
+  <div class="toc-item sub"><span>3.4 Anti-Corruption &amp; KYC/AML Procedures</span><span class="toc-page-num">27</span></div>
+
+  <div class="toc-item main"><span>Section 4 — Financial Profile (5-Year Projection)</span><span class="toc-page-num">29</span></div>
+  <div class="toc-item sub"><span>4.1 Revenue by Service Line</span><span class="toc-page-num">29</span></div>
+  <div class="toc-item sub"><span>4.2 EBITDA &amp; Cost Structure</span><span class="toc-page-num">31</span></div>
+  <div class="toc-item sub"><span>4.3 Investment Strategy &amp; R&amp;D</span><span class="toc-page-num">32</span></div>
+  <div class="toc-item sub"><span>4.4 Insurance &amp; Professional Liability</span><span class="toc-page-num">33</span></div>
+
+  <div class="toc-item main"><span>Section 5 — Core IT Domains of Expertise</span><span class="toc-page-num">35</span></div>
+  <div class="toc-item sub"><span>5.1–5.10 Technical Practice Areas</span><span class="toc-page-num">35</span></div>
+
+  <div class="toc-item main"><span>Section 6 — Ten Detailed Web Services</span><span class="toc-page-num">47</span></div>
+
+  <div class="toc-item main"><span>Section 7 — Infrastructure Capabilities</span><span class="toc-page-num">62</span></div>
+
+  <div class="toc-item main"><span>Section 8 — Human Resources &amp; Certifications</span><span class="toc-page-num">69</span></div>
+
+  <div class="toc-item main"><span>Section 9 — Corporate Social Responsibility</span><span class="toc-page-num">75</span></div>
+
+  <div class="toc-item main"><span>Section 10 — Five-Year Strategic Roadmap</span><span class="toc-page-num">79</span></div>
+
+  <div class="toc-item main"><span>Appendices</span><span class="toc-page-num">84</span></div>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Confidential | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ EXECUTIVE SUMMARY -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 1–2]</div>
+  <div class="section-header">
+    <div class="section-num">Executive Summary</div>
+    <div class="section-title">Company Overview &amp; Strategic Positioning</div>
+  </div>
+
+  <p>Power Test Global Technologies (hereinafter "PTGT" or "the Company") is a multinational enterprise IT integrator and digital transformation consultancy incorporated under the laws of the Grand Duchy of Luxembourg, with primary operational headquarters in Amsterdam, Netherlands, and principal delivery centers in Casablanca, Morocco and Dubai, United Arab Emirates. Founded in 2011, PTGT has grown from a regional IT services provider into a globally recognized partner for complex, mission-critical technology programs spanning public-sector modernization, financial systems transformation, healthcare digitization, and industrial IoT deployments.</p>
+
+  <p>As of fiscal year 2024, PTGT employs <strong>2,847 full-time equivalents (FTEs)</strong> across 14 countries, maintains active contracts in <strong>38 client organizations</strong>, and reports consolidated annual revenues of <strong>EUR 312.4 million</strong> with an EBITDA margin of <strong>19.3%</strong>. The Company holds strategic vendor partnerships with Amazon Web Services, Microsoft Azure, Salesforce, SAP, and Oracle, and is certified under ISO 27001:2022, ISO 9001:2015, CMMI Level 4, and SOC 2 Type II frameworks.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-value">€312M</div><div class="stat-label">FY2024 Revenue</div></div>
+    <div class="stat-card"><div class="stat-value">2,847</div><div class="stat-label">FTE Employees</div></div>
+    <div class="stat-card"><div class="stat-value">14</div><div class="stat-label">Countries of Operation</div></div>
+    <div class="stat-card"><div class="stat-value">19.3%</div><div class="stat-label">EBITDA Margin</div></div>
+  </div>
+
+  <h2>Strategic Positioning</h2>
+  <p>PTGT occupies a differentiated position in the global IT services market, operating at the intersection of deep technical engineering capability and sector-specific regulatory knowledge. Unlike generalist IT outsourcing firms, PTGT has deliberately concentrated its competencies in <strong>regulated-industry IT integration</strong>, enabling it to participate in markets — such as central bank infrastructure modernization, cross-border healthcare data exchange, and government cloud migration — that require both technical credibility and regulatory alignment.</p>
+  <p>The Company's competitive differentiation rests on three pillars: (1) a <em>compliant-by-design</em> engineering methodology that embeds legal and regulatory requirements into system architecture from day one; (2) a <em>multilingual governance capability</em> enabling direct engagement with regulatory authorities across European, Gulf Cooperation Council (GCC), and North African jurisdictions; and (3) a <em>hybrid delivery model</em> that combines onshore advisory expertise with cost-optimized nearshore and offshore engineering centers.</p>
+
+  <h2>Market Role</h2>
+  <p>PTGT serves as a Tier-1 systems integrator in the European and MENA (Middle East &amp; North Africa) markets, regularly competing and partnering with global firms including Capgemini, CGI, Atos, and Deloitte Technology. The Company's revenue mix is approximately 55% from long-term managed services contracts, 30% from fixed-price implementation engagements, and 15% from time-and-materials consulting mandates. Public sector contracts account for 42% of total revenues, reflecting PTGT's strong positioning in government IT modernization programs.</p>
+
+  <h2>Core Differentiators</h2>
+  <ul>
+    <li><strong>Regulatory Embedded Engineering:</strong> PTGT's proprietary Compliance-First Development (CFD) methodology ensures that GDPR, NIS2, DORA, and sector-specific regulatory requirements are architected into solutions at the design stage, not added as post-implementation controls.</li>
+    <li><strong>Multilingual Delivery:</strong> The Company delivers projects in English, French, Arabic, Dutch, and German, removing language barriers in cross-border engagements across the EU, GCC, and Maghreb regions.</li>
+    <li><strong>Sovereign Cloud Expertise:</strong> PTGT holds rare technical certification and contractual frameworks enabling it to architect solutions on sovereign cloud infrastructure — a critical capability for EU GAIA-X participants and GCC national data residency requirements.</li>
+    <li><strong>Ethics-by-Design AI Practice:</strong> The Company's Artificial Intelligence &amp; Data Engineering practice operates under a published Ethical AI Charter, providing clients in regulated sectors with documented bias auditing, explainability, and model governance frameworks.</li>
+    <li><strong>Capital Adequacy for Large Contracts:</strong> With a EUR 45 million revolving credit facility and a EUR 120 million balance sheet, PTGT meets the financial pre-qualification thresholds of the most demanding public procurement frameworks, including the EU Institutions' Financial Regulation (Article 196) and GCC government tender requirements.</li>
+  </ul>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Section: Executive Summary | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 1 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 3–10]</div>
+  <div class="section-header">
+    <div class="section-num">Section 1</div>
+    <div class="section-title">Corporate Identity</div>
+  </div>
+
+  <h2>1.1 Legal Name, Corporate Structure &amp; Jurisdiction</h2>
+
+  <h3>1.1.1 Legal Name</h3>
+  <p>The full registered legal name of the Company is <strong>Power Test Global Technologies S.A.</strong> (Société Anonyme), registered in the Grand Duchy of Luxembourg. The Company trades commercially under the brand name <strong>Power Test Global Technologies</strong> and the acronym <strong>PTGT</strong>. The Company's registered office address is:</p>
+  <div class="info-box">
+    <div class="box-title">Registered Office</div>
+    Power Test Global Technologies S.A.<br>
+    5, Rue de la Forge<br>
+    L-1535 Luxembourg<br>
+    Grand Duchy of Luxembourg<br>
+    <br>
+    Registration: Luxembourg Register of Commerce and Companies (RCS Luxembourg) — <strong>B 178.442</strong><br>
+    VAT Number: <strong>LU28834491</strong>
+  </div>
+
+  <h3>1.1.2 Group Structure</h3>
+  <p>PTGT operates through a two-tier holding structure. The parent holding company, <strong>Power Test Group Holdings S.A.</strong> (Luxembourg), owns 100% of the operational holding entity, <strong>Power Test Global Technologies S.A.</strong> (Luxembourg), which in turn wholly owns or majority-owns the following subsidiaries:</p>
+
+  <table>
+    <thead><tr><th>Subsidiary Legal Name</th><th>Country</th><th>Legal Form</th><th>Registration No.</th><th>PTGT Ownership</th><th>Primary Function</th></tr></thead>
+    <tbody>
+      <tr><td>Power Test Technologies B.V.</td><td>Netherlands</td><td>B.V. (Private Ltd)</td><td>KVK 73441892</td><td>100%</td><td>EU Delivery Hub &amp; HQ Operations</td></tr>
+      <tr><td>Power Test Maroc SARL</td><td>Morocco</td><td>SARL</td><td>RC Casablanca 456.789</td><td>100%</td><td>Nearshore Engineering Center</td></tr>
+      <tr><td>Power Test Gulf FZE</td><td>UAE (DMCC)</td><td>Free Zone Entity</td><td>DMCC-135782</td><td>100%</td><td>GCC Business Development</td></tr>
+      <tr><td>Power Test Technologies GmbH</td><td>Germany</td><td>GmbH</td><td>HRB 221447 B</td><td>100%</td><td>DACH Region Operations</td></tr>
+      <tr><td>Power Test Solutions SAS</td><td>France</td><td>SAS</td><td>SIREN 882 341 567</td><td>100%</td><td>French Public Sector Contracts</td></tr>
+      <tr><td>Power Test Consulting Ltd</td><td>United Kingdom</td><td>Ltd</td><td>CH 12847391</td><td>100%</td><td>UK Advisory &amp; Financial Sector</td></tr>
+      <tr><td>Power Test Technologies d.o.o.</td><td>Serbia</td><td>d.o.o.</td><td>APR 21-3445621</td><td>100%</td><td>Eastern European Engineering</td></tr>
+      <tr><td>Power Test Saudi LLC</td><td>Saudi Arabia</td><td>LLC</td><td>CR 1010834721</td><td>51%</td><td>KSA Government Contracts</td></tr>
+      <tr><td>Power Test Egypt LLC</td><td>Egypt</td><td>LLC</td><td>CR 84722-Cairo</td><td>70%</td><td>Egypt &amp; Levant Operations</td></tr>
+    </tbody>
+  </table>
+  <div class="table-caption">Table 1.1 — PTGT Group Subsidiary Structure as of January 1, 2025</div>
+
+  <div class="warn-box">
+    <div class="box-title">⚠ Compliance Note on Partial Ownership</div>
+    Power Test Saudi LLC (51% owned) operates as a Saudi-registered limited liability company with a local strategic partner holding 49% of shares, in compliance with the Saudi Companies Law (Royal Decree M/3 of 1437H). This entity may only execute projects that do not require majority foreign ownership restrictions to be lifted under the Saudi Negative List. All government-classified IT projects in Saudi Arabia must be reviewed through the PTGT Legal Review Workflow (Section 3.3) before contracting.
+  </div>
+
+  <h2>1.2 Corporate Governance Model</h2>
+  <p>PTGT adheres to a <strong>two-tier governance model</strong> consisting of a Supervisory Board (Conseil de Surveillance) and an Executive Management Board (Conseil d'Administration Exécutif), consistent with Luxembourg corporate law (Loi du 10 août 1915 sur les sociétés commerciales, as amended). This structure ensures clear separation between oversight and executive management functions, aligned with the OECD Principles of Corporate Governance (2023 Revision).</p>
+
+  <h3>1.2.1 Supervisory Board</h3>
+  <p>The Supervisory Board comprises five independent non-executive directors elected by shareholders at the Annual General Meeting (AGM). The Supervisory Board is responsible for approving the annual budget, material acquisitions (above EUR 10 million), changes to strategic direction, and the appointment of Executive Board members. Board meetings are held quarterly, with extraordinary meetings convened as required.</p>
+
+  <h3>1.2.2 Executive Management Board</h3>
+  <p>The Executive Management Board is responsible for the day-to-day management of the Company and consists of seven executive positions. The Executive Board reports to the Supervisory Board and prepares quarterly management accounts and a detailed annual report for shareholder review.</p>
+
+  <h2>1.3 Board of Directors &amp; Executive Committee</h2>
+
+  <h3>1.3.1 Supervisory Board Members</h3>
+  <table>
+    <thead><tr><th>Name</th><th>Role</th><th>Nationality</th><th>Background</th></tr></thead>
+    <tbody>
+      <tr><td>Dr. Hendrik van Moorsel</td><td>Chairman</td><td>Dutch</td><td>Former SVP Infrastructure, Royal Dutch Shell; Professor of IS Governance, TU Delft</td></tr>
+      <tr><td>Mme. Sophie Leclerc-Fontaine</td><td>Vice-Chair &amp; Audit Committee Chair</td><td>French</td><td>Former CFO, Thales Group; Certified Statutory Auditor (CAC)</td></tr>
+      <tr><td>Mr. James P. Whitmore</td><td>Risk &amp; Compliance Committee Chair</td><td>British</td><td>Former Partner, Linklaters LLP; LL.M. International Commercial Law</td></tr>
+      <tr><td>Eng. Khalid Al-Rashidi</td><td>Technology &amp; Innovation Committee Chair</td><td>Saudi</td><td>Former CTO, Saudi Telecom Company (STC); IEEE Senior Member</td></tr>
+      <tr><td>Ms. Amina Ouhssini</td><td>ESG &amp; People Committee Chair</td><td>Moroccan</td><td>Former VP Human Capital, OCP Group; M.Sc. Organizational Psychology</td></tr>
+    </tbody>
+  </table>
+
+  <h3>1.3.2 Executive Management Board</h3>
+  <table>
+    <thead><tr><th>Title</th><th>Name</th><th>Nationality</th><th>Responsibilities</th></tr></thead>
+    <tbody>
+      <tr><td>Chief Executive Officer (CEO)</td><td>Mr. Alexander Kreutz</td><td>German/Dutch</td><td>Overall strategic leadership, stakeholder relations, M&amp;A</td></tr>
+      <tr><td>Chief Financial Officer (CFO)</td><td>Ms. Nadia Bencheikh</td><td>Moroccan/French</td><td>Financial management, treasury, investor relations, tax compliance</td></tr>
+      <tr><td>Chief Technology Officer (CTO)</td><td>Mr. Dmitri Volkov</td><td>Russian/Dutch</td><td>Technology strategy, R&amp;D, architecture standards, vendor alliances</td></tr>
+      <tr><td>Chief Operating Officer (COO)</td><td>Mr. Tarek El-Sayed</td><td>Egyptian/British</td><td>Delivery operations, project management office, quality assurance</td></tr>
+      <tr><td>Chief Legal &amp; Compliance Officer (CLCO)</td><td>Ms. Ingrid Müller-Schönberg</td><td>German/Luxembourg</td><td>Legal affairs, regulatory compliance, data protection (DPO), contract management</td></tr>
+      <tr><td>Chief People Officer (CPO)</td><td>Mr. Youssef Benali</td><td>Moroccan</td><td>HR strategy, talent acquisition, learning &amp; development, compensation</td></tr>
+      <tr><td>Chief Revenue Officer (CRO)</td><td>Ms. Caroline Hartley</td><td>British</td><td>Global sales, business development, account management, marketing</td></tr>
+    </tbody>
+  </table>
+
+  <h2>1.4 Shareholding Structure &amp; Capital</h2>
+  <h3>1.4.1 Share Capital</h3>
+  <p>The Company's authorized and fully paid-up share capital is <strong>EUR 18,500,000</strong>, divided into <strong>18,500,000 ordinary shares</strong> of EUR 1.00 par value each. No preference shares, convertible notes, or outstanding warrants exist as of the date of this document. The Company has not issued any employee stock options or restricted stock units that remain unvested and material to the share count.</p>
+
+  <table>
+    <thead><tr><th>Shareholder</th><th>Shares Held</th><th>% Ownership</th><th>Category</th></tr></thead>
+    <tbody>
+      <tr><td>Power Test Group Holdings S.A. (Luxembourg)</td><td>9,435,000</td><td>51.0%</td><td>Ultimate Parent / Founder Entity</td></tr>
+      <tr><td>Meridian Capital Partners IV L.P. (Cayman Islands)</td><td>3,700,000</td><td>20.0%</td><td>Private Equity — Growth Capital</td></tr>
+      <tr><td>Gulf Technology Investment Fund (Abu Dhabi)</td><td>2,035,000</td><td>11.0%</td><td>Strategic Institutional Investor</td></tr>
+      <tr><td>European Innovation Ventures FCPR (France)</td><td>1,665,000</td><td>9.0%</td><td>Venture/Growth Capital (EU-domiciled)</td></tr>
+      <tr><td>Management Equity Plan (PTGT Executives)</td><td>925,000</td><td>5.0%</td><td>Management Incentive Shares</td></tr>
+      <tr><td>Employee Share Ownership Program (ESOP)</td><td>740,000</td><td>4.0%</td><td>Employee Participation</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>18,500,000</strong></td><td><strong>100.0%</strong></td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="table-caption">Table 1.4 — Shareholding Structure as of January 1, 2025</div>
+
+  <div class="info-box">
+    <div class="box-title">ℹ Beneficial Ownership Transparency</div>
+    In accordance with Luxembourg Law of January 13, 2019 implementing EU Directive 2018/843 (5th AML Directive), the Ultimate Beneficial Owner (UBO) of Power Test Group Holdings S.A. is <strong>Mr. Alexander Kreutz</strong> (German national, born 1973), who indirectly holds a controlling interest through family trust structures registered in Luxembourg. This beneficial ownership is duly registered with the Luxembourg Beneficial Ownership Register (Registre des bénéficiaires effectifs — RBE).
+  </div>
+
+  <h2>1.5 Articles of Incorporation — Summary</h2>
+  <p>The Articles of Incorporation (Statuts Coordonnés) of Power Test Global Technologies S.A. were last amended by notarial deed on <strong>March 14, 2023</strong>, before Maître Christine Dupont-Sauer, Notary in Luxembourg City. Key provisions are summarized below:</p>
+
+  <table>
+    <thead><tr><th>Article</th><th>Subject</th><th>Key Provision</th></tr></thead>
+    <tbody>
+      <tr><td>Art. 1</td><td>Corporate Name</td><td>Power Test Global Technologies S.A.</td></tr>
+      <tr><td>Art. 2</td><td>Registered Office</td><td>Luxembourg; may be transferred within Luxembourg by Board resolution</td></tr>
+      <tr><td>Art. 3</td><td>Corporate Purpose</td><td>Design, development, integration, and managed operation of IT systems; IT consulting; software engineering; data management; cybersecurity services; and any activities ancillary thereto</td></tr>
+      <tr><td>Art. 4</td><td>Duration</td><td>Unlimited</td></tr>
+      <tr><td>Art. 5</td><td>Share Capital</td><td>EUR 18,500,000 in ordinary registered shares of EUR 1.00 par value</td></tr>
+      <tr><td>Art. 6</td><td>Transfer Restrictions</td><td>Share transfers require prior written consent of the Supervisory Board if to a non-existing shareholder; right of first refusal applies</td></tr>
+      <tr><td>Art. 7</td><td>General Meetings</td><td>Annual General Meeting held no later than six months after fiscal year end; extraordinary meetings by Board or holders of ≥10% of shares</td></tr>
+      <tr><td>Art. 8</td><td>Dividend Policy</td><td>Dividends declared annually from distributable reserves; minimum 5% statutory reserve until reserve equals 10% of share capital</td></tr>
+      <tr><td>Art. 9</td><td>Supervisory Board</td><td>Minimum 3, maximum 7 independent non-executive directors; staggered 4-year terms</td></tr>
+      <tr><td>Art. 10</td><td>Executive Board</td><td>Minimum 2 executive directors; appointed/removed by Supervisory Board; Directors' Liability Insurance (D&amp;O) mandatory</td></tr>
+      <tr><td>Art. 11</td><td>Auditors</td><td>Independent statutory auditor (Réviseur d'entreprises agréé) appointed annually; currently Ernst &amp; Young Luxembourg</td></tr>
+      <tr><td>Art. 12</td><td>Dissolution</td><td>Requires extraordinary resolution of 75% of share capital; liquidator appointed by court</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Section 1: Corporate Identity | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 2 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 11–22]</div>
+  <div class="section-header">
+    <div class="section-num">Section 2</div>
+    <div class="section-title">Legal Framework &amp; Regulatory Compliance</div>
+  </div>
+
+  <h2>2.1 Corporate Legal Form &amp; Registration</h2>
+  <p>Power Test Global Technologies S.A. is constituted as a <em>Société Anonyme</em> (S.A.) under Luxembourg law. This legal form provides the Company with full legal personality, limited liability for shareholders, and unrestricted capacity to enter into contracts, hold assets, and conduct litigation in its own name. The S.A. form is recognized as equivalent to a Société par Actions Simplifiée (SAS) in France, an Aktiengesellschaft (AG) in Germany, and a Public Limited Company (PLC) in the United Kingdom for purposes of cross-border recognition under EU company law harmonization directives.</p>
+
+  <h3>2.1.1 Primary Registration Details</h3>
+  <table>
+    <thead><tr><th>Jurisdiction</th><th>Legal Form</th><th>Registration Number</th><th>Registration Date</th><th>Registering Authority</th></tr></thead>
+    <tbody>
+      <tr><td>Luxembourg (Parent)</td><td>Société Anonyme (S.A.)</td><td>RCS Lux B 178.442</td><td>April 7, 2011</td><td>Luxembourg Trade &amp; Companies Register (RCSL)</td></tr>
+      <tr><td>Netherlands (EU HQ)</td><td>Besloten Vennootschap (B.V.)</td><td>KVK 73441892</td><td>September 12, 2013</td><td>Kamer van Koophandel (KvK)</td></tr>
+      <tr><td>Morocco (Delivery Center)</td><td>SARL (Société à Responsabilité Limitée)</td><td>RC Casablanca 456.789</td><td>February 18, 2014</td><td>Centre Régional d'Investissement (CRI) Casablanca</td></tr>
+      <tr><td>UAE (DMCC Free Zone)</td><td>Free Zone Establishment (FZE)</td><td>DMCC-135782</td><td>June 1, 2016</td><td>Dubai Multi Commodities Centre (DMCC) Authority</td></tr>
+      <tr><td>Germany (DACH)</td><td>Gesellschaft mit beschränkter Haftung (GmbH)</td><td>HRB 221447 B</td><td>January 23, 2017</td><td>Handelsregister Berlin-Charlottenburg</td></tr>
+      <tr><td>France (Public Sector)</td><td>Société par Actions Simplifiée (SAS)</td><td>SIREN 882 341 567</td><td>October 5, 2018</td><td>Greffe du Tribunal de Commerce de Paris</td></tr>
+      <tr><td>Saudi Arabia (KSA)</td><td>LLC (شركة ذات مسؤولية محدودة)</td><td>CR 1010834721</td><td>March 20, 2019</td><td>Ministry of Commerce (MOCI)</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2.2 Tax Identification &amp; Operating Licenses</h2>
+
+  <h3>2.2.1 Tax Identification Numbers</h3>
+  <table>
+    <thead><tr><th>Jurisdiction</th><th>Tax ID Type</th><th>Tax ID Number</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>Luxembourg</td><td>Numéro d'identification fiscale (NIF)</td><td>LU28834491</td><td>Active</td></tr>
+      <tr><td>Netherlands</td><td>BTW-identificatienummer</td><td>NL861234567B01</td><td>Active</td></tr>
+      <tr><td>Morocco</td><td>Identifiant Fiscal (IF)</td><td>IF: 38741290</td><td>Active</td></tr>
+      <tr><td>UAE (DMCC)</td><td>Tax Registration Number (TRN)</td><td>100358744300003</td><td>Active — VAT registered</td></tr>
+      <tr><td>Germany</td><td>Steuernummer / USt-IdNr.</td><td>DE 327 551 884</td><td>Active</td></tr>
+      <tr><td>France</td><td>Numéro SIRET / N° TVA</td><td>SIRET 882 341 567 00012 / FR 47 882341567</td><td>Active</td></tr>
+      <tr><td>Saudi Arabia</td><td>Unified National Number (UNN)</td><td>7016144873</td><td>Active — ZATCA registered</td></tr>
+    </tbody>
+  </table>
+
+  <h3>2.2.2 Operating Licenses</h3>
+  <table>
+    <thead><tr><th>License Type</th><th>Issuing Authority</th><th>Jurisdiction</th><th>License Number</th><th>Valid Until</th></tr></thead>
+    <tbody>
+      <tr><td>ICT Service Provider License</td><td>Agence Nationale de Réglementation des Télécoms (ANRT)</td><td>Morocco</td><td>ANRT/IT/2014/0087</td><td>Renewable — Active</td></tr>
+      <tr><td>IT Consultancy License</td><td>DMCC Authority</td><td>UAE</td><td>DMCC-LC-IT-135782</td><td>December 31, 2025 (renewable)</td></tr>
+      <tr><td>Telecommunications Activities Authorization</td><td>Agence nationale des fréquences (ANFR)</td><td>France</td><td>ANFR/2020/ICT/445</td><td>Permanent (subject to annual notification)</td></tr>
+      <tr><td>Qualified Electronic Signature Service Provider</td><td>Agence nationale de la sécurité des systèmes d'information (ANSSI)</td><td>France</td><td>ANSSI/PSCE/2021/0034</td><td>March 31, 2026</td></tr>
+      <tr><td>National Cybersecurity Authority Vendor Registration</td><td>National Cybersecurity Authority (NCA)</td><td>Saudi Arabia</td><td>NCA-VR-2022-00198</td><td>Renewable annually</td></tr>
+      <tr><td>Cloud Service Provider Registration</td><td>Communications and Information Technology Commission (CITC)</td><td>Saudi Arabia</td><td>CITC-CSP-00342</td><td>Active</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2.3 IT Services Authorization Scope</h2>
+  <p>The Company is authorized to provide the following categories of IT services across its operating jurisdictions, subject to the jurisdiction-specific restrictions enumerated in Section 2.7:</p>
+
+  <table>
+    <thead><tr><th>Service Category</th><th>Authorization Level</th><th>Applicable Jurisdictions</th><th>Special Conditions</th></tr></thead>
+    <tbody>
+      <tr><td>Custom Software Development</td><td>Unrestricted</td><td>All group entities</td><td>None</td></tr>
+      <tr><td>Cloud Architecture &amp; Migration</td><td>Authorized</td><td>All group entities</td><td>Sovereign cloud projects in KSA require NCA pre-approval</td></tr>
+      <tr><td>Managed IT Services &amp; NOC/SOC</td><td>Authorized</td><td>EU, UAE, Morocco, KSA</td><td>Critical national infrastructure contracts require government security clearance</td></tr>
+      <tr><td>Data Analytics &amp; AI Systems</td><td>Authorized</td><td>All group entities</td><td>Biometric AI systems require prior DPIA under GDPR; KSA AI projects require SDAIA notification</td></tr>
+      <tr><td>ERP/CRM Implementation (SAP, Oracle, Microsoft)</td><td>Authorized — Certified Partner</td><td>All group entities</td><td>SAP S/4HANA public sector in France requires UGAP or UGAP-equivalent framework registration</td></tr>
+      <tr><td>Cybersecurity Services (Pentest, SOC, SIEM)</td><td>Authorized with restrictions</td><td>EU, UAE, Morocco</td><td>Offensive security (red teaming) in KSA requires NCA written authorization per engagement</td></tr>
+      <tr><td>Biometric &amp; Identity Management Systems</td><td>Restricted</td><td>EU, UAE only</td><td>GDPR Article 9 / EU AI Act restrictions apply; prohibited in Morocco absent national ID authority partnership</td></tr>
+      <tr><td>Electronic Payment Systems Integration</td><td>Authorized</td><td>EU, UAE, Morocco, KSA</td><td>PCI-DSS Level 1 certification required; EU: EMD2 Directive compliance; UAE: Central Bank CBUAE circular requirements</td></tr>
+      <tr><td>Telecommunications Infrastructure</td><td>Restricted</td><td>EU (partial), Morocco</td><td>Core telecom network infrastructure (Tier-1 backbone) excluded; requires national regulatory authorization PTGT does not currently hold</td></tr>
+      <tr><td>Defense &amp; Intelligence IT Systems</td><td>Excluded — Requires Special Authorization</td><td>All jurisdictions</td><td>PTGT holds no security clearance; defense-classified projects must be declined or executed under a cleared prime contractor</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2.4 Public Procurement Eligibility</h2>
+  <p>PTGT has been pre-qualified under multiple public procurement frameworks. Eligibility is determined by financial thresholds, certification requirements, and jurisdiction-specific vendor registration programs:</p>
+
+  <h3>2.4.1 European Union</h3>
+  <p>Under the EU Public Procurement Directive (Directive 2014/24/EU, implemented in all EU Member States), PTGT qualifies for open procedure tenders without restriction on contract value, subject to meeting individual contracting authority criteria. PTGT is registered on the SIMAP/TED (Tenders Electronic Daily) platform with Supplier ID <strong>EU-PTGT-2018-4471</strong>. For Below-Threshold contracts in France, PTGT's French subsidiary (Power Test Solutions SAS) is registered with the DUME system (Document Unique de Marché Européen).</p>
+
+  <h3>2.4.2 Morocco</h3>
+  <p>Under Decree n° 2-12-349 on public procurement (as amended by Decree 2-22-431 of 2022), Power Test Maroc SARL is registered in the Portail des Marchés Publics under vendor category "Systèmes d'Information et Technologies" with registration reference <strong>CRM-MA-IT-00892</strong>. The company is eligible for public procurement contracts up to MAD 250 million without limitation, subject to the financial pre-qualification conditions of the contracting authority.</p>
+
+  <h3>2.4.3 Saudi Arabia</h3>
+  <p>Power Test Saudi LLC is registered on the Etimad platform (منصة اعتماد) under vendor category IT-003 (Information Technology Services) with supplier registration number <strong>ETA-SA-2020-IT003-04421</strong>. The company is eligible for government contracts up to SAR 100 million under direct award procedures for strategic IT programs. Contracts above SAR 100 million require prior approval of the Saudi Cabinet's Committee on Government Digital Transformation.</p>
+
+  <div class="warn-box">
+    <div class="box-title">⚠ Public Procurement Restrictions — Critical Conditions</div>
+    <ul>
+      <li>PTGT entities may not tender for contracts classified as <strong>national security IT</strong> without a valid government security clearance in the relevant jurisdiction.</li>
+      <li>PTGT's Luxembourg parent company may not directly execute contracts within France without routing through Power Test Solutions SAS, as French public procurement law requires a locally-established entity for contracts exceeding EUR 500,000.</li>
+      <li>In KSA, Power Test Saudi LLC (51% PTGT-owned) must demonstrate that the local 49% partner has been informed of and endorses participation in government tenders, pursuant to the shareholder agreement and Saudi Company Law.</li>
+      <li>PTGT entities are currently <strong>not eligible</strong> to tender for contracts funded by the US Government (FAR/DFARS) or NATO, as no CAGE code or NATO vendor registration has been obtained.</li>
+    </ul>
+  </div>
+
+  <h2>2.5 Data Protection &amp; Privacy Compliance</h2>
+
+  <h3>2.5.1 GDPR Compliance (EU)</h3>
+  <p>All PTGT entities operating within the European Economic Area (EEA) comply with Regulation (EU) 2016/679 (GDPR). The Company has appointed Ms. Ingrid Müller-Schönberg (CLCO) as the <strong>Group Data Protection Officer (DPO)</strong>, duly registered with the Dutch Data Protection Authority (Autoriteit Persoonsgegevens) under registration reference <strong>AP-DPO-22-4419</strong>. A Group-wide Data Processing Register is maintained and updated quarterly. Standard Contractual Clauses (SCCs) in the format approved by European Commission Decision 2021/914 are incorporated into all data processing agreements with non-EEA sub-processors.</p>
+
+  <h3>2.5.2 Moroccan Data Protection</h3>
+  <p>Power Test Maroc SARL is registered with the <strong>Commission Nationale de contrôle de la protection des Données à caractère Personnel (CNDP)</strong> under registration number <strong>R-2014-IT-00234</strong>. Personal data processed by the Casablanca delivery center on behalf of EU clients is governed by back-to-back SCCs and a Group Data Transfer Policy ensuring equivalent levels of protection to GDPR.</p>
+
+  <h3>2.5.3 UAE &amp; KSA Data Localization Requirements</h3>
+  <p>In the UAE, PTGT complies with the UAE Federal Decree-Law No. 45 of 2021 on Personal Data Protection (PDPL) and the separate Dubai International Financial Centre (DIFC) Data Protection Law 2020 for DIFC-located client engagements. PTGT Gulf FZE has registered as a controller with the UAE PDPL competent authority. In Saudi Arabia, PTGT Saudi LLC complies with the <strong>Saudi Personal Data Protection Law (PDPL, Royal Decree M/19 of 1443H)</strong> and the regulations issued thereunder by the Saudi Data and AI Authority (SDAIA/NCA). A dedicated Data Residency policy ensures that Saudi government and health sector data is stored exclusively on infrastructure located within the Kingdom of Saudi Arabia.</p>
+
+  <h2>2.6 Cybersecurity Regulatory Compliance</h2>
+  <table>
+    <thead><tr><th>Framework / Regulation</th><th>Jurisdiction</th><th>PTGT Status</th><th>Certification / Reference</th></tr></thead>
+    <tbody>
+      <tr><td>NIS2 Directive (EU 2022/2555)</td><td>EU</td><td>Compliant — Registered as Essential Entity in Netherlands</td><td>NCSC-NL registration NL-EE-22-0041</td></tr>
+      <tr><td>DORA (Regulation EU 2022/2554)</td><td>EU (Financial Sector)</td><td>Compliant — ICT service provider to financial entities</td><td>DORA readiness assessment completed Q4 2024</td></tr>
+      <tr><td>ISO 27001:2022</td><td>Group-wide</td><td>Certified</td><td>Certificate No. BSI-IS-27001-PTGT-2023-014</td></tr>
+      <tr><td>SOC 2 Type II</td><td>Group (Cloud Operations)</td><td>Certified</td><td>Report No. KPMG-SOC2-PTGT-2024</td></tr>
+      <tr><td>CSA STAR Level 2</td><td>Cloud Services</td><td>Certified</td><td>CSA Registration ID CSA-STAR-L2-PTGT-00441</td></tr>
+      <tr><td>Saudi Essential Cybersecurity Controls (ECC)</td><td>Saudi Arabia</td><td>Compliant</td><td>NCA ECC compliance report Q3 2024</td></tr>
+      <tr><td>Moroccan Directive on IS Security (DGSSI)</td><td>Morocco</td><td>Compliant</td><td>DGSSI audit clearance 2023</td></tr>
+      <tr><td>PCI-DSS v4.0</td><td>All payment-related projects</td><td>Level 1 Certified</td><td>Report on Compliance — Verizon QSA — November 2024</td></tr>
+    </tbody>
+  </table>
+
+  <h2>2.7 Export Controls &amp; Government Contracting Limitations</h2>
+
+  <h3>2.7.1 Export Control Regime</h3>
+  <p>PTGT products, services, and technology deliverables are subject to the following export control regimes:</p>
+  <ul>
+    <li><strong>EU Dual-Use Regulation (EU 2021/821):</strong> PTGT's encryption-capable software and cryptographic modules are classified under Category 5 (Telecommunications and Information Security) of the EU dual-use list. The Company holds a General Export Authorisation (GEA EU001) for exports to 8 approved countries. Exports to sanctioned jurisdictions (currently Russia, Belarus, Iran, North Korea, Myanmar) are strictly prohibited.</li>
+    <li><strong>US EAR (Export Administration Regulations):</strong> Although PTGT is not a US entity, certain technology components licensed from US vendors (e.g., AWS GovCloud services, Oracle Database, certain cryptographic libraries) carry US-origin technology restrictions. PTGT's Legal &amp; Compliance team conducts a Foreign Person screening for all project teams involving non-Western nationals accessing US-origin technology.</li>
+    <li><strong>ITAR (International Traffic in Arms Regulations):</strong> PTGT is not registered with the US State Department's Directorate of Defense Trade Controls (DDTC) and is therefore <strong>categorically prohibited from handling ITAR-controlled technical data or defense articles</strong>. Any project scope that would require access to ITAR-controlled information must be declined.</li>
+  </ul>
+
+  <h3>2.7.2 Sanctions Screening</h3>
+  <p>PTGT screens all new clients, counterparties, and key project stakeholders against the following sanctions lists before contract execution and on an ongoing monthly basis:</p>
+  <ul>
+    <li>EU Consolidated Sanctions List (updated daily)</li>
+    <li>UN Security Council Consolidated List</li>
+    <li>US OFAC Specially Designated Nationals (SDN) List</li>
+    <li>UK HM Treasury Consolidated List</li>
+    <li>UAE Executive Office AML/CFT Sanctions List</li>
+  </ul>
+  <p>Screening is performed through the PTGT-contracted WorldCheck (Refinitiv) platform, with audit trails maintained for a minimum of seven years.</p>
+
+  <h2>2.8 Eligibility Decision Framework</h2>
+  <p>This section constitutes the Company's official eligibility decision framework, governing which projects PTGT may accept, which require special conditions, and which must be refused. This framework is binding on all PTGT subsidiaries and must be applied prior to issuing any binding proposal or letter of intent.</p>
+
+  <h3>2.8.1 Projects PTGT Is Fully Authorized to Execute</h3>
+  <div class="success-box">
+    <div class="box-title">✅ Fully Authorized — No Additional Approvals Required</div>
+    <ul>
+      <li>Custom enterprise web and mobile application development for private-sector clients</li>
+      <li>Cloud migration and cloud-native architecture on AWS, Azure, or GCP for commercial enterprises</li>
+      <li>ERP/CRM implementation (SAP, Oracle, Salesforce, Microsoft Dynamics) for commercial clients</li>
+      <li>Managed IT services, helpdesk, and NOC operations for non-critical infrastructure clients</li>
+      <li>DevOps, CI/CD pipeline implementation, and software quality assurance</li>
+      <li>Data analytics, business intelligence, and non-biometric AI systems</li>
+      <li>IT consulting, digital transformation advisory, and IT strategy</li>
+      <li>Cybersecurity advisory, vulnerability assessments, and penetration testing (non-critical infrastructure)</li>
+      <li>Public procurement contracts in EU (open procedures) &lt; EUR 25 million with standard security requirements</li>
+    </ul>
+  </div>
+
+  <h3>2.8.2 Projects Requiring Special Authorization or Partnerships</h3>
+  <div class="warn-box">
+    <div class="box-title">⚠ Conditional Authorization — Additional Steps Required</div>
+    <ul>
+      <li><strong>Critical National Infrastructure (CNI):</strong> Projects involving CNI sectors (energy grids, water systems, transport control) require a formal Security Clearance application in the relevant jurisdiction. PTGT must not begin work until clearance is granted.</li>
+      <li><strong>Biometric &amp; Facial Recognition AI:</strong> Requires a Data Protection Impact Assessment (DPIA) under GDPR Article 35, prior consultation with supervisory authority if high risk, and compliance with EU AI Act Article 6 prohibited/high-risk AI provisions (effective February 2025).</li>
+      <li><strong>Healthcare IT involving patient data:</strong> Requires NEN 7510 (Netherlands), HDS certification (France), or equivalent national health data security certification in each jurisdiction. PTGT holds HDS pre-certification; full certification expected Q2 2025.</li>
+      <li><strong>Defense-adjacent IT (non-classified):</strong> Projects for defense ministries not involving classified systems require vetting of project team members against security clearance requirements and prior written consent of the CLCO.</li>
+      <li><strong>Cross-border data transfers outside EU/EEA:</strong> Any project involving systematic transfer of EU personal data to non-adequate countries requires SCCs or Binding Corporate Rules (BCRs) and DPIA.</li>
+      <li><strong>Financial services IT (DORA-regulated entities):</strong> Requires DORA-compliant ICT third-party risk management contract provisions and notification rights per Article 30 DORA.</li>
+      <li><strong>Contracts above EUR 25 million:</strong> Require Executive Board approval (CEO + CFO + CLCO signatures) and Supervisory Board notification.</li>
+      <li><strong>Contracts above EUR 50 million:</strong> Require full Supervisory Board approval.</li>
+      <li><strong>Public sector contracts in Saudi Arabia above SAR 100 million:</strong> Require Cabinet-level pre-approval in KSA and prior PTGT Board resolution.</li>
+    </ul>
+  </div>
+
+  <h3>2.8.3 Projects PTGT Must Decline</h3>
+  <div class="danger-box">
+    <div class="box-title">🚫 Mandatory Refusal — PTGT Cannot Execute Under Current Authorizations</div>
+    <ul>
+      <li>Any project involving ITAR-controlled defense articles or technical data</li>
+      <li>Any project for clients or jurisdictions subject to EU, UN, US OFAC, or UK sanctions</li>
+      <li>Projects involving classified government intelligence systems in any jurisdiction</li>
+      <li>Telecommunications backbone/core network infrastructure in jurisdictions where PTGT holds no telecom license</li>
+      <li>Development of AI-based mass surveillance, social scoring, or manipulation systems (prohibited under EU AI Act Article 5)</li>
+      <li>Nuclear facility IT systems (requires IAEA-recognized nuclear sector certification not held by PTGT)</li>
+      <li>Cryptocurrency exchange infrastructure, DeFi protocol development, or unlicensed digital asset platforms</li>
+      <li>Projects where the client cannot pass PTGT KYC/AML screening or sanctions checks</li>
+      <li>Projects in Russia, Belarus, Iran, North Korea, or Myanmar due to export control and sanctions obligations</li>
+    </ul>
+  </div>
+
+  <h3>2.8.4 Capital Adequacy Requirements for Large-Scale Contracts</h3>
+  <p>PTGT applies the following internal capital adequacy standards to ensure financial viability before committing to large engagements:</p>
+  <table>
+    <thead><tr><th>Contract Value</th><th>Financial Threshold</th><th>Required Instruments</th></tr></thead>
+    <tbody>
+      <tr><td>&lt; EUR 1 million</td><td>Standard working capital</td><td>Standard performance bond (if required by client)</td></tr>
+      <tr><td>EUR 1–5 million</td><td>Minimum EUR 5M liquidity</td><td>Bank guarantee if requested; professional indemnity insurance active</td></tr>
+      <tr><td>EUR 5–15 million</td><td>Minimum EUR 15M liquidity + EUR 5M undrawn RCF</td><td>Parent company guarantee; performance bond equivalent to 5% of contract value</td></tr>
+      <tr><td>EUR 15–50 million</td><td>Minimum EUR 30M liquidity + EUR 20M undrawn RCF</td><td>Performance bond 10%; advance payment guarantee; Executive Board approval</td></tr>
+      <tr><td>&gt; EUR 50 million</td><td>Minimum EUR 50M liquidity or consortium financing plan</td><td>Supervisory Board approval; consortium/joint venture considered; external financing arrangements</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Section 2: Legal Framework | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 3 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 23–28]</div>
+  <div class="section-header">
+    <div class="section-num">Section 3</div>
+    <div class="section-title">Risk &amp; Compliance Governance</div>
+  </div>
+
+  <h2>3.1 Internal Compliance Department Structure</h2>
+  <p>The PTGT Group Compliance Function is organized under the Chief Legal &amp; Compliance Officer (CLCO) and is structured along three Lines of Defense consistent with the IIA's Three Lines Model:</p>
+
+  <h3>First Line of Defense — Business Operations</h3>
+  <p>Project teams, business development, and service delivery personnel are responsible for day-to-day compliance with PTGT policies, including identification of compliance risks during project scoping and execution. Each delivery practice area has a designated <strong>Compliance Champion</strong> responsible for escalating compliance concerns and ensuring project teams complete mandatory compliance training.</p>
+
+  <h3>Second Line of Defense — Compliance &amp; Risk Functions</h3>
+  <p>The central compliance team, reporting to the CLCO, comprises:</p>
+  <table>
+    <thead><tr><th>Role</th><th>FTEs</th><th>Primary Responsibilities</th></tr></thead>
+    <tbody>
+      <tr><td>Group DPO / CLCO</td><td>1</td><td>GDPR compliance, data protection, regulatory strategy, board reporting</td></tr>
+      <tr><td>Senior Compliance Manager (EU)</td><td>1</td><td>EU regulatory monitoring, public procurement, NIS2/DORA compliance</td></tr>
+      <tr><td>Senior Compliance Manager (MENA)</td><td>1</td><td>KSA/UAE/Morocco regulatory compliance, Arabic-language regulatory analysis</td></tr>
+      <tr><td>Contract Counsel (2 positions)</td><td>2</td><td>Contract review, negotiation, IP protection, subcontractor vetting</td></tr>
+      <tr><td>Data Protection Analysts</td><td>3</td><td>DPIA execution, data processing register maintenance, SCC management</td></tr>
+      <tr><td>AML/KYC Compliance Analyst</td><td>1</td><td>Client onboarding screening, sanctions monitoring, SAR filing</td></tr>
+      <tr><td>Export Control Specialist</td><td>1</td><td>Dual-use goods screening, EAR/EU export regulation compliance</td></tr>
+      <tr><td>Information Security Compliance Lead</td><td>1</td><td>ISO 27001 program management, audit liaison, ISMS documentation</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>11</strong></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h3>Third Line of Defense — Internal Audit</h3>
+  <p>The PTGT Internal Audit function reports directly to the Supervisory Board's Audit Committee (chaired by Mme. Sophie Leclerc-Fontaine) and is staffed by 4 qualified internal auditors (CIA-certified). Internal Audit executes an annual risk-based audit plan covering all compliance domains and major business processes, with findings reported to the Audit Committee quarterly. External peer reviews of the Internal Audit function are conducted every three years by an independent assurance provider.</p>
+
+  <h2>3.2 Risk Classification Matrix</h2>
+  <p>PTGT classifies all identified risks on a 5×5 matrix (Likelihood × Impact) consistent with ISO 31000:2018. The following table summarizes the key risk categories relevant to project eligibility decisions:</p>
+
+  <table>
+    <thead><tr><th>Risk Category</th><th>Risk Description</th><th>Likelihood</th><th>Impact</th><th>Rating</th><th>Mitigation Strategy</th></tr></thead>
+    <tbody>
+      <tr><td>Legal/Regulatory</td><td>Accepting project outside authorized service scope</td><td>Low</td><td>Critical</td><td class="badge badge-red">HIGH</td><td>Eligibility Decision Framework (Section 2.8) mandated for all projects</td></tr>
+      <tr><td>Sanctions</td><td>Contracting with sanctioned party or jurisdiction</td><td>Very Low</td><td>Critical</td><td class="badge badge-red">HIGH</td><td>Mandatory WorldCheck screening before any engagement</td></tr>
+      <tr><td>Data Protection</td><td>Unlawful personal data transfer to non-adequate country</td><td>Medium</td><td>High</td><td class="badge badge-red">HIGH</td><td>SCC/BCR mandatory; DPIA for cross-border data flows</td></tr>
+      <tr><td>Delivery</td><td>Project overrun exceeding agreed cost baseline</td><td>Medium</td><td>High</td><td class="badge badge-yellow">MEDIUM-HIGH</td><td>Earned Value Management, change control board, contingency reserves</td></tr>
+      <tr><td>Financial</td><td>Client insolvency mid-contract</td><td>Low</td><td>High</td><td class="badge badge-yellow">MEDIUM</td><td>Payment milestone structuring, advance payment, credit insurance</td></tr>
+      <tr><td>Reputational</td><td>Association with ethically controversial client/project</td><td>Low</td><td>High</td><td class="badge badge-yellow">MEDIUM</td><td>Enhanced Due Diligence (EDD) for sensitive sectors; ethics committee review</td></tr>
+      <tr><td>Cybersecurity</td><td>Data breach during project delivery</td><td>Medium</td><td>Critical</td><td class="badge badge-red">HIGH</td><td>ISO 27001 controls; NDA; pen-test pre-deployment; incident response plan</td></tr>
+      <tr><td>Export Control</td><td>Unauthorized transfer of dual-use technology</td><td>Low</td><td>Critical</td><td class="badge badge-red">HIGH</td><td>Export Control Specialist review for all international technology transfers</td></tr>
+    </tbody>
+  </table>
+
+  <h2>3.3 Legal Review Workflow Before Accepting a Project</h2>
+  <p>Every project opportunity above EUR 250,000 (or equivalent) must pass through the following mandatory Legal Review Workflow (LRW) before any binding commitment is made. The LRW is managed through PTGT's CRM/contract management system (Salesforce CPQ) with mandatory gate approvals:</p>
+
+  <h3>Stage 1 — Initial Opportunity Assessment (Business Development)</h3>
+  <p>The CRO team completes a standard Opportunity Assessment Form (OAF-01) covering: client identity, proposed project scope, contracting jurisdiction, estimated contract value, sector classification, data types involved, and any known regulatory complexity. The OAF-01 is submitted to the Compliance team within 48 hours of receiving an invitation to tender or direct approach.</p>
+
+  <h3>Stage 2 — KYC/Sanctions Screening (Compliance Team)</h3>
+  <p>The AML/KYC Analyst conducts a WorldCheck screening of the client entity, its ultimate beneficial owners (to 25% ownership threshold), and its key decision-makers. Results are documented in the Client Due Diligence Record (CDDR). Any adverse finding triggers Enhanced Due Diligence (EDD) and requires CLCO sign-off before proceeding.</p>
+
+  <h3>Stage 3 — Eligibility Analysis (Contract Counsel + Compliance Manager)</h3>
+  <p>Using the Eligibility Decision Framework (Section 2.8), contract counsel confirms whether the project falls within PTGT's authorized service scope, identifies any applicable restrictions, and determines whether special authorizations are required. An Eligibility Report (ER-Form) is produced within 5 business days.</p>
+
+  <h3>Stage 4 — Financial Viability Check (CFO Office)</h3>
+  <p>For contracts above EUR 5 million, the CFO office reviews the capital adequacy position (Section 2.8.4), insurance coverage adequacy, and revenue recognition implications under IFRS 15. A formal Go/No-Go Financial Memorandum is issued.</p>
+
+  <h3>Stage 5 — CLCO Sign-Off</h3>
+  <p>The CLCO reviews all outputs from Stages 1–4 and issues a final Legal Clearance Certificate (LCC) authorizing the sales team to submit a binding proposal. If any unresolved compliance issue exists, the LCC is withheld pending resolution. The CLCO may attach conditions or restrictions to the LCC that must be reflected in the final contract.</p>
+
+  <h3>Stage 6 — Executive Approval (for Large Contracts)</h3>
+  <p>Contracts above EUR 25 million additionally require CEO + CFO + CLCO co-signatures. Contracts above EUR 50 million require Supervisory Board resolution. Emergency approvals may be granted by the CEO alone for time-sensitive bids, subject to post-approval ratification within 5 business days.</p>
+
+  <h2>3.4 Anti-Corruption Framework &amp; KYC/AML Procedures</h2>
+
+  <h3>3.4.1 Anti-Corruption Policy</h3>
+  <p>PTGT maintains a zero-tolerance policy toward bribery and corruption, consistent with the requirements of the UK Bribery Act 2010 (which has extraterritorial effect over PTGT's UK subsidiary and any UK-connected activities), the French Loi Sapin II (which requires PTGT's French entity to maintain an anti-corruption compliance program), and the US Foreign Corrupt Practices Act (FCPA) to the extent US-origin technology is involved. The Group Anti-Corruption Policy prohibits facilitation payments, gifts above EUR 50 in value to public officials, and use of third-party intermediaries without Enhanced Due Diligence approval.</p>
+  <p>PTGT's anti-corruption program includes: annual mandatory training for all employees (online, tracked), a confidential whistleblowing hotline (operated by an independent third party, available in English, French, and Arabic), and annual risk-based reviews of third-party agents and channel partners.</p>
+
+  <h3>3.4.2 KYC &amp; AML Procedures</h3>
+  <p>As a professional services firm operating in regulated jurisdictions, PTGT applies risk-based Customer Due Diligence (CDD) procedures consistent with the EU's 6th Anti-Money Laundering Directive (AMLD6) and the FATF Recommendations. Key procedural requirements include:</p>
+  <ul>
+    <li><strong>Standard CDD:</strong> All new clients — certificate of incorporation, authorized signatories verification, UBO identification to 25% threshold, WorldCheck screening</li>
+    <li><strong>Enhanced Due Diligence (EDD):</strong> Applied to Politically Exposed Persons (PEPs), high-risk jurisdictions, complex corporate structures, or projects with unusual financial arrangements. EDD requires additional source-of-funds documentation and CLCO approval.</li>
+    <li><strong>Ongoing Monitoring:</strong> Quarterly rescreening against updated sanctions lists; annual review of client files for active clients</li>
+    <li><strong>Suspicious Activity Reporting (SAR):</strong> Employees are trained to identify and report red flags; SARs are filed with the relevant national Financial Intelligence Unit (FIU) where legally required</li>
+  </ul>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Section 3: Risk &amp; Compliance | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 4 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 29–34]</div>
+  <div class="section-header">
+    <div class="section-num">Section 4</div>
+    <div class="section-title">Financial Profile — Five-Year Projection (FY2024–FY2028)</div>
+  </div>
+
+  <h2>4.1 Revenue by Service Line</h2>
+  <p>The following table presents consolidated Group revenue projections by service line, based on FY2024 actuals and a compound annual growth rate (CAGR) of 12.8% consistent with the Company's strategic plan approved by the Supervisory Board in October 2024. Revenue is expressed in millions of Euros (EUR).</p>
+
+  <table>
+    <thead><tr><th>Service Line</th><th>FY2024 (Actual)</th><th>FY2025 (Proj.)</th><th>FY2026 (Proj.)</th><th>FY2027 (Proj.)</th><th>FY2028 (Proj.)</th><th>5-Yr CAGR</th></tr></thead>
+    <tbody>
+      <tr><td>Managed IT Services &amp; NOC/SOC</td><td>€87.4M</td><td>€98.6M</td><td>€111.2M</td><td>€125.1M</td><td>€140.4M</td><td>12.6%</td></tr>
+      <tr><td>Cloud Architecture &amp; Migration</td><td>€62.1M</td><td>€72.9M</td><td>€87.5M</td><td>€104.9M</td><td>€125.9M</td><td>19.2%</td></tr>
+      <tr><td>Custom Software Development</td><td>€48.7M</td><td>€54.0M</td><td>€60.0M</td><td>€66.5M</td><td>€73.7M</td><td>10.9%</td></tr>
+      <tr><td>ERP/CRM Implementation</td><td>€44.2M</td><td>€48.7M</td><td>€53.5M</td><td>€58.7M</td><td>€64.3M</td><td>9.8%</td></tr>
+      <tr><td>Cybersecurity Services</td><td>€28.9M</td><td>€35.1M</td><td>€42.3M</td><td>€50.8M</td><td>€61.0M</td><td>20.5%</td></tr>
+      <tr><td>Data Engineering &amp; AI Systems</td><td>€22.4M</td><td>€30.1M</td><td>€40.3M</td><td>€54.0M</td><td>€72.3M</td><td>34.0%</td></tr>
+      <tr><td>IT Consulting &amp; Digital Transformation</td><td>€14.8M</td><td>€16.9M</td><td>€19.1M</td><td>€21.5M</td><td>€24.2M</td><td>13.1%</td></tr>
+      <tr><td>Mobile Application Engineering</td><td>€3.9M</td><td>€4.8M</td><td>€5.9M</td><td>€7.1M</td><td>€8.6M</td><td>21.9%</td></tr>
+      <tr><td><strong>Total Group Revenue</strong></td><td><strong>€312.4M</strong></td><td><strong>€361.1M</strong></td><td><strong>€419.8M</strong></td><td><strong>€488.6M</strong></td><td><strong>€570.4M</strong></td><td><strong>16.2%</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="table-caption">Table 4.1 — Group Revenue Projection by Service Line (EUR millions, rounded to one decimal place)</div>
+
+  <h3>4.1.1 Revenue by Geography</h3>
+  <table>
+    <thead><tr><th>Region</th><th>FY2024 Revenue</th><th>% of Total</th><th>FY2028 Target</th><th>Target %</th></tr></thead>
+    <tbody>
+      <tr><td>Western Europe (incl. Luxembourg, NL, FR, DE, UK)</td><td>€184.2M</td><td>59.0%</td><td>€299.5M</td><td>52.5%</td></tr>
+      <tr><td>GCC (UAE, Saudi Arabia, Kuwait)</td><td>€71.3M</td><td>22.8%</td><td>€167.6M</td><td>29.4%</td></tr>
+      <tr><td>North Africa (Morocco, Egypt, Tunisia)</td><td>€41.7M</td><td>13.4%</td><td>€74.9M</td><td>13.1%</td></tr>
+      <tr><td>Other / Project-Based</td><td>€15.2M</td><td>4.8%</td><td>€28.4M</td><td>5.0%</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>€312.4M</strong></td><td><strong>100%</strong></td><td><strong>€570.4M</strong></td><td><strong>100%</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h2>4.2 EBITDA &amp; Cost Structure</h2>
+  <table>
+    <thead><tr><th>P&amp;L Item</th><th>FY2024</th><th>FY2025</th><th>FY2026</th><th>FY2027</th><th>FY2028</th></tr></thead>
+    <tbody>
+      <tr><td>Total Revenue</td><td>€312.4M</td><td>€361.1M</td><td>€419.8M</td><td>€488.6M</td><td>€570.4M</td></tr>
+      <tr><td>Cost of Revenue (direct labor, subcontractors)</td><td>€168.7M (54%)</td><td>€192.0M</td><td>€219.6M</td><td>€252.7M</td><td>€291.4M</td></tr>
+      <tr><td>Gross Profit</td><td>€143.7M (46%)</td><td>€169.1M</td><td>€200.2M</td><td>€235.9M</td><td>€279.0M</td></tr>
+      <tr><td>SG&amp;A (Sales, General &amp; Administrative)</td><td>€68.8M (22%)</td><td>€77.7M</td><td>€88.2M</td><td>€100.8M</td><td>€116.9M</td></tr>
+      <tr><td>R&amp;D Expenditure</td><td>€14.6M (4.7%)</td><td>€18.1M</td><td>€22.1M</td><td>€27.0M</td><td>€33.0M</td></tr>
+      <tr><td><strong>EBITDA</strong></td><td><strong>€60.3M (19.3%)</strong></td><td><strong>€73.3M (20.3%)</strong></td><td><strong>€89.9M (21.4%)</strong></td><td><strong>€108.1M (22.1%)</strong></td><td><strong>€129.1M (22.6%)</strong></td></tr>
+      <tr><td>Depreciation &amp; Amortization</td><td>€12.4M</td><td>€13.9M</td><td>€15.6M</td><td>€17.3M</td><td>€19.1M</td></tr>
+      <tr><td>EBIT (Operating Profit)</td><td>€47.9M (15.3%)</td><td>€59.4M</td><td>€74.3M</td><td>€90.8M</td><td>€110.0M</td></tr>
+      <tr><td>Net Finance Costs</td><td>€3.2M</td><td>€3.5M</td><td>€3.1M</td><td>€2.8M</td><td>€2.2M</td></tr>
+      <tr><td>Tax (effective rate ~22%)</td><td>€9.8M</td><td>€12.3M</td><td>€15.7M</td><td>€19.4M</td><td>€23.7M</td></tr>
+      <tr><td><strong>Net Profit After Tax</strong></td><td><strong>€34.9M (11.2%)</strong></td><td><strong>€43.6M</strong></td><td><strong>€55.5M</strong></td><td><strong>€68.6M</strong></td><td><strong>€84.1M</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h3>4.2.1 CAPEX / OPEX Structure (FY2024)</h3>
+  <div class="two-col">
+    <div>
+      <h4>CAPEX — €22.8 million (FY2024)</h4>
+      <ul>
+        <li>Data center infrastructure expansion (Casablanca): €8.4M</li>
+        <li>Development lab equipment (Serbia, Morocco): €3.9M</li>
+        <li>Software licenses &amp; capitalized R&amp;D: €6.7M</li>
+        <li>Office fit-out (Dubai expansion): €2.2M</li>
+        <li>Other capital investments: €1.6M</li>
+      </ul>
+    </div>
+    <div>
+      <h4>OPEX highlights (FY2024)</h4>
+      <ul>
+        <li>Personnel costs: €189.4M (60.6% of revenue)</li>
+        <li>Cloud infrastructure (AWS/Azure): €14.7M</li>
+        <li>Travel &amp; business development: €8.2M</li>
+        <li>Professional services (legal/audit): €4.1M</li>
+        <li>Training &amp; certifications: €3.8M</li>
+        <li>Office &amp; facilities: €11.3M</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>4.3 Balance Sheet Highlights &amp; Investment Strategy</h2>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-value">€120M</div><div class="stat-label">Total Assets (FY2024)</div></div>
+    <div class="stat-card"><div class="stat-value">€45M</div><div class="stat-label">Revolving Credit Facility</div></div>
+    <div class="stat-card"><div class="stat-value">€72M</div><div class="stat-label">Total Equity</div></div>
+    <div class="stat-card"><div class="stat-value">0.42x</div><div class="stat-label">Net Debt / EBITDA</div></div>
+  </div>
+
+  <h3>4.3.1 R&amp;D Investment Strategy</h3>
+  <p>PTGT allocates approximately <strong>4.7% of annual revenue to R&amp;D</strong>, equivalent to EUR 14.6 million in FY2024, across four focus areas: (1) AI/ML platform development (Ethical AI, MLOps tooling) — 38% of R&amp;D budget; (2) Sovereign cloud and data residency automation tools — 24%; (3) Next-generation cybersecurity (zero-trust, SASE architecture) — 22%; (4) Industry-specific accelerators (FinTech, HealthTech, GovTech) — 16%. R&amp;D activities qualify for R&amp;D tax credits under Luxembourg IP Box regime and Moroccan CRI incentive programs.</p>
+
+  <h2>4.4 Insurance &amp; Professional Liability Coverage</h2>
+  <table>
+    <thead><tr><th>Insurance Type</th><th>Insurer</th><th>Coverage Limit</th><th>Policy Reference</th><th>Renewal Date</th></tr></thead>
+    <tbody>
+      <tr><td>Professional Indemnity (PI) / E&amp;O</td><td>AIG Europe S.A. (Luxembourg)</td><td>EUR 25,000,000 per claim / EUR 50,000,000 aggregate</td><td>AIG-PI-LU-2024-PTGT-001</td><td>June 30, 2025</td></tr>
+      <tr><td>Cyber Liability &amp; Data Breach</td><td>Zurich Insurance plc</td><td>EUR 15,000,000 per incident</td><td>ZUR-CYB-NL-2024-00341</td><td>September 30, 2025</td></tr>
+      <tr><td>General Commercial Liability</td><td>Allianz SE</td><td>EUR 10,000,000 per occurrence</td><td>ALZ-GL-DE-2024-PTGT-88</td><td>January 31, 2026</td></tr>
+      <tr><td>Directors &amp; Officers (D&amp;O) Liability</td><td>Chubb European Group</td><td>EUR 20,000,000</td><td>CHB-DO-LU-2024-0217</td><td>April 30, 2025</td></tr>
+      <tr><td>Workers' Compensation (Group)</td><td>Multiple (per jurisdiction)</td><td>Statutory + supplemental</td><td>Various</td><td>Annual renewable</td></tr>
+      <tr><td>Credit Insurance (Accounts Receivable)</td><td>Euler Hermes / Allianz Trade</td><td>EUR 30,000,000 aggregate</td><td>EH-CR-LU-2024-PTGT-002</td><td>December 31, 2025</td></tr>
+    </tbody>
+  </table>
+  <div class="info-box">
+    <div class="box-title">ℹ Insurance Coverage Note for Contract Negotiation</div>
+    PTGT's Professional Indemnity coverage of EUR 25M per claim is sufficient to satisfy the PI requirements of most enterprise and public sector contracts up to EUR 50M in value. For contracts requiring PI coverage above EUR 25M, PTGT must obtain top-up coverage through its broker (Marsh Luxembourg) at least 30 days prior to contract signing. This additional cost will be passed through to the client or absorbed based on commercial negotiation.
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Section 4: Financial Profile | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 5 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 35–46]</div>
+  <div class="section-header">
+    <div class="section-num">Section 5</div>
+    <div class="section-title">Core IT Domains of Expertise</div>
+  </div>
+
+  <h2>5.1 Enterprise Web Development</h2>
+  <p>PTGT's Enterprise Web Development practice delivers large-scale, mission-critical web applications for organizations requiring high availability, complex business logic, multi-language support, and regulatory compliance out of the box. The practice employs <strong>312 developers and architects</strong> organized in cross-functional product teams (CPTs) following Spotify-model squad architecture.</p>
+  <h4>Technology Stack:</h4>
+  <p>Frontend: React 18 / Next.js 14, TypeScript, Tailwind CSS, Storybook component library. Backend: Node.js (NestJS), Java 21 (Spring Boot 3.x), Python (FastAPI), .NET 8. API layer: REST (OpenAPI 3.1), GraphQL (Apollo Federation), gRPC for inter-service communication. Databases: PostgreSQL 16, MongoDB 7, Redis 7 (caching/session), Elasticsearch 8 (search). Authentication: OAuth 2.0 / OIDC (Keycloak, Azure AD B2C). Hosting: AWS ECS/EKS, Azure AKS, on-premise Kubernetes (Rancher/K3s).</p>
+  <h4>Compliance Embedding:</h4>
+  <p>PTGT's CFD methodology mandates that web applications meet WCAG 2.1 Level AA accessibility standards, EN 301 549 (EU accessibility directive), OWASP Top-10 security controls, and GDPR data minimization and consent management requirements at architecture design stage. Cookie consent management is implemented using CookiePro or Axeptio compliant modules for EU clients.</p>
+
+  <h2>5.2 Mobile Application Engineering</h2>
+  <p>The Mobile Engineering practice develops native and cross-platform applications across iOS, Android, and progressive web application (PWA) paradigms. The practice has delivered 47 production mobile applications with over 2.4 million active users across banking, healthcare, and government sectors.</p>
+  <h4>Technology Stack:</h4>
+  <p>Cross-platform: Flutter 3.x (primary), React Native 0.73. Native iOS: Swift 5.9 / SwiftUI. Native Android: Kotlin 1.9 / Jetpack Compose. Backend-for-Frontend: Firebase, AWS Amplify, custom GraphQL BFF layer. MDM Integration: Microsoft Intune, VMware Workspace ONE for enterprise mobility. Security: Biometric authentication (FIDO2/WebAuthn), certificate pinning, OWASP MASVS Level 2 compliance.</p>
+  <h4>Regulatory Considerations:</h4>
+  <p>Healthcare mobile apps are developed under EU MDR (Medical Device Regulation 2017/745) classification analysis where applicable. eIDAS-compliant electronic signature integration is available for EU public sector applications. GCC mobile applications comply with UAE Telecommunications Regulatory Authority (TDRA) and Saudi CITC app store registration requirements.</p>
+
+  <h2>5.3 Cloud Architecture (AWS, Azure, Hybrid)</h2>
+  <p>PTGT's Cloud Architecture practice is one of the Company's fastest-growing capabilities, contributing EUR 62.1M in FY2024 revenue and projected to exceed EUR 125M by FY2028. The practice operates as an <strong>AWS Premier Consulting Partner</strong> and a <strong>Microsoft Solutions Partner for Azure (Infrastructure and Digital &amp; App Innovation)</strong>.</p>
+  <h4>AWS Competencies:</h4>
+  <p>Migration, Managed Service Provider (MSP), Government, Healthcare, Financial Services. Certified AWS architects: 87 (AWS Solutions Architect Professional), 34 (AWS DevOps Engineer Professional), 12 (AWS Security Specialty).</p>
+  <h4>Azure Competencies:</h4>
+  <p>Azure Infrastructure, Azure Data &amp; AI, Azure Networking. Microsoft Certified Azure architects: 62 (Azure Solutions Architect Expert), 28 (Azure DevOps Engineer Expert), 19 (Azure Security Engineer Associate).</p>
+  <h4>Hybrid &amp; Sovereign Cloud:</h4>
+  <p>PTGT designs multi-cloud and hybrid architectures using VMware Cloud Foundation, AWS Outposts, Azure Arc, and Nutanix Cloud Platform. For EU sovereign cloud requirements, PTGT is an authorized integrator on the OVHcloud Sovereign Cloud and the Trusted Cloud for GAIA-X-compliant deployments. For GCC data residency requirements, PTGT architects solutions exclusively on AWS me-south-1 (Bahrain), AWS ap-southeast-2 equivalent UAE, Azure UAE North, and local sovereign cloud providers where mandated.</p>
+
+  <h2>5.4 DevOps &amp; CI/CD Engineering</h2>
+  <p>PTGT's DevOps practice accelerates software delivery cycles while maintaining quality and security gates throughout the pipeline. The practice is founded on a "Everything-as-Code" philosophy: infrastructure, security policies, compliance controls, and configuration are all version-controlled and automatically validated.</p>
+  <h4>Toolchain:</h4>
+  <p>Source Control: Git (GitLab, GitHub Enterprise, Azure DevOps). CI Platforms: GitLab CI/CD, GitHub Actions, Jenkins (legacy clients), Azure Pipelines. Container Orchestration: Kubernetes (EKS, AKS, GKE, on-prem). Infrastructure as Code: Terraform (OpenTofu for open-source requirements), Pulumi, AWS CDK, Bicep. Configuration Management: Ansible, Chef InSpec (compliance-as-code). Secret Management: HashiCorp Vault, AWS Secrets Manager, Azure Key Vault. Artifact Management: JFrog Artifactory, AWS ECR. GitOps: ArgoCD, Flux. DevSecOps: Snyk (SAST/SCA), Trivy (container scanning), OWASP ZAP (DAST), SonarQube (code quality).</p>
+
+  <h2>5.5 Infrastructure Design &amp; Deployment</h2>
+  <p>The Infrastructure practice covers the full lifecycle of enterprise IT infrastructure, from network design and data center architecture to hyperconverged infrastructure deployment and structured cabling. PTGT employs <strong>Cisco Gold Certified Partner</strong> engineers and maintains certified expertise in Juniper Networks, Palo Alto Networks, and F5 Technologies.</p>
+  <h4>Core Capabilities:</h4>
+  <p>LAN/WAN design (SD-WAN with Cisco Meraki, VeloCloud/VMware), data center network fabric (Cisco ACI, Arista EOS), network security (next-gen firewalls: Palo Alto NGFW, Fortinet FortiGate), storage systems (NetApp ONTAP, Pure Storage, Dell EMC PowerStore), server infrastructure (HPE ProLiant/Synergy, Dell PowerEdge), virtualization (VMware vSphere 8, Microsoft Hyper-V), and HCI (Nutanix AOS, VMware vSAN).</p>
+
+  <h2>5.6 Cybersecurity Operations</h2>
+  <p>PTGT's Cybersecurity practice provides end-to-end security services from strategic advisory through technical implementation and 24/7 managed detection and response. The practice is staffed by <strong>187 cybersecurity specialists</strong>, of whom 43 hold CISSP certification, 38 hold CEH (Certified Ethical Hacker), and 29 hold OSCP (Offensive Security Certified Professional).</p>
+  <h4>Service Lines:</h4>
+  <p><em>Advisory:</em> ISO 27001 implementation, NIST CSF maturity assessments, DORA ICT risk framework, NIS2 compliance gap analysis, cloud security posture management (CSPM). <em>Technical:</em> Penetration testing (network, web application, mobile, cloud, red teaming), vulnerability management (Tenable.sc / Nessus), SIEM implementation (Splunk, Microsoft Sentinel, IBM QRadar), EDR deployment (CrowdStrike Falcon, Microsoft Defender for Endpoint), PAM (CyberArk, BeyondTrust). <em>Managed:</em> 24/7 SOC-as-a-Service (MDR), threat intelligence (Recorded Future integration), incident response retainer services.</p>
+
+  <h2>5.7 Data Engineering &amp; AI Systems</h2>
+  <p>The Data &amp; AI practice is PTGT's highest-growth capability, with a 34% projected CAGR through FY2028. The practice operates PTGT's <strong>Ethical AI Center of Excellence</strong> and is a signatory to the EU Pact for AI Trustworthy AI Initiative.</p>
+  <h4>Data Engineering Stack:</h4>
+  <p>Ingestion: Apache Kafka, AWS Kinesis, Azure Event Hubs. Processing: Apache Spark (Databricks, EMR), dbt (data build tool), Apache Flink (streaming). Storage: Delta Lake, Apache Iceberg, AWS S3, Azure Data Lake Storage Gen2, Snowflake, BigQuery. Orchestration: Apache Airflow (MWAA, Astronomer), Prefect, Azure Data Factory. Visualization: Power BI, Tableau, Looker, custom React-based dashboards.</p>
+  <h4>AI/ML Platform:</h4>
+  <p>Model development: Python (scikit-learn, PyTorch, TensorFlow, Hugging Face Transformers). MLOps: MLflow, Kubeflow, SageMaker, Azure ML. LLM Integration: OpenAI API, Anthropic Claude API, Azure OpenAI Service, on-premise Llama 3 deployments for data residency requirements. Responsible AI: PTGT's proprietary FAIR-AI toolkit provides automated bias detection, model explainability (SHAP, LIME), and model documentation (Model Cards).</p>
+
+  <h2>5.8 ERP / CRM Integration</h2>
+  <p>PTGT is a certified implementation partner for SAP (SAP Gold Partner, S/4HANA and SuccessFactors), Oracle (Oracle Platinum Partner, ERP Cloud, HCM Cloud), Microsoft (Solutions Partner for Business Applications — Dynamics 365), and Salesforce (Salesforce Consulting Partner, Sales Cloud, Service Cloud, Experience Cloud).</p>
+  <h4>Implementation Methodology:</h4>
+  <p>SAP projects follow SAP Activate methodology with PTGT proprietary industry-specific model company templates for Finance, Healthcare, and Government sectors. Oracle Cloud implementations follow Oracle Unified Method (OUM). PTGT maintains a pre-configured Dynamics 365 accelerator for the mid-market financial services sector, reducing implementation time by approximately 35% versus greenfield implementations.</p>
+
+  <h2>5.9 IT Consulting &amp; Digital Transformation</h2>
+  <p>PTGT's consulting practice delivers IT strategy, enterprise architecture, change management, and program management services. The practice employs <strong>TOGAF 9.2 Certified Enterprise Architects</strong>, PMP-certified project managers, and change management professionals accredited under PROSCI and APMG Change Management frameworks. Key service offerings include: IT strategy development, IT operating model design, enterprise architecture (TOGAF, Zachman), IT sourcing advisory, and large-scale IT transformation program management.</p>
+
+  <h2>5.10 Managed Services &amp; Support</h2>
+  <p>PTGT's Managed Services division operates a 24/7/365 service desk, network operations center (NOC), and security operations center (SOC) from primary delivery centers in Casablanca and Amsterdam, with follow-the-sun coverage through the Dubai operations center. The practice holds <strong>ITIL 4 Foundation</strong> institutional certification and manages all service delivery according to ITIL 4 practices.</p>
+  <h4>SLA Framework:</h4>
+  <p>PTGT offers three standard service tiers: Essential (business hours support, 4h response SLA, 99.5% uptime), Advanced (16h/day support, 2h response, 99.9% uptime), and Enterprise (24/7/365 support, 30-min response for P1, 99.95% uptime with financial SLA penalties). All SLAs are monitored through a customer-facing real-time portal built on ServiceNow and PRTG Network Monitor.</p>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Section 5: Core IT Domains | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 6 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 47–61]</div>
+  <div class="section-header">
+    <div class="section-num">Section 6</div>
+    <div class="section-title">Ten Detailed Web Services</div>
+  </div>
+
+  <!-- SERVICE 1 -->
+  <h2>Service 1: PTGT CloudPortal™ — Sovereign Cloud Management Portal</h2>
+  <h4>Overview</h4>
+  <p>CloudPortal™ is a PTGT-proprietary web-based platform enabling enterprise and government clients to manage multi-cloud and hybrid cloud environments through a single pane of glass, with built-in data residency enforcement, regulatory compliance dashboards, and cost optimization capabilities.</p>
+  <h4>Technical Architecture</h4>
+  <p>Frontend: Next.js 14 (React 18) with TypeScript, served via AWS CloudFront CDN. Backend: Microservices architecture (8 services) on AWS EKS, written in Go and Node.js/NestJS. Data Layer: PostgreSQL 16 (primary), Redis 7 (caching), TimescaleDB (metrics), Apache Kafka (event streaming). Authentication: OIDC/SAML 2.0 with Keycloak IdP supporting ADFS, Azure AD, and Google Workspace federation. Infrastructure: Terraform-managed, GitOps via ArgoCD.</p>
+  <h4>Technology Stack</h4>
+  <p><span class="badge badge-blue">Next.js 14</span> <span class="badge badge-blue">TypeScript</span> <span class="badge badge-blue">Go</span> <span class="badge badge-blue">Node.js/NestJS</span> <span class="badge badge-blue">AWS EKS</span> <span class="badge badge-blue">Terraform</span> <span class="badge badge-blue">Kafka</span> <span class="badge badge-blue">Keycloak</span></p>
+  <h4>Compliance Considerations</h4>
+  <p>CloudPortal™ enforces data residency policies at the API layer, preventing workload placement outside approved regions. The platform includes a built-in GDPR consent and data subject rights management module, NIS2 incident reporting workflows, and DORA operational resilience dashboards for financial sector clients. All audit logs are retained for 7 years in immutable storage (AWS S3 Object Lock).</p>
+  <h4>Pricing Model</h4>
+  <table>
+    <thead><tr><th>Tier</th><th>Monthly Price</th><th>Managed Cloud Spend</th><th>Support Level</th></tr></thead>
+    <tbody>
+      <tr><td>Starter</td><td>EUR 3,500/month</td><td>Up to EUR 200K/month</td><td>Business hours</td></tr>
+      <tr><td>Professional</td><td>EUR 8,500/month</td><td>EUR 200K–1M/month</td><td>16h/day, 5 days</td></tr>
+      <tr><td>Enterprise</td><td>Custom (from EUR 18,000/month)</td><td>Above EUR 1M/month</td><td>24/7 dedicated team</td></tr>
+    </tbody>
+  </table>
+  <h4>SLA</h4>
+  <p>Platform availability: 99.95% monthly uptime. Portal response time: &lt;200ms p95 for read operations. RTO/RPO: 1h / 15min respectively. SLA credits: 10% monthly fee per 0.1% downtime below target.</p>
+  <h4>Ideal Client Profile</h4>
+  <p>Mid-to-large enterprises (500+ employees) operating in regulated sectors (financial services, healthcare, government) with multi-cloud spend above EUR 200,000/month who require data residency compliance and consolidated governance visibility.</p>
+
+  <!-- SERVICE 2 -->
+  <h2>Service 2: PTGT SecureID™ — Identity &amp; Access Management Platform</h2>
+  <h4>Overview</h4>
+  <p>SecureID™ provides enterprise identity governance, single sign-on (SSO), multi-factor authentication (MFA), and privileged access management (PAM) capabilities as a managed web service. SecureID™ is pre-certified for eIDAS Level of Assurance Substantial (LoA2) and supports integration with national eID schemes in France (FranceConnect+), Netherlands (DigiD), and UAE (UAE PASS).</p>
+  <h4>Technical Architecture</h4>
+  <p>Identity Provider: Keycloak (open-source, PTGT-managed) with custom PTGT extensions. PAM Engine: CyberArk-compatible API layer or BeyondTrust for on-premise clients. Directory Services: LDAP v3 / Microsoft Active Directory synchronization. MFA: TOTP (Google Authenticator, Authy), FIDO2/WebAuthn hardware keys (YubiKey, FIDO passkeys), SMS OTP (Twilio). Hosted on Azure AKS (EU region: West Europe) with hot standby on AWS EKS (eu-west-1).</p>
+  <h4>Compliance Considerations</h4>
+  <p>SecureID™ implements all controls required by NIST SP 800-63B (Digital Identity Guidelines), eIDAS Regulation (EU No 910/2014), and GDPR Article 32 (security of processing). For French public sector clients, SecureID™ integrates with FranceConnect+ under the qualification level "élevé." The platform maintains a complete audit trail of all authentication events and access decisions, stored for 5 years as required by financial sector regulations.</p>
+  <h4>Pricing Model</h4>
+  <p>Per-user/per-month: EUR 8.50 (up to 5,000 users), EUR 6.00 (5,001–25,000), EUR 4.20 (above 25,000). Implementation fees: EUR 45,000–120,000 depending on integration complexity. Annual enterprise contract minimum: EUR 250,000.</p>
+  <h4>Ideal Client Profile</h4>
+  <p>Regulated enterprises requiring GDPR-compliant IAM, government agencies requiring national eID integration, financial institutions requiring DORA-compliant access control documentation.</p>
+
+  <!-- SERVICE 3 -->
+  <h2>Service 3: PTGT DataSentinel™ — Data Loss Prevention &amp; Classification Platform</h2>
+  <h4>Overview</h4>
+  <p>DataSentinel™ is a web-delivered data governance platform providing automated data discovery, classification, protection, and compliance reporting across structured and unstructured data environments.</p>
+  <h4>Technical Architecture</h4>
+  <p>Scanning Engine: Python-based distributed scanner (Apache Spark workers) with custom NLP classifiers for PII detection in 14 languages. Classification Engine: Rule-based + ML hybrid approach using regex patterns, Named Entity Recognition (spaCy, Hugging Face), and probabilistic models. Policy Engine: API-driven policy management with REST and SCIM 2.0 integration into DLP tools (Microsoft Purview, Forcepoint DLP, Netskope). Dashboard: React 18 / D3.js visualization, real-time risk score display, regulatory report export (GDPR Article 30 register, PDPL compliance report).</p>
+  <h4>SLA</h4>
+  <p>Scanning throughput: up to 10TB/day per scanning worker. Classification accuracy: ≥97.5% precision on standard PII categories (validated by independent audit). Uptime: 99.9%.</p>
+  <h4>Pricing</h4>
+  <p>Subscription: EUR 1,200/month per 1TB of managed data estate. Professional services for initial data discovery and classification project: EUR 80,000–200,000 fixed price.</p>
+
+  <!-- SERVICE 4 -->
+  <h2>Service 4: PTGT GovProcure™ — Public Procurement e-Platform</h2>
+  <h4>Overview</h4>
+  <p>GovProcure™ is a customizable electronic procurement management platform designed for public sector contracting authorities and regulated entities. It supports the full procurement lifecycle from needs identification through contract management and supplier performance evaluation, compliant with EU Directive 2014/24/EU and the eSPD/DUME standard.</p>
+  <h4>Technical Architecture</h4>
+  <p>Backend: Java 21 Spring Boot microservices (12 services). API: REST OpenAPI 3.1 with Open e-Procurement Standard (eTendering) integration. e-Signature: QES (Qualified Electronic Signature) integration via DocuSign eNotary and Belgium/France qualified TSPs. Data: PostgreSQL 16 (primary), Elasticsearch (full-text search of tender documents), MinIO (document storage — S3-compatible, on-premise deployable). Infrastructure: Kubernetes-native, deployable on-premise or on sovereign cloud.</p>
+  <h4>Compliance Considerations</h4>
+  <p>GovProcure™ is validated against the EU eProcurement ontology (ePO) and supports machine-readable tender notices compliant with the EU TED e-Forms standard (Implementing Regulation 2019/1780). Accessibility: WCAG 2.1 Level AA. Data sovereignty: all data stored within client-specified geographic boundary; no third-party data sharing.</p>
+  <h4>Pricing</h4>
+  <p>SaaS license: EUR 120,000–480,000/year depending on number of contracting authorities and annual tender volume. On-premise deployment: one-time license EUR 350,000 + 20% annual maintenance.</p>
+
+  <!-- SERVICE 5 -->
+  <h2>Service 5: PTGT HealthBridge™ — Healthcare Interoperability Platform</h2>
+  <h4>Overview</h4>
+  <p>HealthBridge™ provides a FHIR R4-compliant healthcare data interoperability platform enabling secure exchange of patient clinical data between hospitals, laboratories, pharmacies, and public health authorities.</p>
+  <h4>Technical Architecture</h4>
+  <p>FHIR Server: HAPI FHIR (Java) customized with PTGT extensions for EU clinical data standards (IPS — International Patient Summary). Terminology Services: SNOMED CT, LOINC, ICD-10/11 term server. API Gateway: Kong Gateway with OAuth 2.0 SMART-on-FHIR authorization. Audit Logging: IHE ATNA (Audit Trail and Node Authentication) compliant. Infrastructure: HDS-certified (French Hébergeur de Données de Santé) hosting on OVH SNC (Société Numérique Certifiée) for French clients; HL7 FHIR R4 REST APIs exposed over TLS 1.3 only.</p>
+  <h4>Compliance Considerations</h4>
+  <p>HealthBridge™ is designed for operation under the EU European Health Data Space (EHDS) Regulation (proposed). GDPR Article 9 special category data controls are enforced at all API layers. The platform supports pseudonymization and k-anonymization for research use cases. In the Netherlands, PTGT complies with NEN 7510 and NEN 7513. In France, deployment requires HDS certification — PTGT's HDS pre-certification is valid pending full certification Q2 2025.</p>
+  <div class="warn-box">
+    <div class="box-title">⚠ Special Authorization Required</div>
+    HealthBridge™ deployments in France require full HDS (Hébergeur de Données de Santé) certification from the ASIP Santé agency, which PTGT expects to obtain by Q2 2025. Until full certification, French healthcare data deployments must be hosted on an HDS-certified co-location partner with PTGT providing application management only.
+  </div>
+
+  <!-- SERVICE 6 -->
+  <h2>Service 6: PTGT FinCore™ — Core Banking Integration Middleware</h2>
+  <h4>Overview</h4>
+  <p>FinCore™ is an API-led integration middleware platform designed to connect legacy core banking systems (Temenos T24, Finastra Fusion, Misys/Finastra BankFusion, FIS Profile) with modern digital banking channels, fintech partners, and regulatory reporting systems.</p>
+  <h4>Technical Architecture</h4>
+  <p>Integration Platform: Apache Camel + MuleSoft AnyPoint (or WSO2 Micro Integrator for open-source clients). API Management: WSO2 API Manager / Kong Enterprise. Message Queue: Apache Kafka (transaction event streaming), IBM MQ (legacy core banking connectivity). Data Transformation: XSLT 3.0, Java/Groovy mapping scripts, OpenAPI-to-ISO 20022 auto-mapping engine. Security: TLS 1.3 mutual authentication, API key + JWT + OAuth 2.0 layered security, HSM-protected key management (Thales Luna Network HSM).</p>
+  <h4>Regulatory Compliance</h4>
+  <p>FinCore™ implements out-of-the-box ISO 20022 message formats for SEPA Credit Transfer (SCT), SEPA Instant Credit Transfer (SCT Inst), TARGET2/T2 migration, and Open Banking PSD2 (Berlin Group NextGenPSD2 API standard). DORA ICT third-party risk management clauses are included in all FinCore™ MSA templates. PCI-DSS controls are embedded in all card data handling components.</p>
+  <h4>Pricing</h4>
+  <p>Platform license: EUR 180,000–600,000/year depending on transaction volume and number of connected systems. Implementation: EUR 250,000–1,200,000 depending on scope. Performance SLA: &lt;50ms API response time for core transaction operations at 99th percentile.</p>
+
+  <!-- SERVICE 7 -->
+  <h2>Service 7: PTGT EduLearn™ — Enterprise Learning Management System</h2>
+  <h4>Overview</h4>
+  <p>EduLearn™ is a scalable, SCORM 2004 and xAPI (Tin Can) compliant learning management system (LMS) for corporate training, continuing professional development (CPD), and mandatory regulatory training programs.</p>
+  <h4>Technical Architecture</h4>
+  <p>LMS Core: Open-source Moodle 4.3 enhanced with PTGT enterprise plugins. Frontend: React-based custom UI with mobile-responsive PWA. Content Delivery: CDN-accelerated video streaming (AWS CloudFront + MediaPackage), H.264/H.265 adaptive bitrate. AI-powered features: Personalized learning path recommendation (collaborative filtering model), automated quiz generation from uploaded content (LLM-based), plagiarism detection. Integration: LDAP/AD/SAML SSO, HRMS connectors (SAP SuccessFactors, Workday, Oracle HCM). Analytics: xAPI Learning Record Store (LRS) — PTGT Learning Analytics Dashboard.</p>
+  <h4>Compliance Considerations</h4>
+  <p>GDPR-compliant learner data management with right-to-erasure workflows. Accessibility: WCAG 2.1 AA, Section 508. European Qualifications Framework (EQF) aligned course metadata for CPD-accredited content. French public sector clients: Qualiopi certification of training organizations integrated for subvention eligibility tracking.</p>
+  <h4>Pricing</h4>
+  <p>SaaS: EUR 3.50–8.00/active learner/month (volume-dependent). Minimum contract: EUR 48,000/year. Content development: EUR 4,500–12,000 per e-learning module.</p>
+
+  <!-- SERVICE 8 -->
+  <h2>Service 8: PTGT LogiTrack™ — Supply Chain Visibility &amp; Track-and-Trace Platform</h2>
+  <h4>Overview</h4>
+  <p>LogiTrack™ provides end-to-end supply chain visibility, IoT-enabled shipment tracking, customs compliance automation, and supplier management capabilities for logistics and manufacturing enterprises.</p>
+  <h4>Technical Architecture</h4>
+  <p>IoT Ingestion Layer: MQTT broker (EMQX), AWS IoT Core for device management. Event Processing: Apache Flink (real-time stream processing), geo-spatial event detection (PostGIS). Backend: Python/FastAPI microservices, containerized on AWS ECS. Map Visualization: Mapbox GL JS (PTGT custom logistics layer). Blockchain (optional): Hyperledger Fabric 2.5 for tamper-proof shipment provenance. ERP Integration: SAP TM/EWM, Oracle SCM Cloud, Microsoft Dynamics 365 Supply Chain Management connectors. Customs: EU ICS2 (Import Control System 2) and EUCC (Authorized Economic Operator) data format compliance.</p>
+  <h4>Pricing</h4>
+  <p>Subscription: EUR 15,000–65,000/month depending on shipment volume and IoT device count. EU Customs Compliance module: EUR 25,000 one-time configuration fee + EUR 4,000/month. Implementation: EUR 120,000–350,000.</p>
+
+  <!-- SERVICE 9 -->
+  <h2>Service 9: PTGT EnergyOS™ — Smart Energy Management &amp; Monitoring Platform</h2>
+  <h4>Overview</h4>
+  <p>EnergyOS™ is a web-based energy management information system (EMIS) compliant with ISO 50001:2018 (Energy Management Systems) and the EU Energy Efficiency Directive (EED 2023/1791). The platform integrates with smart meters, SCADA systems, and building management systems (BMS) to provide real-time energy consumption monitoring, anomaly detection, and automated regulatory reporting.</p>
+  <h4>Technical Architecture</h4>
+  <p>Data Ingestion: DLMS/COSEM smart meter protocol, Modbus TCP/RTU, BACnet/IP for BMS. Time-Series Database: InfluxDB 2.7 + Apache Parquet archiving on S3. ML Anomaly Detection: Prophet (time-series forecasting), Isolation Forest (anomaly detection). SCADA Integration: OPC-UA (read-only, enforced network segmentation). Frontend: Vue.js 3 with Highcharts Energy Dashboard. Compliance Reports: Automated ISO 50001 energy review export, EU EED Article 11 large enterprise reporting template.</p>
+  <div class="warn-box">
+    <div class="box-title">⚠ Critical Infrastructure Restriction</div>
+    EnergyOS™ deployments involving integration with electricity grid SCADA systems or transmission operator control systems are classified as Critical National Infrastructure (CNI) projects. PTGT must complete security clearance procedures and notify the relevant national energy regulatory authority (e.g., ACM in Netherlands, CRE in France, ZATCA/MOCI in KSA) before commencing integration work. PTGT does not develop SCADA control software — only monitoring and reporting interfaces are in scope.
+  </div>
+  <h4>Pricing</h4>
+  <p>SaaS: EUR 800–3,500/month per facility/site. Enterprise (multi-site, 50+ locations): custom pricing from EUR 85,000/year. Implementation: EUR 40,000–180,000.</p>
+
+  <!-- SERVICE 10 -->
+  <h2>Service 10: PTGT TalentHub™ — HR Digital Transformation Suite</h2>
+  <h4>Overview</h4>
+  <p>TalentHub™ is a comprehensive human capital management web platform covering recruitment (ATS), onboarding, performance management, learning &amp; development, compensation management, and HR analytics, built to integrate natively with SAP SuccessFactors, Workday, and Oracle HCM Cloud.</p>
+  <h4>Technical Architecture</h4>
+  <p>Core Platform: React 18 / Node.js monorepo architecture with micro-frontend module federation. AI Features: Resume screening (BERT-based NLP model — PTGT FAIR-AI toolkit applied for bias detection), chatbot onboarding assistant (OpenAI GPT-4o integration with strict PII redaction layer), predictive attrition analytics. Data: Multi-tenant PostgreSQL with row-level security. Integration: REST APIs + SAP SuccessFactors OData, Workday RAAS/REST, Payroll connectors (ADP, Cegid, Sage). GDPR: Automated data retention lifecycle, employee consent management, SAR (Subject Access Request) fulfillment workflow.</p>
+  <h4>Compliance Considerations</h4>
+  <p>TalentHub™'s AI-assisted recruitment features include mandatory bias audit reports (per PTGT Ethical AI Charter) and comply with the EU AI Act requirements for AI systems used in employment contexts (classified as high-risk AI under Annex III, Article 6). Automated decision-making that materially affects employees is subject to human review override mechanisms per GDPR Article 22.</p>
+  <h4>Pricing</h4>
+  <p>SaaS: EUR 12–22/employee/month (volume-dependent). Annual minimum: EUR 120,000. Implementation + data migration: EUR 80,000–250,000.</p>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Section 6: Web Services | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 7 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 62–68]</div>
+  <div class="section-header">
+    <div class="section-num">Section 7</div>
+    <div class="section-title">Infrastructure Capabilities</div>
+  </div>
+
+  <h2>7.1 Data Center Architecture</h2>
+  <p>PTGT operates and co-locates infrastructure across three primary data center facilities and maintains cloud presence across 6 hyperscaler regions. All primary data center facilities are rated <strong>Tier III equivalent</strong> (Uptime Institute classification) providing N+1 redundancy across power, cooling, and network infrastructure.</p>
+
+  <table>
+    <thead><tr><th>Facility</th><th>Location</th><th>Type</th><th>Floor Space</th><th>Power Capacity</th><th>Tier Rating</th><th>Certifications</th></tr></thead>
+    <tbody>
+      <tr><td>PTGT DC-AMS1</td><td>Amsterdam, Netherlands</td><td>Co-location (Equinix AM7)</td><td>120 sqm (20 racks)</td><td>120 kW</td><td>Tier IV</td><td>ISO 27001, SOC 2 (Equinix)</td></tr>
+      <tr><td>PTGT DC-CAS1</td><td>Casablanca, Morocco</td><td>PTGT-owned facility</td><td>850 sqm (120 racks)</td><td>480 kW</td><td>Tier III+</td><td>ISO 27001, TIA-942 Tier III</td></tr>
+      <tr><td>PTGT DC-DXB1</td><td>Dubai, UAE (DEWA DCC)</td><td>Co-location (DEWA Digital Office)</td><td>60 sqm (10 racks)</td><td>60 kW</td><td>Tier III</td><td>ISO 27001, ISO 50001</td></tr>
+    </tbody>
+  </table>
+  <div class="table-caption">Table 7.1 — PTGT Data Center Footprint</div>
+
+  <h3>7.1.1 Casablanca DC-CAS1 — Primary Delivery Infrastructure</h3>
+  <p>The Casablanca facility serves as PTGT's primary managed services and cloud delivery hub for MENA and African region clients. The facility is equipped with a fully redundant N+2 UPS system (APC Symmetra MW, 480 kW), precision cooling (CRAC units + in-row cooling), fuel-powered backup generators with 72-hour autonomy, and a dedicated fiber interconnect to two independent internet exchange points (CasaNet IX and IXPMA). The facility houses PTGT's primary NOC operations room (24 workstations, dual ISP BGP routing, MPLS connectivity to major EU and GCC PoPs) and the Morocco-based SOC team.</p>
+
+  <h2>7.2 High Availability Cluster Architecture</h2>
+  <p>PTGT's managed services platform operates on a multi-region active-active high availability architecture. Production workloads are distributed across AWS eu-west-1 (Ireland), AWS eu-central-1 (Frankfurt), and PTGT DC-CAS1, with intelligent traffic routing via AWS Route 53 (Geo + Health Check routing) and Cloudflare Load Balancing. The following HA specifications apply to PTGT's managed services infrastructure:</p>
+  <ul>
+    <li><strong>Compute:</strong> Kubernetes cluster (AWS EKS, 3 availability zones, minimum 3 worker nodes per AZ, auto-scaling 3–30 nodes). Node types: AWS r6g.xlarge to r6g.4xlarge.</li>
+    <li><strong>Database HA:</strong> PostgreSQL — AWS RDS Multi-AZ with automated failover (RTO &lt;60s). Redis — AWS ElastiCache Global Datastore (cross-region replication). MongoDB — Atlas M30+ dedicated cluster (3-node replica set, cross-region secondary).</li>
+    <li><strong>Network:</strong> AWS Direct Connect (dedicated 1Gbps from DC-AMS1), Site-to-Site VPN as backup. BGP failover to secondary ISP in &lt;90 seconds.</li>
+  </ul>
+
+  <h2>7.3 Disaster Recovery Model</h2>
+  <p>PTGT implements a tiered disaster recovery strategy aligned with NIST SP 800-34 Contingency Planning Guide for Federal Information Systems. DR tiers are assigned per client SLA:</p>
+  <table>
+    <thead><tr><th>DR Tier</th><th>Strategy</th><th>RTO</th><th>RPO</th><th>Annual DR Test</th><th>Applicable SLA Tier</th></tr></thead>
+    <tbody>
+      <tr><td>Tier 1 — Warm Standby</td><td>Hot standby cluster in secondary AWS region (eu-central-1); traffic failover within 5 minutes via Route 53</td><td>&lt;30 minutes</td><td>&lt;5 minutes</td><td>Full failover test — quarterly</td><td>Enterprise SLA clients</td></tr>
+      <tr><td>Tier 2 — Pilot Light</td><td>Minimal infrastructure running in secondary region; scaled up on declaration of disaster event</td><td>&lt;2 hours</td><td>&lt;1 hour</td><td>Tabletop + partial activation — semi-annual</td><td>Advanced SLA clients</td></tr>
+      <tr><td>Tier 3 — Backup &amp; Restore</td><td>Daily automated backups to S3 (encrypted), restored to new environment on DR declaration</td><td>&lt;24 hours</td><td>&lt;24 hours</td><td>Restore test — annual</td><td>Essential SLA clients</td></tr>
+    </tbody>
+  </table>
+
+  <h2>7.4 Hybrid Cloud Topology</h2>
+  <p>For clients requiring data residency, PTGT designs and operates hybrid cloud architectures that combine on-premise infrastructure (or sovereign cloud) with public hyperscaler services through a controlled integration layer:</p>
+  <p>The reference architecture employs: <strong>AWS Outposts</strong> or <strong>Azure Arc</strong> for extending native AWS/Azure management to on-premise/sovereign cloud nodes; <strong>HashiCorp Terraform</strong> for unified IaC management across all environments; <strong>Cilium</strong> (eBPF-based CNI) for network policy enforcement across cluster boundaries; <strong>Istio Service Mesh</strong> with mTLS for inter-service communication security across hybrid topology; and <strong>Velero</strong> for cross-environment backup and workload portability.</p>
+
+  <h2>7.5 Network Segmentation Strategy</h2>
+  <p>PTGT implements a Zero Trust Network Architecture (ZTNA) model across all managed environments. The network is segmented into the following security zones, enforced by Palo Alto Networks NGFW (PA-3400 Series) with Panorama central management:</p>
+  <ul>
+    <li><strong>Internet DMZ:</strong> Public-facing web application firewalls (WAF — AWS WAF + Cloudflare Enterprise), DDoS protection (Cloudflare Magic Transit, AWS Shield Advanced)</li>
+    <li><strong>Application Zone:</strong> Kubernetes cluster network with Calico/Cilium CNI, inter-namespace policies restricting east-west traffic</li>
+    <li><strong>Data Zone:</strong> Database and storage subnet with no direct internet access; access only through application-tier API layer; encryption at rest (AES-256) and in transit (TLS 1.3 mandatory)</li>
+    <li><strong>Management Zone:</strong> Bastion host access only via CyberArk PAM; MFA mandatory; jump server logs retained 7 years</li>
+    <li><strong>Client Isolation:</strong> Multi-tenant workloads are hardware-isolated (dedicated VPCs per client for Enterprise tier) or logically isolated via Kubernetes namespaces + network policies for shared infrastructure tiers</li>
+  </ul>
+
+  <h2>7.6 Security Operations Center (SOC) Model</h2>
+  <p>PTGT operates a dual-hub SOC model with primary SOC in Casablanca (12 analysts, 24/7) and secondary SOC in Amsterdam (6 analysts, business hours + on-call). The two SOCs operate on a follow-the-sun model with full knowledge transfer and shared SIEM/SOAR platform. SOC tooling:</p>
+  <ul>
+    <li><strong>SIEM:</strong> Microsoft Sentinel (primary for Azure-connected clients), Splunk Enterprise Security (primary for AWS/on-prem clients)</li>
+    <li><strong>SOAR:</strong> Palo Alto XSOAR (Cortex) for automated playbook-driven incident response</li>
+    <li><strong>EDR:</strong> CrowdStrike Falcon Complete (managed EDR for PTGT internal and client MDR service)</li>
+    <li><strong>Threat Intelligence:</strong> Recorded Future API integrated into SIEM for real-time IoC enrichment</li>
+    <li><strong>Vulnerability Management:</strong> Tenable.sc (on-premise networks), Tenable.io (cloud assets), integrated with Jira for remediation tracking</li>
+    <li><strong>DFIR:</strong> Digital forensics capability using Cellebrite, Magnet Axiom, Velociraptor for incident response engagements</li>
+  </ul>
+
+  <h2>7.7 Monitoring Stack</h2>
+  <p>PTGT's infrastructure monitoring stack is fully open-standards based, providing client-facing dashboards and internal SLA tracking:</p>
+  <ul>
+    <li><strong>Infrastructure Monitoring:</strong> Prometheus + Grafana (primary), Zabbix 6.x (legacy client environments), PRTG Network Monitor (SMB clients)</li>
+    <li><strong>Application Performance Monitoring (APM):</strong> Datadog APM, AWS X-Ray, OpenTelemetry (OTEL) for distributed tracing</li>
+    <li><strong>Log Management:</strong> Elastic Stack (Elasticsearch + Logstash + Kibana — ELK), AWS CloudWatch Logs for cloud-native environments</li>
+    <li><strong>Synthetic Monitoring:</strong> Datadog Synthetics, Pingdom — external endpoint monitoring from 18 global probe locations</li>
+    <li><strong>Status Pages:</strong> Client-facing real-time status pages via Statuspage.io (Atlassian) — white-labeled per client SLA tier</li>
+  </ul>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Section 7: Infrastructure | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 8 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 69–74]</div>
+  <div class="section-header">
+    <div class="section-num">Section 8</div>
+    <div class="section-title">Human Resources &amp; Certifications</div>
+  </div>
+
+  <h2>8.1 Workforce Overview</h2>
+  <div class="stat-grid">
+    <div class="stat-card"><div class="stat-value">2,847</div><div class="stat-label">Total FTEs</div></div>
+    <div class="stat-card"><div class="stat-value">31%</div><div class="stat-label">Female Workforce</div></div>
+    <div class="stat-card"><div class="stat-value">47</div><div class="stat-label">Nationalities Represented</div></div>
+    <div class="stat-card"><div class="stat-value">6.2 yrs</div><div class="stat-label">Avg. Employee Tenure</div></div>
+  </div>
+
+  <h3>8.1.1 Workforce by Function</h3>
+  <table>
+    <thead><tr><th>Function</th><th>FTEs</th><th>% of Total</th><th>Primary Location(s)</th></tr></thead>
+    <tbody>
+      <tr><td>Software Engineering (all practices)</td><td>1,124</td><td>39.5%</td><td>Morocco (688), Serbia (247), Netherlands (189)</td></tr>
+      <tr><td>Cloud &amp; Infrastructure Engineering</td><td>387</td><td>13.6%</td><td>Netherlands (201), Morocco (142), UAE (44)</td></tr>
+      <tr><td>Cybersecurity</td><td>187</td><td>6.6%</td><td>Morocco (102), Netherlands (58), UAE (27)</td></tr>
+      <tr><td>Data Engineering &amp; AI</td><td>214</td><td>7.5%</td><td>Morocco (134), Netherlands (62), Serbia (18)</td></tr>
+      <tr><td>ERP/CRM Implementation</td><td>189</td><td>6.6%</td><td>Netherlands (84), France (62), Morocco (43)</td></tr>
+      <tr><td>Consulting &amp; Architecture</td><td>156</td><td>5.5%</td><td>Netherlands (98), Germany (34), UAE (24)</td></tr>
+      <tr><td>Managed Services &amp; NOC/SOC</td><td>221</td><td>7.8%</td><td>Morocco (174), Netherlands (29), UAE (18)</td></tr>
+      <tr><td>Sales, BD &amp; Marketing</td><td>148</td><td>5.2%</td><td>All regions</td></tr>
+      <tr><td>Corporate Functions (Finance, HR, Legal)</td><td>221</td><td>7.8%</td><td>Luxembourg (87), Netherlands (134)</td></tr>
+      <tr><td><strong>Total</strong></td><td><strong>2,847</strong></td><td><strong>100%</strong></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>8.2 Technical Certifications</h2>
+  <h3>8.2.1 Cloud Certifications (as of January 1, 2025)</h3>
+  <table>
+    <thead><tr><th>Certification</th><th>Vendor</th><th>Holders (PTGT FTEs)</th></tr></thead>
+    <tbody>
+      <tr><td>AWS Solutions Architect Professional</td><td>Amazon Web Services</td><td>87</td></tr>
+      <tr><td>AWS DevOps Engineer Professional</td><td>Amazon Web Services</td><td>34</td></tr>
+      <tr><td>AWS Security Specialty</td><td>Amazon Web Services</td><td>12</td></tr>
+      <tr><td>AWS Database Specialty</td><td>Amazon Web Services</td><td>18</td></tr>
+      <tr><td>Azure Solutions Architect Expert</td><td>Microsoft</td><td>62</td></tr>
+      <tr><td>Azure DevOps Engineer Expert</td><td>Microsoft</td><td>28</td></tr>
+      <tr><td>Azure Security Engineer Associate</td><td>Microsoft</td><td>19</td></tr>
+      <tr><td>Google Cloud Professional Architect</td><td>Google</td><td>14</td></tr>
+    </tbody>
+  </table>
+
+  <h3>8.2.2 Cybersecurity Certifications</h3>
+  <table>
+    <thead><tr><th>Certification</th><th>Body</th><th>Holders</th></tr></thead>
+    <tbody>
+      <tr><td>CISSP (Certified Information Systems Security Professional)</td><td>(ISC)²</td><td>43</td></tr>
+      <tr><td>CISM (Certified Information Security Manager)</td><td>ISACA</td><td>22</td></tr>
+      <tr><td>CEH (Certified Ethical Hacker)</td><td>EC-Council</td><td>38</td></tr>
+      <tr><td>OSCP (Offensive Security Certified Professional)</td><td>Offensive Security</td><td>29</td></tr>
+      <tr><td>CompTIA Security+</td><td>CompTIA</td><td>74</td></tr>
+      <tr><td>GIAC GPEN / GWAPT / GCIH</td><td>GIAC/SANS</td><td>31</td></tr>
+    </tbody>
+  </table>
+
+  <h3>8.2.3 Enterprise Architecture &amp; Project Management</h3>
+  <table>
+    <thead><tr><th>Certification</th><th>Body</th><th>Holders</th></tr></thead>
+    <tbody>
+      <tr><td>TOGAF 9.2 Certified</td><td>The Open Group</td><td>34</td></tr>
+      <tr><td>PMP (Project Management Professional)</td><td>PMI</td><td>88</td></tr>
+      <tr><td>PRINCE2 Practitioner</td><td>AXELOS/PeopleCert</td><td>52</td></tr>
+      <tr><td>ITIL 4 Managing Professional</td><td>AXELOS/PeopleCert</td><td>41</td></tr>
+      <tr><td>SAP Certified Application Associate</td><td>SAP</td><td>67</td></tr>
+      <tr><td>Salesforce Certified Architect</td><td>Salesforce</td><td>18</td></tr>
+      <tr><td>CDMP (Certified Data Management Professional)</td><td>DAMA International</td><td>24</td></tr>
+    </tbody>
+  </table>
+
+  <h2>8.3 Partner Certifications &amp; Vendor Alliances</h2>
+  <table>
+    <thead><tr><th>Vendor</th><th>Partnership Level</th><th>Competencies / Specializations</th></tr></thead>
+    <tbody>
+      <tr><td>Amazon Web Services</td><td>Premier Consulting Partner</td><td>Migration, MSP, Government, Healthcare, Financial Services, DevOps</td></tr>
+      <tr><td>Microsoft</td><td>Solutions Partner (Infrastructure; Digital &amp; App Innovation; Data &amp; AI; Business Applications)</td><td>Azure Expert MSP, GitHub Advanced Security Partner</td></tr>
+      <tr><td>Google Cloud</td><td>Partner</td><td>Infrastructure, Data Analytics</td></tr>
+      <tr><td>SAP</td><td>Gold Partner</td><td>S/4HANA, SuccessFactors, Business Technology Platform</td></tr>
+      <tr><td>Oracle</td><td>Platinum Partner</td><td>ERP Cloud, HCM Cloud, Database, Autonomous DB</td></tr>
+      <tr><td>Salesforce</td><td>Consulting Partner (Gold)</td><td>Sales Cloud, Service Cloud, Experience Cloud, MuleSoft</td></tr>
+      <tr><td>Cisco</td><td>Gold Certified Partner</td><td>Enterprise Networking, Security, Data Center, Collaboration</td></tr>
+      <tr><td>Palo Alto Networks</td><td>NextWave Partner (Authorized)</td><td>NGFW, Prisma Cloud, Cortex XSOAR</td></tr>
+      <tr><td>CrowdStrike</td><td>Authorized Partner</td><td>Falcon Endpoint Protection, MDR</td></tr>
+      <tr><td>ServiceNow</td><td>Partner</td><td>ITSM, ITOM, SecOps</td></tr>
+    </tbody>
+  </table>
+
+  <h2>8.4 Internal Training Academy — PTGT Academy</h2>
+  <p>PTGT Academy is the Company's corporate learning institution, providing structured technical and professional development programs to all PTGT employees. The Academy operates a blended learning model combining online self-paced learning (EduLearn™ LMS), instructor-led training (ILT) in Casablanca and Amsterdam learning centers, and on-the-job mentoring programs.</p>
+  <h4>Key Programs:</h4>
+  <ul>
+    <li><strong>Graduate Technical Bootcamp:</strong> 12-week intensive onboarding for new graduates covering cloud fundamentals, DevOps practices, secure coding, and PTGT delivery methodology. Conducted 4 times/year in Casablanca; 90% employment retention rate post-bootcamp.</li>
+    <li><strong>Cloud Mastery Track:</strong> 6-month structured learning path from AWS/Azure Associate to Professional level certifications; subsidized exam vouchers; 180 engineers completed in FY2024.</li>
+    <li><strong>Cybersecurity Professional Track:</strong> 9-month track from Security+ to CISSP/OSCP level; PTGT-funded; conditional 2-year service commitment post-qualification.</li>
+    <li><strong>Leadership Development Program:</strong> Annual 6-month program for 20 high-potential managers; delivered in partnership with Amsterdam-based business school.</li>
+    <li><strong>Compliance Mandatory Training:</strong> Annual 4-hour online course covering GDPR, anti-corruption, export control, and data classification; 100% completion rate enforced.</li>
+  </ul>
+  <p>PTGT Academy training investment: EUR 3.8 million in FY2024 (approximately EUR 1,335 per employee per year).</p>
+
+  <h2>8.5 Recruitment Pipeline</h2>
+  <p>PTGT recruits primarily from university partnerships (12 partner universities across Morocco, Netherlands, France, Serbia, and UAE), competitive LinkedIn Talent Solutions campaigns, and internal referral programs (referral bonus: EUR 2,000). Key hiring markets: Morocco (engineering talent — Casablanca, Rabat, Marrakech), Serbia (backend engineering — Belgrade, Novi Sad), Netherlands (senior architects and consultants). PTGT's annual recruitment target for FY2025 is 380 net new hires, primarily in Software Engineering (+120), Cloud Engineering (+65), Data &amp; AI (+80), and Cybersecurity (+45).</p>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Section 8: Human Resources | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 9 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 75–78]</div>
+  <div class="section-header">
+    <div class="section-num">Section 9</div>
+    <div class="section-title">Corporate Social Responsibility</div>
+  </div>
+
+  <h2>9.1 Environmental Policy</h2>
+  <p>PTGT is committed to achieving <strong>carbon neutrality by 2030</strong> across all Scope 1 and Scope 2 emissions, with a target to reduce Scope 3 emissions by 40% by 2030 relative to a 2022 baseline. The Company's environmental governance is led by the ESG &amp; People Committee of the Supervisory Board (chaired by Ms. Amina Ouhssini) and reported under the GRI Standards 2021 framework with reference to the TCFD (Task Force on Climate-related Financial Disclosures) recommendations.</p>
+  <h4>Key Environmental Initiatives (FY2024):</h4>
+  <ul>
+    <li><strong>Data Center Efficiency:</strong> PTGT DC-CAS1 achieved a Power Usage Effectiveness (PUE) of 1.42 in FY2024 (industry average: 1.58), targeting PUE ≤1.3 by 2026 through free-cooling system upgrade currently in procurement. 100% of Casablanca DC electricity sourced from renewable energy certificates (RECs) under a Power Purchase Agreement with ONEE (Office National de l'Electricité et de l'Eau Potable, Morocco).</li>
+    <li><strong>Carbon Footprint:</strong> FY2024 Scope 1+2 emissions: 1,847 tCO₂e. Scope 3 (business travel, supply chain): 4,214 tCO₂e estimated. Offset via Gold Standard-verified reforestation credits (Moroccan Argan forest restoration program) pending internal emissions reduction measures.</li>
+    <li><strong>Green IT Advisory:</strong> PTGT has developed a Green IT Assessment service for clients, quantifying the carbon footprint of client IT estates and recommending cloud migration, server consolidation, and renewable energy sourcing strategies.</li>
+    <li><strong>CSRD Readiness:</strong> PTGT is implementing processes to comply with the EU Corporate Sustainability Reporting Directive (CSRD, Directive 2022/2464) requirements applicable from FY2026 reporting year, including double materiality assessment (ESRS framework).</li>
+  </ul>
+
+  <h2>9.2 Digital Inclusion Strategy</h2>
+  <p>PTGT's Digital Inclusion strategy focuses on three pillars: skills development in underserved communities, accessibility in technology design, and affordable digital services for the social sector.</p>
+  <h4>PTGT Code for Change Program:</h4>
+  <p>An annual program funding 50 coding scholarships for young women from low-income families in Morocco and Egypt to attend PTGT Academy's 12-week technical bootcamp. Of 150 graduates since program inception in 2020, 87% have secured technology employment within 6 months. Total investment: EUR 340,000 in FY2024.</p>
+  <h4>NGO &amp; Social Enterprise Pricing:</h4>
+  <p>PTGT offers a 40% discount on all SaaS platform licenses (EduLearn™, TalentHub™, CloudPortal™) to registered NGOs and social enterprises with annual revenues below EUR 5 million, subject to review and approval by the CSR Committee.</p>
+  <h4>Accessibility by Design:</h4>
+  <p>All PTGT-developed software products are required to achieve WCAG 2.1 Level AA as a minimum deliverable quality gate. PTGT maintains a dedicated accessibility testing team of 4 specialists (certified by International Association of Accessibility Professionals — IAAP) who conduct user testing with persons with disabilities before product release.</p>
+
+  <h2>9.3 Ethical AI Charter</h2>
+  <p>PTGT published its first Ethical AI Charter in January 2022, revised in alignment with the EU AI Act in March 2024. The Charter establishes binding principles for the design, development, and deployment of all AI systems engineered or operated by PTGT. The Charter is publicly available at www.ptgt.eu/ethical-ai.</p>
+  <h4>Charter Principles:</h4>
+  <ul>
+    <li><strong>Fairness &amp; Non-Discrimination:</strong> All PTGT AI models that inform decisions about individuals must undergo bias auditing using PTGT's FAIR-AI toolkit prior to deployment. Bias audit reports are provided to clients as part of project deliverables.</li>
+    <li><strong>Transparency &amp; Explainability:</strong> PTGT will not deploy black-box AI systems in contexts where decisions materially affect individuals' rights, access to services, or employment, without providing meaningful explanation mechanisms (SHAP/LIME-based explanations as standard).</li>
+    <li><strong>Human Oversight:</strong> All high-risk AI systems (as classified under EU AI Act Annex III) deployed by PTGT must include mandatory human-in-the-loop review mechanisms. Fully automated consequential decisions are prohibited without explicit regulatory approval and client agreement.</li>
+    <li><strong>Privacy by Design:</strong> PTGT AI systems are designed to minimize personal data use, maximize pseudonymization and aggregation, and default to on-premise or sovereign cloud deployment for data residency compliance.</li>
+    <li><strong>Prohibited AI Applications:</strong> PTGT will not develop or operate AI systems for social scoring, mass surveillance, real-time biometric identification in public spaces (except under narrow law enforcement exceptions permitted by EU AI Act), or psychological manipulation. These prohibitions apply regardless of client instructions.</li>
+    <li><strong>Environmental Responsibility:</strong> PTGT reports the estimated carbon footprint of AI model training and inference for all large-scale AI deployments and recommends energy-efficient model architectures.</li>
+  </ul>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Section 9: CSR | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ SECTION 10 -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 79–83]</div>
+  <div class="section-header">
+    <div class="section-num">Section 10</div>
+    <div class="section-title">Five-Year Strategic Roadmap (2025–2029)</div>
+  </div>
+
+  <h2>10.1 Strategic Vision</h2>
+  <p>PTGT's five-year strategic plan, approved by the Supervisory Board in October 2024, targets the transformation of the Company from a regional IT integrator into a <strong>top-tier global regulated-industry technology platform</strong> with EUR 570+ million in annual revenues by FY2028 and an IPO readiness milestone by 2027–2028 on Euronext Amsterdam or the London Stock Exchange.</p>
+
+  <h2>10.2 Geographic Expansion</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <div class="timeline-content"><strong>West Africa Hub — Dakar, Senegal:</strong> Establish Power Test Sénégal SUARL as a new delivery center serving Francophone West Africa (OHADA jurisdiction). Target: 80 FTEs by end-2025. Primary sectors: telecommunications, banking, e-government. Estimated capex: EUR 1.2 million.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2025</div>
+      <div class="timeline-content"><strong>Saudi Arabia Expansion:</strong> Increase Power Test Saudi LLC headcount from 34 to 120 FTEs, relocating to a larger Riyadh office in KAFD (King Abdullah Financial District). Target 2 anchor government contracts under Vision 2030 digital transformation program. Estimated investment: SAR 8.5 million (EUR 2.1 million).</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2026</div>
+      <div class="timeline-content"><strong>Poland/Eastern Europe Hub — Warsaw:</strong> Establish a new engineering center in Warsaw, Poland (EU jurisdiction), serving as a redundant EU delivery hub. Target: 200 FTEs by 2027. Rationale: EU labor market access, strong engineering talent pool, near-shore positioning for German and Nordic markets.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2026</div>
+      <div class="timeline-content"><strong>East Africa — Nairobi, Kenya:</strong> Explore establishment of a representative office with 15 FTEs for East African market entry. Target sectors: fintech, telecoms, donor-funded digital development projects (World Bank, AfDB). No regulatory bar identified — requires CRO approval.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2027</div>
+      <div class="timeline-content"><strong>Southeast Asia — Singapore:</strong> Establish a regional headquarters for Asia-Pacific operations (Power Test APAC Pte. Ltd.). Target sectors: financial services, smart city, healthcare IT. Estimated investment: EUR 3.5 million over 3 years. Compliance note: MAS TRM (Technology Risk Management) guidelines compliance required for Singapore financial sector clients.</div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-year">2028</div>
+      <div class="timeline-content"><strong>North America Advisory Office — Toronto, Canada:</strong> Small advisory presence (10 FTEs) to pursue EU-headquartered multinational clients' North American digital transformation programs. Canadian legal and regulatory environment assessed as fully compatible with PTGT's service scope.</div>
+    </div>
+  </div>
+
+  <h2>10.3 Mergers &amp; Acquisitions Strategy</h2>
+  <p>PTGT has identified M&amp;A as a key accelerator for capability building and geographic market entry. The Supervisory Board has approved an M&amp;A envelope of up to EUR 60 million over the FY2025–2027 period, financed through a combination of existing cash reserves, revolving credit facility, and potential new equity issuance.</p>
+  <h4>Acquisition Criteria:</h4>
+  <ul>
+    <li>Annual revenues between EUR 5M–30M</li>
+    <li>Strong talent base in a target capability area (AI/ML, healthcare IT, defense-adjacent cybersecurity with required clearances, or green IT)</li>
+    <li>Located in target geographic markets (Warsaw, Singapore, West Africa, or North America)</li>
+    <li>EBITDA margin ≥12% or clear path to margin improvement post-integration</li>
+    <li>Clean compliance record — no outstanding regulatory enforcement actions</li>
+  </ul>
+  <h4>Identified Target Categories:</h4>
+  <p>PTGT is actively evaluating acquisitions in: (1) specialized healthcare IT integrators in France or Belgium (to accelerate HDS certification and EHDS positioning); (2) a boutique AI/ML firm with academic research partnerships and EU AI Act compliance track record; (3) a cybersecurity MSSP with government security clearances enabling access to defense-adjacent contracts currently declined by PTGT.</p>
+
+  <h2>10.4 Product Innovation Roadmap</h2>
+  <table>
+    <thead><tr><th>Product/Initiative</th><th>Target Launch</th><th>Investment</th><th>Expected Revenue Impact by FY2028</th></tr></thead>
+    <tbody>
+      <tr><td>PTGT AI Governance Platform (AI Act Compliance SaaS)</td><td>Q3 2025</td><td>EUR 4.2M</td><td>EUR 12M ARR</td></tr>
+      <tr><td>CloudPortal™ v3.0 — GAIA-X Sovereign Cloud Module</td><td>Q4 2025</td><td>EUR 2.8M</td><td>EUR 8M ARR</td></tr>
+      <tr><td>PTGT Edge AI Platform for Industrial IoT</td><td>Q2 2026</td><td>EUR 6.1M</td><td>EUR 18M ARR</td></tr>
+      <tr><td>PTGT HealthBridge™ v2.0 — EHDS Compliance Module</td><td>Q1 2026</td><td>EUR 3.5M</td><td>EUR 10M ARR</td></tr>
+      <tr><td>PTGT GovProcure™ — GCC Edition (Arabic-first, ZATCA/MOF compliant)</td><td>Q3 2026</td><td>EUR 2.1M</td><td>EUR 14M ARR</td></tr>
+      <tr><td>PTGT Quantum Security Readiness Assessment Service</td><td>Q4 2027</td><td>EUR 1.8M</td><td>EUR 6M ARR</td></tr>
+    </tbody>
+  </table>
+
+  <h2>10.5 Regulatory Expansion</h2>
+  <h4>Target Regulatory Certifications (2025–2029):</h4>
+  <ul>
+    <li><strong>HDS (Hébergeur de Données de Santé) — France:</strong> Q2 2025 — Enables full healthcare data hosting in France; critical for HealthBridge™ sales</li>
+    <li><strong>ISO 27017 &amp; ISO 27018:</strong> Q3 2025 — Cloud security and cloud privacy controls certification; strengthens enterprise cloud managed services positioning</li>
+    <li><strong>EU AI Act Compliance Certification:</strong> Q4 2025 (as framework takes effect) — PTGT will be among first IT service providers to obtain independent conformity assessment for high-risk AI systems under EU AI Act</li>
+    <li><strong>CMMI Level 5 (PTGT Morocco):</strong> FY2026 — Targeting upgrade from current CMMI Level 4; strengthens GCC government contract pre-qualification</li>
+    <li><strong>FedRAMP (Low/Moderate) — USA:</strong> FY2027 — Required for North America federal market entry; long-lead-time authorization process to commence FY2025</li>
+    <li><strong>TISAX (Trusted Information Security Assessment Exchange) — Germany:</strong> FY2026 — Required for automotive sector engagements in Germany (Volkswagen, BMW, Daimler supply chain)</li>
+  </ul>
+
+  <div class="footer">
+    <div class="footer-logo">Power Test Global Technologies</div>
+    <div>PTGT-CORP-001-2025 | Section 10: Strategic Roadmap | © 2025 PTGT</div>
+  </div>
+</div>
+
+<!-- ============================================================ APPENDICES -->
+<div class="content-page page-break">
+  <div class="page-ind">[Suggested Pages 84–90]</div>
+  <div class="section-header">
+    <div class="section-num">Appendices</div>
+    <div class="section-title">Supporting Reference Materials</div>
+  </div>
+
+  <h2>Appendix A — Corporate Registration Certificates Summary</h2>
+  <table>
+    <thead><tr><th>Entity</th><th>Registration Number</th><th>Issuing Authority</th><th>Date</th></tr></thead>
+    <tbody>
+      <tr><td>PTGT S.A. (Luxembourg)</td><td>RCS B 178.442</td><td>RCSL Luxembourg</td><td>April 7, 2011</td></tr>
+      <tr><td>Power Test Technologies B.V.</td><td>KVK 73441892</td><td>KvK Netherlands</td><td>Sept 12, 2013</td></tr>
+      <tr><td>Power Test Maroc SARL</td><td>RC Casablanca 456.789</td><td>CRI Casablanca</td><td>Feb 18, 2014</td></tr>
+      <tr><td>Power Test Gulf FZE</td><td>DMCC-135782</td><td>DMCC Authority</td><td>June 1, 2016</td></tr>
+      <tr><td>Power Test Technologies GmbH</td><td>HRB 221447 B</td><td>Handelsregister Berlin</td><td>Jan 23, 2017</td></tr>
+      <tr><td>Power Test Solutions SAS</td><td>SIREN 882 341 567</td><td>TC Paris</td><td>Oct 5, 2018</td></tr>
+      <tr><td>Power Test Saudi LLC</td><td>CR 1010834721</td><td>MOCI Saudi Arabia</td><td>Mar 20, 2019</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Appendix B — ISO &amp; Compliance Certification Summary</h2>
+  <table>
+    <thead><tr><th>Standard</th><th>Scope</th><th>Certificate Number</th><th>Certification Body</th><th>Valid Until</th></tr></thead>
+    <tbody>
+      <tr><td>ISO 27001:2022</td><td>Full Group (all delivery operations)</td><td>BSI-IS-27001-PTGT-2023-014</td><td>BSI Group</td><td>August 2026</td></tr>
+      <tr><td>ISO 9001:2015</td><td>Full Group</td><td>BSI-QM-9001-PTGT-2022-078</td><td>BSI Group</td><td>November 2025</td></tr>
+      <tr><td>SOC 2 Type II</td><td>Cloud &amp; Managed Services (PTGT B.V., PTGT Maroc)</td><td>KPMG-SOC2-PTGT-2024</td><td>KPMG Advisory</td><td>November 2025 (annual)</td></tr>
+      <tr><td>CMMI Level 4</td><td>Software development (PTGT Maroc, PTGT Serbia)</td><td>CMMI-L4-2023-PTGT-0084</td><td>CMMI Institute</td><td>Continuous program</td></tr>
+      <tr><td>PCI-DSS v4.0 (Level 1)</td><td>Payment-related services</td><td>Verizon QSA RoC — Nov 2024</td><td>Verizon</td><td>November 2025</td></tr>
+      <tr><td>CSA STAR Level 2</td><td>Cloud services</td><td>CSA-STAR-L2-PTGT-00441</td><td>CSA</td><td>March 2026</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Appendix C — Key Financial Ratios (FY2024)</h2>
+  <table>
+    <thead><tr><th>Ratio</th><th>Value</th><th>Benchmark (IT Services Industry)</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td>Revenue Growth YoY</td><td>+17.4%</td><td>+8–12%</td><td><span class="badge badge-green">Above benchmark</span></td></tr>
+      <tr><td>Gross Margin</td><td>46.0%</td><td>35–45%</td><td><span class="badge badge-green">Strong</span></td></tr>
+      <tr><td>EBITDA Margin</td><td>19.3%</td><td>14–20%</td><td><span class="badge badge-green">Strong</span></td></tr>
+      <tr><td>Net Profit Margin</td><td>11.2%</td><td>7–13%</td><td><span class="badge badge-green">Strong</span></td></tr>
+      <tr><td>Net Debt / EBITDA</td><td>0.42x</td><td>&lt;2.0x (healthy)</td><td><span class="badge badge-green">Conservative leverage</span></td></tr>
+      <tr><td>Current Ratio</td><td>1.8x</td><td>&gt;1.2x</td><td><span class="badge badge-green">Adequate liquidity</span></td></tr>
+      <tr><td>Days Sales Outstanding (DSO)</td><td>62 days</td><td>55–75 days</td><td><span class="badge badge-blue">Within range</span></td></tr>
+      <tr><td>Revenue per FTE</td><td>EUR 109,800</td><td>EUR 85,000–130,000</td><td><span class="badge badge-green">Efficient</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2>Appendix D — Glossary of Key Terms</h2>
+  <table>
+    <thead><tr><th>Term</th><th>Definition</th></tr></thead>
+    <tbody>
+      <tr><td>CFD</td><td>Compliance-First Development — PTGT's proprietary methodology embedding legal and regulatory requirements into system design from inception</td></tr>
+      <tr><td>CLCO</td><td>Chief Legal &amp; Compliance Officer — PTGT executive responsible for legal affairs, regulatory compliance, and data protection</td></tr>
+      <tr><td>DORA</td><td>Digital Operational Resilience Act (EU Regulation 2022/2554) — EU regulation on ICT risk management for financial entities</td></tr>
+      <tr><td>EDD</td><td>Enhanced Due Diligence — elevated KYC/AML procedures applied to higher-risk clients and counterparties</td></tr>
+      <tr><td>EHDS</td><td>European Health Data Space — EU initiative for cross-border health data sharing and secondary use</td></tr>
+      <tr><td>HDS</td><td>Hébergeur de Données de Santé — French certification required for hosting personal health data</td></tr>
+      <tr><td>LCC</td><td>Legal Clearance Certificate — PTGT internal document issued by CLCO authorizing submission of a binding commercial proposal</td></tr>
+      <tr><td>LRW</td><td>Legal Review Workflow — PTGT's mandatory multi-stage process for evaluating project eligibility before contracting</td></tr>
+      <tr><td>NIS2</td><td>Network and Information Security Directive 2 (EU 2022/2555) — EU directive on cybersecurity of essential and important entities</td></tr>
+      <tr><td>OAF</td><td>Opportunity Assessment Form — PTGT internal form completed by CRO team at project opportunity stage</td></tr>
+      <tr><td>PDPL</td><td>Personal Data Protection Law — data protection legislation in Saudi Arabia (Royal Decree M/19) and UAE (Federal Decree-Law 45/2021)</td></tr>
+      <tr><td>PTGT</td><td>Power Test Global Technologies — the Company and its subsidiaries collectively</td></tr>
+      <tr><td>SCC</td><td>Standard Contractual Clauses — EU Commission-approved clauses for lawful personal data transfer to non-EEA countries</td></tr>
+      <tr><td>SDAIA</td><td>Saudi Data and AI Authority — Saudi Arabia regulatory authority for data governance and AI oversight</td></tr>
+    </tbody>
+  </table>
+
+  <h2>Appendix E — Document Control</h2>
+  <table>
+    <thead><tr><th>Version</th><th>Date</th><th>Author</th><th>Reviewer</th><th>Changes</th></tr></thead>
+    <tbody>
+      <tr><td>1.0</td><td>April 10, 2021</td><td>Legal &amp; Strategy Team</td><td>CEO</td><td>Initial issue</td></tr>
+      <tr><td>2.0</td><td>January 15, 2022</td><td>Compliance &amp; Strategy</td><td>CLCO + CEO</td><td>Added GDPR section, financial profile updated</td></tr>
+      <tr><td>3.0</td><td>March 20, 2023</td><td>Compliance &amp; Strategy</td><td>Supervisory Board</td><td>NIS2/DORA sections added; Saudi operations expanded; Articles of Incorporation updated</td></tr>
+      <tr><td>4.0</td><td>January 12, 2024</td><td>Compliance &amp; Strategy</td><td>CLCO + CFO</td><td>Full FY2023 financial data integration; AI Charter revision; GCC expansion sections</td></tr>
+      <tr><td>4.2 (Current)</td><td>January 15, 2025</td><td>Strategy Division</td><td>Executive Board + Supervisory Board</td><td>EU AI Act alignment; FY2024 actuals; 5-year roadmap FY2025–2029; HDS pre-certification added; Singapore expansion plan added</td></tr>
+    </tbody>
+  </table>
+
+  <div style="margin-top:40px; padding:20px; background:var(--light-gray); border-radius:8px; border:1px solid var(--border);">
+    <p style="font-size:9pt; color:var(--gray); text-align:center; margin:0;">
+      <strong>CONFIDENTIALITY NOTICE:</strong> This document contains proprietary and confidential information belonging to Power Test Global Technologies S.A. and its subsidiaries. It is intended solely for the use of the addressee and authorized recipients. Unauthorized disclosure, copying, distribution, or use of the contents of this document is strictly prohibited and may be unlawful. If you have received this document in error, please notify the sender immediately and destroy all copies. © 2025 Power Test Global Technologies S.A. All rights reserved.
+    </p>
+  </div>
+
+  <div class="footer" style="margin-top:30px;">
+    <div class="footer-logo">Power Test Global Technologies S.A. | RCS Luxembourg B 178.442</div>
+    <div>Document: PTGT-CORP-001-2025 v4.2 | Classification: Restricted | © 2025 PTGT</div>
+  </div>
+</div>
+
+</body>
+</html>

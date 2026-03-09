@@ -73,6 +73,7 @@
       "name": "Iron Monarch",
       "rarity": "Limited",
       "emoji": "\u2694\ufe0f",
+      "videoUrl": "/cutscenes/wilhelmina-iron-monarch.mp4",
       "color": "#38bdf8",
       "spCost": "4 SP \u2192 3 SP at -1SP unlock",
       "cooldown": "1 turn at +4",
